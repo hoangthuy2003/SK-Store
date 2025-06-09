@@ -16,10 +16,15 @@ namespace Repositories.Implementations
         public async Task<IEnumerable<Review>> GetReviewsByProductIdAsync(int productId)
         {
             return await _dbSet
-                .Include(r => r.User)
+                .Include(r => r.User) // Để lấy thông tin UserName
                 .Where(r => r.ProductId == productId)
                 .OrderByDescending(r => r.ReviewDate)
                 .ToListAsync();
+        }
+
+        public async Task<bool> HasUserReviewedProductAsync(int userId, int productId)
+        {
+            return await _dbSet.AnyAsync(r => r.UserId == userId && r.ProductId == productId);
         }
     }
 }

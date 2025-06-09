@@ -1,0 +1,8 @@
+/* Thêm một số style tùy chỉnh cho trang giỏ hàng */
+.quantity-btn {
+  @apply w-8 h-8 flex items-center justify-center text-gray-600 border border-gray-300 rounded-full transition hover:bg-gray-100;
+}
+
+.quantity-display {
+  @apply w-12 text-center font-medium;
+}

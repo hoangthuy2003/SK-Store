@@ -1,0 +1,65 @@
+<!-- Hero Section (giữ nguyên) -->
+<section class="hero-section">
+    <!-- ... -->
+</section>
+
+<!-- Featured Products -->
+<section id="featured" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="section-title">Sản Phẩm Nổi Bật</h2>
+            <p class="section-subtitle">Những sản phẩm thiết yếu được lựa chọn cẩn thận cho không gian làm việc của bạn.</p>
+        </div>
+
+        @if (isLoading()) {
+            <div class="flex justify-center items-center min-h-[300px]">
+                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+            </div>
+        } @else if (error()) {
+            <div class="text-center py-12 bg-red-50 rounded-lg">
+                <p class="text-red-600">{{ error() }}</p>
+            </div>
+        } @else {
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                @for (product of featuredProducts(); track product.productId) {
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition duration-300 flex flex-col">
+                        <div class="relative overflow-hidden">
+                            <a [routerLink]="['/products', product.productId]">
+                                <img [src]="product.primaryImageUrl || 'assets/images/placeholder.jpg'" 
+                                     [alt]="product.productName"
+                                     class="product-image w-full h-48 object-contain p-4">
+                            </a>
+                        </div>
+                        <div class="p-4 flex flex-col flex-grow">
+                            <div class="text-xs text-gray-500 mb-1">{{ product.brandName }}</div>
+                            <h3 class="font-medium text-gray-800 mb-2 hover:text-blue-600 transition flex-grow">
+                                <a [routerLink]="['/products', product.productId]">{{ product.productName }}</a>
+                            </h3>
+                            <div class="flex items-center text-sm text-yellow-500 mb-3">
+                                <i class="fas fa-star"></i>
+                                <span class="text-gray-600 ml-1">{{ product.averageRating.toFixed(1) }} ({{ product.reviewCount }} đánh giá)</span>
+                            </div>
+                            <div class="flex items-center mt-auto">
+                                <span class="text-lg font-bold text-blue-600">{{ formatPrice(product.price) }}</span>
+                                <button class="ml-auto w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 hover:bg-blue-100 transition">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+
+        <div class="text-center mt-12">
+            <a routerLink="/shop" class="inline-block border-2 border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-white font-medium py-3 px-8 rounded-full transition duration-300">
+                Xem tất cả sản phẩm
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Section (giữ nguyên) -->
+<section class="py-16 bg-gray-100">
+    <!-- ... -->
+</section>

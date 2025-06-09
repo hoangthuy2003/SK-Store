@@ -438,10 +438,6 @@ namespace Sk_Store.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<string>("PasswordResetToken")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasMaxLength(20)
@@ -452,15 +448,8 @@ namespace Sk_Store.Migrations
                         .HasColumnType("datetime")
                         .HasDefaultValueSql("(getdate())");
 
-                    b.Property<DateTime?>("ResetTokenExpiry")
-                        .HasColumnType("datetime");
-
                     b.Property<int>("RoleId")
                         .HasColumnType("int");
-
-                    b.Property<string>("VerificationToken")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
 
                     b.HasKey("UserId")
                         .HasName("PK__Users__1788CC4C1BEA199A");

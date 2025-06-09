@@ -1,190 +1,421 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\SK_Store_Website\\Sk_Store\\",
+  "WorkspaceRootPath": "D:\\SK_Store_Website\\Backend\\Sk_Store\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\sk_store\\services\\implementations\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\implementations\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\sk_store\\repositories\\implementations\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\implementations\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\sk_store\\repositories\\interfaces\\iuserrepository .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\interfaces\\iuserrepository .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\sk_store\\application\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\sk_store\\businessobjects\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\sk_store\\businessobjects\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\sk_store\\businessobjects\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|d:\\sk_store_website\\sk_store\\sk_store\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|d:\\sk_store_website\\backend\\sk_store\\sk_store\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|solutionrelative:sk_store\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\sk_store\\repositories\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|d:\\sk_store_website\\backend\\sk_store\\sk_store\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|solutionrelative:sk_store\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|d:\\sk_store_website\\sk_store\\sk_store\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|d:\\sk_store_website\\backend\\sk_store\\sk_store\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|solutionrelative:sk_store\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\product\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\product\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|d:\\sk_store_website\\backend\\sk_store\\sk_store\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|solutionrelative:sk_store\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|d:\\sk_store_website\\sk_store\\sk_store\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|d:\\sk_store_website\\backend\\sk_store\\sk_store\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|solutionrelative:sk_store\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\sk_store\\repositories\\unitofwork\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\unitofwork\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\sk_store\\repositories\\implementations\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\implementations\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\sk_store\\repositories\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\sk_store\\application\\dtos\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\sk_store\\application\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\sk_store\\services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|d:\\sk_store_website\\sk_store\\sk_store\\migrations\\20250529040805_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|solutionrelative:sk_store\\migrations\\20250529040805_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SK_Store_Website\\Sk_Store\\Sk_Store\\Migrations\\20250529042400_AddDateOfBirthAndGenderToUser2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Sk_Store\\Migrations\\20250529042400_AddDateOfBirthAndGenderToUser2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\sk_store\\repositories\\skstorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\skstorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\skstorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\sk_store\\repositories\\implementations\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\implementations\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\repositories.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\repositories.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\sk_store\\businessobjects\\useraddress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\useraddress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\services.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\services.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\sk_store\\businessobjects\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\implementations\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\implementations\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\sk_store\\repositories\\implementations\\useraddressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\implementations\\useraddressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\sk_store\\repositories\\interfaces\\ireviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\interfaces\\ireviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\implementations\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\implementations\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\sk_store\\repositories\\interfaces\\iuseraddressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\interfaces\\iuseraddressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|d:\\sk_store_website\\backend\\sk_store\\sk_store\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|solutionrelative:sk_store\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\sk_store\\repositories\\implementations\\reviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|d:\\sk_store_website\\backend\\sk_store\\sk_store\\controllers\\reviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|solutionrelative:sk_store\\controllers\\reviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\interfaces\\ireviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\interfaces\\ireviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\implementations\\reviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\implementations\\reviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\sk_store\\repositories\\implementations\\brandrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\implementations\\brandrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\interfaces\\ireviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\interfaces\\ireviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\sk_store\\repositories\\interfaces\\ibrandrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\interfaces\\ibrandrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\review\\createreviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\review\\createreviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\sk_store\\repositories\\interfaces\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\interfaces\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\implementations\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\implementations\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\sk_store\\repositories\\implementations\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\implementations\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\order\\updateorderstatusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\order\\updateorderstatusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\sk_store\\repositories\\implementations\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\implementations\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|d:\\sk_store_website\\backend\\sk_store\\sk_store\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|solutionrelative:sk_store\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\sk_store\\repositories\\interfaces\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|d:\\sk_store_website\\backend\\sk_store\\sk_store\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|solutionrelative:sk_store\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\implementations\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\implementations\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\implementations\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\implementations\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\unitofwork\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\unitofwork\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\interfaces\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\interfaces\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\sk_store\\repositories\\implementations\\shoppingcartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\implementations\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\implementations\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\implementations\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\implementations\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\order\\ordersummarydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\order\\ordersummarydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\order\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\order\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\order\\orderitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\order\\orderitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\order\\createorderrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\order\\createorderrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\implementations\\shoppingcartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\implementations\\shoppingcartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\sk_store\\repositories\\interfaces\\ishoppingcartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\implementations\\shoppingcartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\implementations\\shoppingcartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|d:\\sk_store_website\\backend\\sk_store\\sk_store\\controllers\\shoppingcartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|solutionrelative:sk_store\\controllers\\shoppingcartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\shoppingcart\\cartdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\shoppingcart\\cartdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\shoppingcart\\cartitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\shoppingcart\\cartitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\interfaces\\ishoppingcartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\interfaces\\ishoppingcartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\shoppingcart\\additemtocartdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\shoppingcart\\additemtocartdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\shoppingcart\\updatecartitemquantitydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\shoppingcart\\updatecartitemquantitydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\backend\\sk_store\\businessobjects\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\user\\changepassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\user\\changepassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\user\\updateuserprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\user\\updateuserprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\user\\userprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\user\\userprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|d:\\sk_store_website\\backend\\sk_store\\sk_store\\controllers\\brandscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|solutionrelative:sk_store\\controllers\\brandscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\auth\\verifyemaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\auth\\verifyemaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\auth\\resetpassworddto .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\auth\\resetpassworddto .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\auth\\forgotpassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\auth\\forgotpassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\interfaces\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\interfaces\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\implementations\\brandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\implementations\\brandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\backend\\sk_store\\businessobjects\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\interfaces\\ishoppingcartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\interfaces\\ishoppingcartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\sk_store\\repositories\\interfaces\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\interfaces\\iuserrepository .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\interfaces\\iuserrepository .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\implementations\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\implementations\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\interfaces\\irolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\interfaces\\irolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\implementations\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\implementations\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\user\\userfilterparametersdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\user\\userfilterparametersdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\user\\userforadminupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\user\\userforadminupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\user\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\user\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\auth\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\auth\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\implementations\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\implementations\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\interfaces\\ibrandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\interfaces\\ibrandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\interfaces\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\interfaces\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\brand\\updatebranddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\brand\\updatebranddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\brand\\createbranddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\brand\\createbranddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\brand\\branddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\brand\\branddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\category\\updatecategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\category\\updatecategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\category\\createcategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\category\\createcategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\category\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\category\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\implementations\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\implementations\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\implementations\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\implementations\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\product\\productattributedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\product\\productattributedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\product\\createproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\product\\createproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\product\\updateproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\product\\updateproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\product\\productdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\product\\productdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\product\\reviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\product\\reviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\product\\productimagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\product\\productimagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\auth\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\auth\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\backend\\sk_store\\businessobjects\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\auth\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\auth\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\implementations\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\implementations\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\backend\\sk_store\\businessobjects\\useraddress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\useraddress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\backend\\sk_store\\businessobjects\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\implementations\\useraddressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\implementations\\useraddressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\interfaces\\iuseraddressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\interfaces\\iuseraddressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\implementations\\brandrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\implementations\\brandrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\interfaces\\ibrandrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\interfaces\\ibrandrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\interfaces\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\interfaces\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\interfaces\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\interfaces\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\sk_store\\repositories\\productfilterparameters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\productfilterparameters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\productfilterparameters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\sk_store\\businessobjects\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\backend\\sk_store\\businessobjects\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\sk_store\\businessobjects\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\backend\\sk_store\\businessobjects\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\sk_store\\businessobjects\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\backend\\sk_store\\businessobjects\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\sk_store\\businessobjects\\productimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\backend\\sk_store\\businessobjects\\productimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\productimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\sk_store\\businessobjects\\productattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\backend\\sk_store\\businessobjects\\productattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\productattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\sk_store\\businessobjects\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\backend\\sk_store\\businessobjects\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\sk_store\\businessobjects\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\backend\\sk_store\\businessobjects\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\sk_store\\businessobjects\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|d:\\sk_store_website\\backend\\sk_store\\businessobjects\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0369DDF8-640E-4456-8967-04489FF818AA}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SK_Store_Website\\Sk_Store\\Services\\Class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\Class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SK_Store_Website\\Sk_Store\\Services\\Class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -194,601 +425,1253 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\UnitOfWork\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "Repositories\\UnitOfWork\\UnitOfWork.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\UnitOfWork\\UnitOfWork.cs",
-              "RelativeToolTip": "Repositories\\UnitOfWork\\UnitOfWork.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAiwB8AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T06:13:31.868Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Implementations\\UserRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementations\\UserRepository.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Implementations\\UserRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementations\\UserRepository.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAywBoAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T14:34:58.219Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "Repositories.csproj",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Repositories.csproj",
+              "RelativeDocumentMoniker": "Repositories\\Repositories.csproj",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Repositories.csproj",
+              "RelativeToolTip": "Repositories\\Repositories.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-08T08:33:29.747Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Sk_Store\\Program.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Program.cs",
               "RelativeDocumentMoniker": "Sk_Store\\Program.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Sk_Store\\Program.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Program.cs",
               "RelativeToolTip": "Sk_Store\\Program.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAywEUAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-26T17:34:44.979Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\User.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\User.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\User.cs",
-              "RelativeToolTip": "BusinessObjects\\User.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAuwC8AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Sk_Store\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Sk_Store\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAywBEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T14:13:40.996Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-29T07:09:05.747Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SkstoreContext.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\SkstoreContext.cs",
+              "RelativeDocumentMoniker": "Repositories\\SkstoreContext.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\SkstoreContext.cs",
+              "RelativeToolTip": "Repositories\\SkstoreContext.cs",
+              "ViewState": "AgIAAOcAAAAAAAAAAIA2wPsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T14:13:57.311Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Order.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\Order.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\Order.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\Order.cs",
-              "RelativeToolTip": "BusinessObjects\\Order.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T14:13:14.533Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Review.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\Review.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\Review.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\Review.cs",
-              "RelativeToolTip": "BusinessObjects\\Review.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T14:13:31.93Z",
-              "EditorCaption": ""
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\appsettings.json",
+              "RelativeDocumentMoniker": "Sk_Store\\appsettings.json",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\appsettings.json",
+              "RelativeToolTip": "Sk_Store\\appsettings.json",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA0wBEAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-26T17:17:20.895Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "RegisterDto.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Application\\DTOs\\RegisterDto.cs",
-              "RelativeDocumentMoniker": "Application\\DTOs\\RegisterDto.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Application\\DTOs\\RegisterDto.cs",
-              "RelativeToolTip": "Application\\DTOs\\RegisterDto.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowAcAAAAaAAAAAAAAAA==",
+              "Title": "ProductDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\ProductDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Product\\ProductDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\ProductDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Product\\ProductDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T04:45:59.347Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Services\\Implementations\\AuthService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\AuthService.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Services\\Implementations\\AuthService.cs",
-              "RelativeToolTip": "Services\\Implementations\\AuthService.cs",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAewJgAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T04:47:40.456Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-31T14:04:07.518Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IUserRepository .cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Interfaces\\IUserRepository .cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUserRepository .cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Interfaces\\IUserRepository .cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IUserRepository .cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAIAAAAAAAAAA==",
+              "Title": "ProfileController.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\ProfileController.cs",
+              "RelativeDocumentMoniker": "Sk_Store\\Controllers\\ProfileController.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\ProfileController.cs",
+              "RelativeToolTip": "Sk_Store\\Controllers\\ProfileController.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAA1wHsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T14:16:38.254Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T10:05:12.91Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "IGenericRepository.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Interfaces\\IGenericRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IGenericRepository.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Interfaces\\IGenericRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IGenericRepository.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAewBUAAAANAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "Sk_Store\\Controllers\\ProductsController.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "Sk_Store\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAABCwCYAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T17:56:26.744Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-31T14:34:18.145Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "AuthResponseDto.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Application\\DTOs\\AuthResponseDto.cs",
-              "RelativeDocumentMoniker": "Application\\DTOs\\AuthResponseDto.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Application\\DTOs\\AuthResponseDto.cs",
-              "RelativeToolTip": "Application\\DTOs\\AuthResponseDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T04:45:47.437Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "IUnitOfWork.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\UnitOfWork\\IUnitOfWork.cs",
-              "RelativeDocumentMoniker": "Repositories\\UnitOfWork\\IUnitOfWork.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\UnitOfWork\\IUnitOfWork.cs",
-              "RelativeToolTip": "Repositories\\UnitOfWork\\IUnitOfWork.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAA1wAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T06:13:08.684Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Sk_Store\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Sk_Store\\Controllers\\AuthController.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Sk_Store\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Sk_Store\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAiwCoAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T07:09:05.747Z",
-              "EditorCaption": ""
+              "DocumentIndex": 8,
+              "Title": "Services.csproj",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Services.csproj",
+              "RelativeDocumentMoniker": "Services\\Services.csproj",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Services.csproj",
+              "RelativeToolTip": "Services\\Services.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-08T08:33:28.66Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Sk_Store\\appsettings.json",
-              "RelativeDocumentMoniker": "Sk_Store\\appsettings.json",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Sk_Store\\appsettings.json",
-              "RelativeToolTip": "Sk_Store\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-26T17:17:20.895Z",
-              "EditorCaption": ""
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IAuthService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IAuthService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T04:35:25.329Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "LoginDto.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Application\\DTOs\\LoginDto.cs",
-              "RelativeDocumentMoniker": "Application\\DTOs\\LoginDto.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Application\\DTOs\\LoginDto.cs",
-              "RelativeToolTip": "Application\\DTOs\\LoginDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAaAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "ReviewService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\ReviewService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\ReviewService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\ReviewService.cs",
+              "RelativeToolTip": "Services\\Implementations\\ReviewService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T04:45:55.378Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T11:15:13.969Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "GenericRepository.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Implementations\\GenericRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementations\\GenericRepository.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Implementations\\GenericRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementations\\GenericRepository.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAIBAwBYAAAAIAAAAAAAAAA==",
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Sk_Store\\Controllers\\UsersController.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Sk_Store\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAA1wE0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T03:09:16.167Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "IAuthService.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Services\\Interfaces\\IAuthService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IAuthService.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Services\\Interfaces\\IAuthService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IAuthService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T04:35:25.329Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "20250529040805_InitialCreate.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Sk_Store\\Migrations\\20250529040805_InitialCreate.cs",
-              "RelativeDocumentMoniker": "Sk_Store\\Migrations\\20250529040805_InitialCreate.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Sk_Store\\Migrations\\20250529040805_InitialCreate.cs",
-              "RelativeToolTip": "Sk_Store\\Migrations\\20250529040805_InitialCreate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T04:08:06.044Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "20250529042400_AddDateOfBirthAndGenderToUser2.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Sk_Store\\Migrations\\20250529042400_AddDateOfBirthAndGenderToUser2.cs",
-              "RelativeDocumentMoniker": "Sk_Store\\Migrations\\20250529042400_AddDateOfBirthAndGenderToUser2.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Sk_Store\\Migrations\\20250529042400_AddDateOfBirthAndGenderToUser2.cs",
-              "RelativeToolTip": "Sk_Store\\Migrations\\20250529042400_AddDateOfBirthAndGenderToUser2.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAywAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T04:24:00.964Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "BrandRepository.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Implementations\\BrandRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementations\\BrandRepository.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Implementations\\BrandRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementations\\BrandRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T16:35:07.318Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "CategoryRepository.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Implementations\\CategoryRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementations\\CategoryRepository.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Implementations\\CategoryRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementations\\CategoryRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T16:33:54.524Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T09:49:38.797Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 19,
-              "Title": "SkstoreContext.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\SkstoreContext.cs",
-              "RelativeDocumentMoniker": "Repositories\\SkstoreContext.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\SkstoreContext.cs",
-              "RelativeToolTip": "Repositories\\SkstoreContext.cs",
-              "ViewState": "AgIAAO8AAAAAAAAAAIA2wPwAAAAjAAAAAAAAAA==",
+              "Title": "UpdateOrderStatusDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\UpdateOrderStatusDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Order\\UpdateOrderStatusDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\UpdateOrderStatusDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Order\\UpdateOrderStatusDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T14:13:57.311Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T10:40:55.263Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 9,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\AuthService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\AuthService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\AuthService.cs",
+              "RelativeToolTip": "Services\\Implementations\\AuthService.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAIwI0AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T04:47:40.456Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CreateReviewDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Review\\CreateReviewDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Review\\CreateReviewDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Review\\CreateReviewDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Review\\CreateReviewDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T11:13:22.828Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IReviewService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IReviewService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IReviewService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IReviewService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IReviewService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T11:15:04.005Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ReviewsController.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\ReviewsController.cs",
+              "RelativeDocumentMoniker": "Sk_Store\\Controllers\\ReviewsController.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\ReviewsController.cs",
+              "RelativeToolTip": "Sk_Store\\Controllers\\ReviewsController.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAywGsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T11:15:29.714Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "Sk_Store\\Controllers\\OrdersController.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "Sk_Store\\Controllers\\OrdersController.cs",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAowIsAAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T10:49:47.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "IReviewRepository.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Interfaces\\IReviewRepository.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IReviewRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IReviewRepository.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Interfaces\\IReviewRepository.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IReviewRepository.cs",
               "RelativeToolTip": "Repositories\\Interfaces\\IReviewRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T16:36:42.405Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T16:36:42.405Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "UserAddressRepository.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Implementations\\UserAddressRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementations\\UserAddressRepository.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Implementations\\UserAddressRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementations\\UserAddressRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "DocumentIndex": 15,
+              "Title": "ReviewRepository.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\ReviewRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\ReviewRepository.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\ReviewRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\ReviewRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T16:39:11.174Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Role.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\Role.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\Role.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\Role.cs",
-              "RelativeToolTip": "BusinessObjects\\Role.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T14:13:34.833Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T16:37:04.462Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 21,
-              "Title": "UserAddress.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\UserAddress.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\UserAddress.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\UserAddress.cs",
-              "RelativeToolTip": "BusinessObjects\\UserAddress.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAA+wBUAAAAAAAAAAAAAAA==",
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "Sk_Store\\Controllers\\CategoriesController.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\CategoriesController.cs",
+              "RelativeToolTip": "Sk_Store\\Controllers\\CategoriesController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T14:13:43.974Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-31T15:07:19.364Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "ReviewRepository.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Implementations\\ReviewRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementations\\ReviewRepository.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Implementations\\ReviewRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementations\\ReviewRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAZAAAAAAAAAA==",
+              "DocumentIndex": 18,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\OrderService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\OrderService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\OrderService.cs",
+              "RelativeToolTip": "Services\\Implementations\\OrderService.cs",
+              "ViewState": "AgIAABQBAAAAAAAAAAAywCMBAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T16:37:04.462Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T10:45:16.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\GenericRepository.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\GenericRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\GenericRepository.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACYAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T03:09:16.167Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\EmailService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\EmailService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\EmailService.cs",
+              "RelativeToolTip": "Services\\Implementations\\EmailService.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAD4vyIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T02:25:04.055Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\UnitOfWork\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "Repositories\\UnitOfWork\\UnitOfWork.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\UnitOfWork\\UnitOfWork.cs",
+              "RelativeToolTip": "Repositories\\UnitOfWork\\UnitOfWork.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAA1wDgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T06:13:31.868Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 25,
-              "Title": "IUserAddressRepository.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Interfaces\\IUserAddressRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUserAddressRepository.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Interfaces\\IUserAddressRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IUserAddressRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\UnitOfWork\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "Repositories\\UnitOfWork\\IUnitOfWork.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\UnitOfWork\\IUnitOfWork.cs",
+              "RelativeToolTip": "Repositories\\UnitOfWork\\IUnitOfWork.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAABCwB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T16:37:32.168Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-29T06:13:08.684Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "IBrandRepository.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Interfaces\\IBrandRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IBrandRepository.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Interfaces\\IBrandRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IBrandRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA/AAAAAAAAAA==",
+              "DocumentIndex": 26,
+              "Title": "IOrderRepository.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IOrderRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IOrderRepository.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IOrderRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IOrderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T16:33:07.832Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "ICategoryRepository.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Interfaces\\ICategoryRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\ICategoryRepository.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Interfaces\\ICategoryRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\ICategoryRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T16:31:54.075Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T16:19:01.915Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 30,
+              "Title": "OrderSummaryDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\OrderSummaryDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Order\\OrderSummaryDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\OrderSummaryDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Order\\OrderSummaryDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T10:40:44.219Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "IOrderService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IOrderService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IOrderService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IOrderService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IOrderService.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAABCwCIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T10:43:32.877Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
               "Title": "OrderRepository.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Implementations\\OrderRepository.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\OrderRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\OrderRepository.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Implementations\\OrderRepository.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\OrderRepository.cs",
               "RelativeToolTip": "Repositories\\Implementations\\OrderRepository.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAABSwBYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAA1wCUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T16:19:36.845Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "IOrderRepository.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Interfaces\\IOrderRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IOrderRepository.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Interfaces\\IOrderRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IOrderRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T16:19:01.915Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "ShoppingCartRepository.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Implementations\\ShoppingCartRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementations\\ShoppingCartRepository.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Implementations\\ShoppingCartRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementations\\ShoppingCartRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T16:18:12.844Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "IShoppingCartRepository.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Interfaces\\IShoppingCartRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IShoppingCartRepository.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Interfaces\\IShoppingCartRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IShoppingCartRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T16:17:28.668Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "ProductFilterParameters.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\ProductFilterParameters.cs",
-              "RelativeDocumentMoniker": "Repositories\\ProductFilterParameters.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\ProductFilterParameters.cs",
-              "RelativeToolTip": "Repositories\\ProductFilterParameters.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T16:02:31.076Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T16:19:36.845Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 31,
-              "Title": "ProductRepository.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Implementations\\ProductRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementations\\ProductRepository.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Implementations\\ProductRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementations\\ProductRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABLAAAAAAAAAA==",
+              "Title": "OrderDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\OrderDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Order\\OrderDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\OrderDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Order\\OrderDto.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAA7wA8AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T15:47:53.881Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T10:40:23.73Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "OrderItemDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\OrderItemDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Order\\OrderItemDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\OrderItemDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Order\\OrderItemDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T10:40:11.065Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "CreateOrderRequestDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\CreateOrderRequestDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Order\\CreateOrderRequestDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\CreateOrderRequestDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Order\\CreateOrderRequestDto.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAiwCAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T10:39:57.454Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\UserService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\UserService.cs",
+              "RelativeToolTip": "Services\\Implementations\\UserService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAAL4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:16:41.303Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "ShoppingCartsController.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\ShoppingCartsController.cs",
+              "RelativeDocumentMoniker": "Sk_Store\\Controllers\\ShoppingCartsController.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\ShoppingCartsController.cs",
+              "RelativeToolTip": "Sk_Store\\Controllers\\ShoppingCartsController.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAA1wI0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T10:19:08.783Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 35,
-              "Title": "IProductRepository.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Interfaces\\IProductRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IProductRepository.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Repositories\\Interfaces\\IProductRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IProductRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABZAAAAAAAAAA==",
+              "Title": "ShoppingCartService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\ShoppingCartService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\ShoppingCartService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\ShoppingCartService.cs",
+              "RelativeToolTip": "Services\\Implementations\\ShoppingCartService.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAlwDcAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T14:51:14.623Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "Brand.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\Brand.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\Brand.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\Brand.cs",
-              "RelativeToolTip": "BusinessObjects\\Brand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T14:11:16.47Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "CartItem.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\CartItem.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\CartItem.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\CartItem.cs",
-              "RelativeToolTip": "BusinessObjects\\CartItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T14:11:35.853Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "ShoppingCart.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\ShoppingCart.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\ShoppingCart.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\ShoppingCart.cs",
-              "RelativeToolTip": "BusinessObjects\\ShoppingCart.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T14:13:38.116Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T10:17:36.187Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 40,
-              "Title": "ProductImage.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\ProductImage.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\ProductImage.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\ProductImage.cs",
-              "RelativeToolTip": "BusinessObjects\\ProductImage.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Title": "AddItemToCartDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\ShoppingCart\\AddItemToCartDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\ShoppingCart\\AddItemToCartDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\ShoppingCart\\AddItemToCartDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\ShoppingCart\\AddItemToCartDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T14:13:29.684Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T10:16:47.793Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "IShoppingCartService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IShoppingCartService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IShoppingCartService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IShoppingCartService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IShoppingCartService.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAASwBcAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T10:15:08.915Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "CartDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\ShoppingCart\\CartDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\ShoppingCart\\CartDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\ShoppingCart\\CartDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\ShoppingCart\\CartDto.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAD4vwwAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T10:14:09.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ShoppingCartRepository.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\ShoppingCartRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\ShoppingCartRepository.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\ShoppingCartRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\ShoppingCartRepository.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAywBYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T16:18:12.844Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 41,
-              "Title": "ProductAttribute.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\ProductAttribute.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\ProductAttribute.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\ProductAttribute.cs",
-              "RelativeToolTip": "BusinessObjects\\ProductAttribute.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Title": "UpdateCartItemQuantityDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\ShoppingCart\\UpdateCartItemQuantityDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\ShoppingCart\\UpdateCartItemQuantityDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\ShoppingCart\\UpdateCartItemQuantityDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\ShoppingCart\\UpdateCartItemQuantityDto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T14:13:26.773Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T10:14:46.356Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "Product.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\Product.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\Product.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\Product.cs",
-              "RelativeToolTip": "BusinessObjects\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAaAAAAAAAAAA==",
+              "DocumentIndex": 38,
+              "Title": "CartItemDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\ShoppingCart\\CartItemDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\ShoppingCart\\CartItemDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\ShoppingCart\\CartItemDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\ShoppingCart\\CartItemDto.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAowAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T14:13:22.641Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "OrderItem.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\OrderItem.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\OrderItem.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\OrderItem.cs",
-              "RelativeToolTip": "BusinessObjects\\OrderItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T14:13:20.404Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T10:13:56.482Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 44,
-              "Title": "Category.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\Category.cs",
-              "RelativeDocumentMoniker": "BusinessObjects\\Category.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\BusinessObjects\\Category.cs",
-              "RelativeToolTip": "BusinessObjects\\Category.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Title": "ChangePasswordDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\User\\ChangePasswordDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\User\\ChangePasswordDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\User\\ChangePasswordDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\User\\ChangePasswordDto.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAowA4AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T14:12:03.838Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T10:01:46.493Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 45,
+              "Title": "UpdateUserProfileDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\User\\UpdateUserProfileDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\User\\UpdateUserProfileDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\User\\UpdateUserProfileDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\User\\UpdateUserProfileDto.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAuwCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T10:01:09.725Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "UserProfileDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\User\\UserProfileDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\User\\UserProfileDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\User\\UserProfileDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\User\\UserProfileDto.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAowBYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T10:00:55.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IUserService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IUserService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:16:22.821Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\User.cs",
+              "RelativeDocumentMoniker": "BusinessObjects\\User.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\User.cs",
+              "RelativeToolTip": "BusinessObjects\\User.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAA7wBcAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T14:13:40.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "BrandsController.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\BrandsController.cs",
+              "RelativeDocumentMoniker": "Sk_Store\\Controllers\\BrandsController.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\BrandsController.cs",
+              "RelativeToolTip": "Sk_Store\\Controllers\\BrandsController.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAiwGgAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:07:35.782Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "ForgotPasswordDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Auth\\ForgotPasswordDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Auth\\ForgotPasswordDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Auth\\ForgotPasswordDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Auth\\ForgotPasswordDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T02:28:49.936Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "ResetPasswordDto .cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Auth\\ResetPasswordDto .cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Auth\\ResetPasswordDto .cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Auth\\ResetPasswordDto .cs",
+              "RelativeToolTip": "Application\\DTOs\\Auth\\ResetPasswordDto .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T02:28:58.725Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "VerifyEmailDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Auth\\VerifyEmailDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Auth\\VerifyEmailDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Auth\\VerifyEmailDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Auth\\VerifyEmailDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T02:29:11.606Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "IEmailService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IEmailService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IEmailService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IEmailService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IEmailService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T02:24:41.411Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "IShoppingCartRepository.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IShoppingCartRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IShoppingCartRepository.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IShoppingCartRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IShoppingCartRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T16:17:28.668Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "Review.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\Review.cs",
+              "RelativeDocumentMoniker": "BusinessObjects\\Review.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\Review.cs",
+              "RelativeToolTip": "BusinessObjects\\Review.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T14:13:31.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "BrandService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\BrandService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\BrandService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\BrandService.cs",
+              "RelativeToolTip": "Services\\Implementations\\BrandService.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAywHgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:05:31.502Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "IUserRepository .cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IUserRepository .cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUserRepository .cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IUserRepository .cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IUserRepository .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T14:16:38.254Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "IRoleRepository.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IRoleRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IRoleRepository.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IRoleRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IRoleRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:19:01.621Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "RoleRepository.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\RoleRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\RoleRepository.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\RoleRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\RoleRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:19:47.636Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "UserFilterParametersDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\User\\UserFilterParametersDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\User\\UserFilterParametersDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\User\\UserFilterParametersDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\User\\UserFilterParametersDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:14:25.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "UserForAdminUpdateDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\User\\UserForAdminUpdateDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\User\\UserForAdminUpdateDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\User\\UserForAdminUpdateDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\User\\UserForAdminUpdateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:14:04.745Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\User\\UserDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\User\\UserDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\User\\UserDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\User\\UserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:13:50.573Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\UserRepository.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\UserRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\UserRepository.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAywHMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T14:34:58.219Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\CategoryService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\CategoryService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\CategoryService.cs",
+              "RelativeToolTip": "Services\\Implementations\\CategoryService.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAywHsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:05:20.587Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "AuthResponseDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Auth\\AuthResponseDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Auth\\AuthResponseDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Auth\\AuthResponseDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Auth\\AuthResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T04:45:47.437Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "IBrandService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IBrandService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IBrandService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IBrandService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IBrandService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:05:06.838Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "ICategoryService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\ICategoryService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\ICategoryService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\ICategoryService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\ICategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:04:54.331Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "UpdateBrandDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Brand\\UpdateBrandDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Brand\\UpdateBrandDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Brand\\UpdateBrandDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Brand\\UpdateBrandDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:04:29.513Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "CreateBrandDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Brand\\CreateBrandDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Brand\\CreateBrandDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Brand\\CreateBrandDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Brand\\CreateBrandDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:04:18.02Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "BrandDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Brand\\BrandDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Brand\\BrandDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Brand\\BrandDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Brand\\BrandDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:04:08.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "UpdateCategoryDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Category\\UpdateCategoryDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Category\\UpdateCategoryDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Category\\UpdateCategoryDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Category\\UpdateCategoryDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:03:42.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "CreateCategoryDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Category\\CreateCategoryDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Category\\CreateCategoryDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Category\\CreateCategoryDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Category\\CreateCategoryDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:03:24.446Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "CategoryDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Category\\CategoryDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Category\\CategoryDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Category\\CategoryDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Category\\CategoryDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:03:00.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\ProductService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\ProductService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\ProductService.cs",
+              "RelativeToolTip": "Services\\Implementations\\ProductService.cs",
+              "ViewState": "AgIAAPgAAAAAAAAAAAAywCoBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T14:13:12.385Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IProductService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IProductService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IProductService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T14:12:49.943Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\ProductRepository.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\ProductRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\ProductRepository.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAiwEIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T15:47:53.881Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "ProductAttributeDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\ProductAttributeDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Product\\ProductAttributeDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\ProductAttributeDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Product\\ProductAttributeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T14:09:32.927Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "CreateProductDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\CreateProductDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Product\\CreateProductDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\CreateProductDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Product\\CreateProductDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T14:10:37.659Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 77,
+              "Title": "UpdateProductDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\UpdateProductDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Product\\UpdateProductDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\UpdateProductDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Product\\UpdateProductDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T14:10:57.17Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
+              "Title": "ProductDetailDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\ProductDetailDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Product\\ProductDetailDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\ProductDetailDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Product\\ProductDetailDto.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAA7wCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T14:10:23.04Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 79,
+              "Title": "ReviewDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\ReviewDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Product\\ReviewDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\ReviewDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Product\\ReviewDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAA1wBIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T14:10:04.351Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 80,
+              "Title": "ProductImageDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\ProductImageDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Product\\ProductImageDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\ProductImageDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Product\\ProductImageDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T14:09:17.724Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 82,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\Order.cs",
+              "RelativeDocumentMoniker": "BusinessObjects\\Order.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\Order.cs",
+              "RelativeToolTip": "BusinessObjects\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T14:13:14.533Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 81,
+              "Title": "RegisterDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Auth\\RegisterDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Auth\\RegisterDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Auth\\RegisterDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Auth\\RegisterDto.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowAcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T04:45:59.347Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 83,
+              "Title": "IGenericRepository.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IGenericRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IGenericRepository.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IGenericRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IGenericRepository.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAewBUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T17:56:26.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 84,
+              "Title": "LoginDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Auth\\LoginDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Auth\\LoginDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Auth\\LoginDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Auth\\LoginDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T04:45:55.378Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 90,
+              "Title": "BrandRepository.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\BrandRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\BrandRepository.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\BrandRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\BrandRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T16:35:07.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 85,
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\CategoryRepository.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\CategoryRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\CategoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T16:33:54.524Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 88,
+              "Title": "UserAddressRepository.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\UserAddressRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\UserAddressRepository.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\UserAddressRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\UserAddressRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T16:39:11.174Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 87,
+              "Title": "Role.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\Role.cs",
+              "RelativeDocumentMoniker": "BusinessObjects\\Role.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\Role.cs",
+              "RelativeToolTip": "BusinessObjects\\Role.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T14:13:34.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 86,
+              "Title": "UserAddress.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\UserAddress.cs",
+              "RelativeDocumentMoniker": "BusinessObjects\\UserAddress.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\UserAddress.cs",
+              "RelativeToolTip": "BusinessObjects\\UserAddress.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAYwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T14:13:43.974Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 89,
+              "Title": "IUserAddressRepository.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IUserAddressRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUserAddressRepository.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IUserAddressRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IUserAddressRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T16:37:32.168Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 91,
+              "Title": "IBrandRepository.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IBrandRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IBrandRepository.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IBrandRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IBrandRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T16:33:07.832Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 92,
+              "Title": "ICategoryRepository.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\ICategoryRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\ICategoryRepository.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\ICategoryRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\ICategoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T16:31:54.075Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 94,
+              "Title": "ProductFilterParameters.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\ProductFilterParameters.cs",
+              "RelativeDocumentMoniker": "Repositories\\ProductFilterParameters.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\ProductFilterParameters.cs",
+              "RelativeToolTip": "Repositories\\ProductFilterParameters.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T16:02:31.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 93,
+              "Title": "IProductRepository.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IProductRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IProductRepository.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IProductRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T14:51:14.623Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 96,
+              "Title": "Brand.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\Brand.cs",
+              "RelativeDocumentMoniker": "BusinessObjects\\Brand.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\Brand.cs",
+              "RelativeToolTip": "BusinessObjects\\Brand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T14:11:16.47Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 95,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\CartItem.cs",
+              "RelativeDocumentMoniker": "BusinessObjects\\CartItem.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\CartItem.cs",
+              "RelativeToolTip": "BusinessObjects\\CartItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T14:11:35.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 97,
+              "Title": "ShoppingCart.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\ShoppingCart.cs",
+              "RelativeDocumentMoniker": "BusinessObjects\\ShoppingCart.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\ShoppingCart.cs",
+              "RelativeToolTip": "BusinessObjects\\ShoppingCart.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T14:13:38.116Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 98,
+              "Title": "ProductImage.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\ProductImage.cs",
+              "RelativeDocumentMoniker": "BusinessObjects\\ProductImage.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\ProductImage.cs",
+              "RelativeToolTip": "BusinessObjects\\ProductImage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T14:13:29.684Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 99,
+              "Title": "ProductAttribute.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\ProductAttribute.cs",
+              "RelativeDocumentMoniker": "BusinessObjects\\ProductAttribute.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\ProductAttribute.cs",
+              "RelativeToolTip": "BusinessObjects\\ProductAttribute.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T14:13:26.773Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 100,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\Product.cs",
+              "RelativeDocumentMoniker": "BusinessObjects\\Product.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\Product.cs",
+              "RelativeToolTip": "BusinessObjects\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T14:13:22.641Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 101,
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\OrderItem.cs",
+              "RelativeDocumentMoniker": "BusinessObjects\\OrderItem.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\OrderItem.cs",
+              "RelativeToolTip": "BusinessObjects\\OrderItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T14:13:20.404Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 102,
+              "Title": "Category.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\Category.cs",
+              "RelativeDocumentMoniker": "BusinessObjects\\Category.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\Category.cs",
+              "RelativeToolTip": "BusinessObjects\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T14:12:03.838Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 103,
               "Title": "Class1.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Services\\Class1.cs",
-              "RelativeDocumentMoniker": "Services\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\..\\Sk_Store\\Services\\Class1.cs",
               "ToolTip": "D:\\SK_Store_Website\\Sk_Store\\Services\\Class1.cs",
-              "RelativeToolTip": "Services\\Class1.cs",
+              "RelativeToolTip": "..\\..\\Sk_Store\\Services\\Class1.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-26T13:09:39.816Z"
             }

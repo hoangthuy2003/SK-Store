@@ -1,0 +1,188 @@
+/* src/app/pages/shop/shop.component.css */
+
+/* Shop Container */
+.shop-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
+}
+
+/* Loading State */
+.loading-container {
+  @apply flex items-center justify-center min-h-[400px];
+}
+
+.loading-spinner {
+  @apply w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin;
+}
+
+/* Shop Grid */
+.shop-grid {
+  @apply grid grid-cols-1 lg:grid-cols-4 gap-8;
+}
+
+/* Sidebar */
+.sidebar {
+  @apply lg:col-span-1 space-y-8;
+}
+
+.sidebar-section {
+  @apply bg-white rounded-lg shadow-sm p-6;
+}
+
+.sidebar-title {
+  @apply text-lg font-semibold text-gray-900 mb-4;
+}
+
+/* Category & Brand Lists */
+.filter-list {
+  @apply space-y-2;
+}
+
+.filter-item {
+  @apply flex items-center justify-between text-sm;
+}
+
+.filter-link {
+  @apply text-gray-600 hover:text-primary transition-colors duration-200 flex-1;
+}
+
+.filter-link.active {
+  @apply text-primary font-medium;
+}
+
+.filter-count {
+  @apply text-gray-400 text-xs;
+}
+
+/* Products Grid */
+.products-grid {
+  @apply lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+/* Product Card */
+.product-card {
+  @apply bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-200 hover:shadow-md;
+}
+
+.product-image-container {
+  @apply relative aspect-square overflow-hidden bg-gray-100;
+}
+
+.product-image {
+  @apply w-full h-full object-cover transition-transform duration-300 hover:scale-105;
+}
+
+.product-badge {
+  @apply absolute top-2 right-2 bg-primary text-white text-xs font-medium px-2 py-1 rounded;
+}
+
+.product-content {
+  @apply p-4;
+}
+
+.product-title {
+  @apply text-sm font-medium text-gray-900 mb-1 line-clamp-2;
+}
+
+.product-price {
+  @apply text-lg font-semibold text-primary mb-2;
+}
+
+.product-rating {
+  @apply flex items-center text-sm text-gray-500 mb-3;
+}
+
+.product-rating-stars {
+  @apply flex items-center mr-2;
+}
+
+.product-rating-count {
+  @apply text-xs text-gray-400;
+}
+
+.product-description {
+  @apply text-sm text-gray-600 line-clamp-2 mb-4;
+}
+
+.product-actions {
+  @apply flex items-center justify-between;
+}
+
+.add-to-cart-btn {
+  @apply flex-1 bg-primary text-white text-sm font-medium px-4 py-2 rounded hover:bg-primary/90 transition-colors duration-200;
+}
+
+.add-to-wishlist-btn {
+  @apply p-2 text-gray-400 hover:text-primary transition-colors duration-200;
+}
+
+/* Empty State */
+.empty-state {
+  @apply text-center py-12;
+}
+
+.empty-state-icon {
+  @apply mx-auto h-12 w-12 text-gray-400;
+}
+
+.empty-state-title {
+  @apply mt-2 text-sm font-medium text-gray-900;
+}
+
+.empty-state-description {
+  @apply mt-1 text-sm text-gray-500;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .shop-grid {
+    @apply gap-6;
+  }
+  
+  .products-grid {
+    @apply gap-4;
+  }
+}
+
+@media (max-width: 640px) {
+  .shop-container {
+    @apply px-4 py-6;
+  }
+  
+  .sidebar {
+    @apply space-y-6;
+  }
+  
+  .sidebar-section {
+    @apply p-4;
+  }
+  
+  .product-card {
+    @apply max-w-sm mx-auto;
+  }
+}
+
+/* Pagination Styles */
+.pagination-link, .pagination-arrow, .pagination-dots {
+    @apply relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300;
+}
+
+.pagination-link:hover, .pagination-arrow:hover {
+    @apply bg-gray-50 z-10;
+}
+
+.pagination-link.active {
+    @apply bg-blue-800 text-white ring-blue-800 z-20;
+}
+
+.pagination-arrow {
+    @apply text-gray-400;
+}
+
+/* Reusing section styles from homepage */
+.section-title {
+    @apply heading-font text-3xl md:text-4xl font-bold text-blue-800 mb-4;
+}
+
+.section-subtitle {
+    @apply text-gray-600 max-w-2xl mx-auto;
+}

@@ -1,4 +1,4 @@
-﻿using Application.DTOs;
+﻿using Application.DTOs.Auth;
 using BusinessObjects;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -98,14 +98,10 @@ namespace Services.Implementations
             user.LastLoginDate = DateTime.UtcNow;
             try
             {
-                // Không cần gọi _unitOfWork.Users.UpdateAsync(user) nếu bạn chỉ thay đổi thuộc tính
-                // EF Core Change Tracker sẽ tự động phát hiện thay đổi khi bạn gọi CompleteAsync
                 await _unitOfWork.CompleteAsync(); // Lưu thay đổi LastLoginDate
             }
             catch (Exception ex)
             {
-                // _logger.LogError(ex, $"Lỗi khi cập nhật LastLoginDate cho UserID: {user.UserId}. Tuy nhiên, token vẫn được tạo.");
-                // Không nên return lỗi ở đây vì đăng nhập đã thành công, chỉ là không cập nhật được LastLoginDate
             }
 
             return new AuthResponseDto

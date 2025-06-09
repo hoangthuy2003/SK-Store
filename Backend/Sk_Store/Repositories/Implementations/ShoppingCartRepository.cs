@@ -16,6 +16,7 @@ namespace Repositories.Implementations
             return await _dbSet
                 .Include(sc => sc.CartItems)
                 .ThenInclude(ci => ci.Product)
+                .ThenInclude(p => p.ProductImages)
                 .FirstOrDefaultAsync(sc => sc.UserId == userId);
         }
     }

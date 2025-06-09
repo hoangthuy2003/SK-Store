@@ -1,4 +1,4 @@
-﻿using Application.DTOs;
+﻿using Application.DTOs.Auth;
 using System.Threading.Tasks;
 
 namespace Sk_Store.Services.Interfaces

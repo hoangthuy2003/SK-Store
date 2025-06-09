@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+    --primary: #2a4365;
+    --secondary: #c53030;
+    --accent: #ecc94b;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.heading-font {
+    font-family: 'Playfair Display', serif;
+}
+
+.hero-gradient {
+    background: linear-gradient(135deg, rgba(42,67,101,0.9) 0%, rgba(42,67,101,0.8) 50%, rgba(42,67,101,0.7) 100%);
+}
+
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.category-item {
+    transition: all 0.3s ease;
+}
+
+.category-item:hover {
+    transform: scale(1.05);
+}
+
+.newsletter-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--accent);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Navigation */
+.nav-link {
+    @apply text-gray-800 hover:text-blue-800 font-medium transition;
+}
+
+.nav-icon {
+    @apply p-2 text-gray-700 hover:text-blue-800 transition;
+}
+
+/* Hero Section */
+.hero-section {
+    @apply relative h-[600px] bg-primary text-white overflow-hidden;
+}
+
+.hero-content {
+    @apply absolute inset-0 flex items-center justify-center text-center px-4;
+    background: linear-gradient(rgba(42, 67, 101, 0.8), rgba(42, 67, 101, 0.8));
+}
+
+.hero-title {
+    @apply text-5xl md:text-6xl font-playfair mb-6;
+}
+
+.hero-subtitle {
+    @apply text-xl md:text-2xl mb-8 max-w-2xl mx-auto;
+}
+
+.hero-cta {
+    @apply inline-block bg-accent text-primary font-bold px-8 py-3 rounded-full 
+           hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105;
+}
+
+/* Featured Products Section */
+.featured-section {
+    @apply py-16 px-4 bg-gray-50;
+}
+
+.section-title {
+    @apply text-3xl md:text-4xl font-playfair text-center mb-12 text-primary;
+}
+
+.products-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto;
+}
+
+.product-card {
+    @apply bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 
+           hover:shadow-xl transform hover:-translate-y-1;
+}
+
+.product-image {
+    @apply relative h-64 w-full overflow-hidden;
+}
+
+.product-image img {
+    @apply w-full h-full object-cover transition-transform duration-500;
+}
+
+.product-card:hover .product-image img {
+    @apply scale-110;
+}
+
+.product-badge {
+    @apply absolute top-4 right-4 bg-accent text-primary px-3 py-1 rounded-full text-sm font-bold;
+}
+
+.product-content {
+    @apply p-6;
+}
+
+.product-title {
+    @apply text-xl font-playfair mb-2 text-primary;
+}
+
+.product-price {
+    @apply text-2xl font-bold text-secondary mb-3;
+}
+
+.product-description {
+    @apply text-gray-600 mb-4;
+}
+
+.product-rating {
+    @apply flex items-center mb-4;
+}
+
+.stars {
+    @apply flex text-accent mr-2;
+}
+
+.reviews {
+    @apply text-sm text-gray-500;
+}
+
+.add-to-cart {
+    @apply w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 
+           transition-colors duration-300 flex items-center justify-center gap-2;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    @apply py-16 px-4 bg-primary text-white;
+}
+
+.newsletter-container {
+    @apply max-w-4xl mx-auto text-center;
+}
+
+.newsletter-title {
+    @apply text-3xl md:text-4xl font-playfair mb-4;
+}
+
+.newsletter-subtitle {
+    @apply text-lg mb-8 max-w-2xl mx-auto;
+}
+
+.newsletter-form {
+    @apply flex flex-col md:flex-row gap-4 max-w-xl mx-auto;
+}
+
+.newsletter-input {
+    @apply flex-1 px-4 py-3 rounded-lg text-primary focus:outline-none focus:ring-2 
+           focus:ring-accent;
+}
+
+.newsletter-button {
+    @apply bg-accent text-primary font-bold px-8 py-3 rounded-lg hover:bg-opacity-90 
+           transition-all duration-300;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        @apply text-4xl;
+    }
+    
+    .hero-subtitle {
+        @apply text-lg;
+    }
+    
+    .products-grid {
+        @apply grid-cols-1 md:grid-cols-2;
+    }
+    
+    .newsletter-form {
+        @apply flex-col;
+    }
+    
+    .newsletter-button {
+        @apply w-full;
+    }
+} 

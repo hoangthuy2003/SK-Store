@@ -1,0 +1,120 @@
+<!-- Login Form -->
+<div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-md w-full space-y-8">
+    <!-- Header -->
+    <div>
+      <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+        Đăng nhập
+      </h2>
+      <p class="mt-2 text-center text-sm text-gray-600">
+        Hoặc
+        <a routerLink="/register" class="font-medium text-primary hover:text-primary/80">
+          đăng ký tài khoản mới
+        </a>
+      </p>
+    </div>
+
+    <!-- Form -->
+    <form class="mt-8 space-y-6" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <!-- Email -->
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">
+          Email
+        </label>
+        <div class="mt-1">
+          <input
+            id="email"
+            name="email"
+            type="email"
+            formControlName="email"
+            required
+            class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm"
+            [class.border-red-300]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+          >
+        </div>
+        @if (loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
+          <p class="mt-2 text-sm text-red-600">
+            {{ loginForm.get('email')?.errors?.['required'] ? 'Vui lòng nhập email' : 
+               loginForm.get('email')?.errors?.['email'] ? 'Email không hợp lệ' : '' }}
+          </p>
+        }
+      </div>
+
+      <!-- Password -->
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">
+          Mật khẩu
+        </label>
+        <div class="mt-1 relative">
+          <input
+            id="password"
+            name="password"
+            [type]="hidePassword() ? 'password' : 'text'"
+            formControlName="password"
+            required
+            class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm"
+            [class.border-red-300]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+          >
+          <button
+            type="button"
+            class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5"
+            (click)="togglePasswordVisibility()"
+          >
+            {{ hidePassword() ? 'Hiện' : 'Ẩn' }}
+          </button>
+        </div>
+        @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+          <p class="mt-2 text-sm text-red-600">
+            {{ loginForm.get('password')?.errors?.['required'] ? 'Vui lòng nhập mật khẩu' : 
+               loginForm.get('password')?.errors?.['minlength'] ? 'Mật khẩu phải có ít nhất 6 ký tự' : '' }}
+          </p>
+        }
+      </div>
+
+      <!-- Error Message -->
+      @if (errorMessage()) {
+        <div class="rounded-md bg-red-50 p-4">
+          <div class="flex">
+            <div class="ml-3">
+              <h3 class="text-sm font-medium text-red-800">
+                {{ errorMessage() }}
+              </h3>
+            </div>
+          </div>
+        </div>
+      }
+
+      <!-- Success Message -->
+      @if (successMessage()) {
+        <div class="rounded-md bg-green-50 p-4">
+          <div class="flex">
+            <div class="ml-3">
+              <h3 class="text-sm font-medium text-green-800">
+                {{ successMessage() }}
+              </h3>
+            </div>
+          </div>
+        </div>
+      }
+
+      <!-- Submit Button -->
+      <div>
+        <button
+          type="submit"
+          [disabled]="loginForm.invalid || isLoading()"
+          class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          @if (isLoading()) {
+            <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            Đang xử lý...
+          } @else {
+            Đăng nhập
+          }
+        </button>
+      </div>
+    </form>
+  </div>
+</div> 

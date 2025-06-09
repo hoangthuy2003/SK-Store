@@ -1,10 +1,9 @@
-﻿using BusinessObjects;
+﻿// File: Repositories/Implementations/OrderRepository.cs
+using BusinessObjects;
 using Microsoft.EntityFrameworkCore;
 using Repositories.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Repositories.Implementations
@@ -17,14 +16,22 @@ namespace Repositories.Implementations
 
         public async Task<Order?> GetOrderDetailsAsync(int orderId)
         {
-            return await _dbSet.Include(o=>o.OrderItems)
-                .ThenInclude(o=>o.Product).
-                FirstOrDefaultAsync(o => o.OrderId == orderId);
+            return await _dbSet
+                .Include(o => o.User) // Thêm User để lấy thông tin người đặt nếu cần ở service
+                .Include(o => o.OrderItems)
+                    .ThenInclude(oi => oi.Product)
+                        .ThenInclude(p => p.ProductImages) // Để lấy hình ảnh sản phẩm cho OrderItemDto
+                .FirstOrDefaultAsync(o => o.OrderId == orderId);
         }
 
-        public async Task<IEnumerable<Order>> GetOrdersByUserIdAsync(int userId)
+        public async Task<IEnumerable<Order>> GetOrdersByUserIdAsync(int userId, bool includeItems = false)
         {
-            return await _dbSet.Where(p => p.UserId == userId).ToListAsync();
+            var query = _dbSet.Where(o => o.UserId == userId);
+            if (includeItems)
+            {
+                query = query.Include(o => o.OrderItems); // Chỉ include nếu cần thiết
+            }
+            return await query.OrderByDescending(o => o.OrderDate).ToListAsync();
         }
     }
 }

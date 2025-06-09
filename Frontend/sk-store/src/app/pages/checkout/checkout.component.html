@@ -1,0 +1,98 @@
+<div class="bg-gray-50">
+  <div class="container mx-auto px-4 py-8 lg:py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <!-- Checkout Form -->
+      <div class="lg:col-span-7">
+        <h1 class="text-2xl font-semibold mb-6">Thông tin giao hàng</h1>
+        <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" class="bg-white p-6 rounded-lg shadow-sm space-y-4">
+          <div>
+            <label for="recipientName" class="form-label">Họ và tên người nhận</label>
+            <input type="text" id="recipientName" formControlName="recipientName" class="form-input">
+            @if (checkoutForm.get('recipientName')?.invalid && checkoutForm.get('recipientName')?.touched) {
+              <p class="form-error">Vui lòng nhập họ tên.</p>
+            }
+          </div>
+
+          <div>
+            <label for="recipientPhoneNumber" class="form-label">Số điện thoại</label>
+            <input type="tel" id="recipientPhoneNumber" formControlName="recipientPhoneNumber" class="form-input">
+            @if (checkoutForm.get('recipientPhoneNumber')?.invalid && checkoutForm.get('recipientPhoneNumber')?.touched) {
+              <p class="form-error">Vui lòng nhập số điện thoại hợp lệ (10 số, bắt đầu bằng 0).</p>
+            }
+          </div>
+
+          <div>
+            <label for="shippingAddress" class="form-label">Địa chỉ giao hàng</label>
+            <textarea id="shippingAddress" formControlName="shippingAddress" rows="3" class="form-input"></textarea>
+            @if (checkoutForm.get('shippingAddress')?.invalid && checkoutForm.get('shippingAddress')?.touched) {
+              <p class="form-error">Vui lòng nhập địa chỉ giao hàng.</p>
+            }
+          </div>
+
+          <div>
+            <label for="notes" class="form-label">Ghi chú (tùy chọn)</label>
+            <textarea id="notes" formControlName="notes" rows="3" class="form-input"></textarea>
+          </div>
+        </form>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="lg:col-span-5">
+        <div class="bg-white p-6 rounded-lg shadow-sm sticky top-24">
+          <h2 class="text-xl font-semibold mb-4">Tóm tắt đơn hàng</h2>
+          @if (cart$ | async; as cart) {
+            <div class="space-y-3 border-b pb-4">
+              @for (item of cart?.items; track item.productId) {
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center">
+                    <div class="relative">
+                      <img [src]="item.productImageUrl || 'assets/images/placeholder.jpg'" [alt]="item.productName" class="w-16 h-16 object-contain rounded-md mr-4">
+                      <span class="absolute -top-2 -right-2 bg-gray-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">{{ item.quantity }}</span>
+                    </div>
+                    <span class="text-sm font-medium">{{ item.productName }}</span>
+                  </div>
+                  <span class="text-sm font-semibold">{{ formatPrice(item.totalPrice) }}</span>
+                </div>
+              }
+            </div>
+
+            <div class="py-4 space-y-2 border-b">
+              <div class="summary-item">
+                <p>Tạm tính</p>
+                <p>{{ formatPrice(cart?.grandTotal ?? 0) }}</p>
+              </div>
+              <div class="summary-item">
+                <p>Phí vận chuyển</p>
+                <p>Miễn phí</p>
+              </div>
+            </div>
+
+            <div class="flex justify-between font-semibold text-lg pt-4">
+              <p>Tổng cộng</p>
+              <p>{{ formatPrice(cart?.grandTotal ?? 0) }}</p>
+            </div>
+
+            @if (errorMessage()) {
+              <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-4" role="alert">
+                <span class="block sm:inline">{{ errorMessage() }}</span>
+              </div>
+            }
+
+            <button 
+            type="submit" 
+            [disabled]="isProcessing() || checkoutForm.invalid" 
+            (click)="onSubmit()" 
+            class="w-full bg-primary text-white font-bold py-3 px-4 rounded-lg mt-6 hover:bg-primary/90 transition flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed">
+            @if (isProcessing()) {
+                <!-- ... (svg spinner) -->
+                <span>Đang xử lý...</span>
+            } @else {
+                <span>Đặt hàng (COD)</span>
+            }
+        </button>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

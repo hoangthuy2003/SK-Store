@@ -9,5 +9,6 @@ namespace Repositories.Interfaces
     {
         
         Task<IEnumerable<Review>> GetReviewsByProductIdAsync(int productId);
+        Task<bool> HasUserReviewedProductAsync(int userId, int productId);
     }
 }

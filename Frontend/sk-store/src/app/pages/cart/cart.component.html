@@ -1,0 +1,96 @@
+<div class="bg-gray-100 py-8">
+  <div class="container mx-auto px-4">
+    <h1 class="text-2xl font-semibold mb-4">Giỏ hàng của bạn</h1>
+
+    @if (cart$ | async; as cart) {
+      @if (cart && cart.items.length > 0) {
+        <div class="flex flex-col md:flex-row gap-4">
+          <!-- Cart Items -->
+          <div class="md:w-3/4">
+            <div class="bg-white rounded-lg shadow-md p-6 mb-4">
+              <table class="w-full">
+                <thead>
+                  <tr>
+                    <th class="text-left font-semibold">Sản phẩm</th>
+                    <th class="text-left font-semibold">Giá</th>
+                    <th class="text-left font-semibold">Số lượng</th>
+                    <th class="text-left font-semibold">Tổng cộng</th>
+                    <th class="text-left font-semibold"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (item of cart.items; track item.productId) {
+                    <tr 
+                      class="border-b" 
+                      [class.opacity-50]="updatingItemId() === item.productId">
+                      <td class="py-4">
+                        <div class="flex items-center">
+                          <img class="h-16 w-16 mr-4 object-contain" [src]="item.productImageUrl || 'assets/images/placeholder.jpg'" [alt]="item.productName">
+                          <span class="font-semibold">{{ item.productName }}</span>
+                        </div>
+                      </td>
+                      <td class="py-4">{{ formatPrice(item.unitPrice) }}</td>
+                      <td class="py-4">
+                        <div class="flex items-center">
+                          <button (click)="updateQuantity(item, item.quantity - 1)" class="quantity-btn" [disabled]="updatingItemId() === item.productId">-</button>
+                          <span class="quantity-display">{{ item.quantity }}</span>
+                          <button (click)="updateQuantity(item, item.quantity + 1)" class="quantity-btn" [disabled]="updatingItemId() === item.productId">+</button>
+                        </div>
+                      </td>
+                      <td class="py-4 font-semibold">{{ formatPrice(item.totalPrice) }}</td>
+                      <td class="py-4">
+                        <button (click)="removeItem(item.productId)" class="text-red-500 hover:text-red-700" [disabled]="updatingItemId() === item.productId">
+                          <i class="fas fa-trash-alt"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Summary -->
+          <div class="md:w-1/4">
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <h2 class="text-lg font-semibold mb-4">Tóm tắt đơn hàng</h2>
+              <div class="flex justify-between mb-2">
+                <span>Tạm tính</span>
+                <span>{{ formatPrice(cart.grandTotal) }}</span>
+              </div>
+              <div class="flex justify-between mb-2">
+                <span>Phí vận chuyển</span>
+                <span>Miễn phí</span>
+              </div>
+              <hr class="my-2">
+              <div class="flex justify-between mb-2">
+                <span class="font-semibold">Tổng cộng</span>
+                <span class="font-semibold">{{ formatPrice(cart.grandTotal) }}</span>
+              </div>
+              <button 
+            routerLink="/checkout"
+            class="bg-primary text-white py-3 px-4 rounded-lg mt-4 w-full hover:bg-primary/90">
+            Tiến hành thanh toán
+        </button>
+            </div>
+          </div>
+        </div>
+      } @else {
+        <!-- Empty Cart -->
+        <div class="text-center py-20 bg-white rounded-lg shadow-md">
+          <i class="fas fa-shopping-cart text-6xl text-gray-300 mb-4"></i>
+          <h2 class="text-2xl font-semibold mb-2">Giỏ hàng của bạn đang trống</h2>
+          <p class="text-gray-500 mb-6">Hãy thêm sản phẩm vào giỏ hàng để tiếp tục mua sắm nhé!</p>
+          <a routerLink="/shop" class="bg-primary text-white py-3 px-6 rounded-lg hover:bg-primary/90">
+            Bắt đầu mua sắm
+          </a>
+        </div>
+      }
+    } @else {
+      <!-- Loading State -->
+      <div class="flex justify-center items-center min-h-[40vh]">
+        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
+    }
+  </div>
+</div>

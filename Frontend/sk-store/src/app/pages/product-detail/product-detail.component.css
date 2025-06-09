@@ -1,0 +1,15 @@
+/* Thêm một số style tùy chỉnh cho trang chi tiết sản phẩm */
+.thumbnail-active {
+  border-color: #3b82f6; /* Tailwind's blue-500 */
+}
+
+.quantity-input {
+  /* Tùy chỉnh để loại bỏ mũi tên mặc định của input number */
+  -moz-appearance: textfield;
+}
+
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

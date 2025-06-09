@@ -245,13 +245,10 @@ public partial class SkstoreContext : DbContext
             entity.Property(e => e.LastLoginDate).HasColumnType("datetime");
             entity.Property(e => e.LastName).HasMaxLength(100);
             entity.Property(e => e.PasswordHash).HasMaxLength(255);
-            entity.Property(e => e.PasswordResetToken).HasMaxLength(255);
             entity.Property(e => e.PhoneNumber).HasMaxLength(20);
             entity.Property(e => e.RegistrationDate)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
-            entity.Property(e => e.ResetTokenExpiry).HasColumnType("datetime");
-            entity.Property(e => e.VerificationToken).HasMaxLength(255);
 
             entity.HasOne(d => d.Role).WithMany(p => p.Users)
                 .HasForeignKey(d => d.RoleId)

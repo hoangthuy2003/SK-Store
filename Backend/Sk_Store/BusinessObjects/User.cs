@@ -25,12 +25,6 @@ public partial class User
 
     public DateTime? LastLoginDate { get; set; }
 
-    public string? PasswordResetToken { get; set; }
-
-    public DateTime? ResetTokenExpiry { get; set; }
-
-    public string? VerificationToken { get; set; }
-
     public bool IsVerified { get; set; }
 
     public int RoleId { get; set; }

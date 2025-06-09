@@ -1,0 +1,82 @@
+<header class="header">
+  <div class="header-container">
+    <div class="header-content">
+      <a routerLink="/" class="logo">SK Store</a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-menu">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">
+          Trang chủ
+        </a>
+        <a routerLink="/shop" routerLinkActive="active" class="nav-link">
+          Cửa hàng
+        </a>
+        <a routerLink="/about" routerLinkActive="active" class="nav-link">
+          Giới thiệu
+        </a>
+        <a routerLink="/contact" routerLinkActive="active" class="nav-link">
+          Liên hệ
+        </a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        @if (currentUser()) {
+          <div class="relative" (click)="toggleUserMenu()">
+            <button class="flex items-center space-x-2 text-gray-600 hover:text-primary">
+              <i class="fas fa-user-circle text-xl"></i>
+              <span class="hidden md:inline">{{ currentUser()?.firstName }}</span>
+            </button>
+            @if (isUserMenuOpen()) {
+              <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                <a routerLink="/profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  Tài khoản
+                </a>
+                <a routerLink="/orders" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  Đơn hàng
+                </a>
+                @if (currentUser()?.role === 'Admin') {
+                  <a routerLink="/admin" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    Quản trị
+                  </a>
+                }
+                <button (click)="logout()" class="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100">
+                  Đăng xuất
+                </button>
+              </div>
+            }
+          </div>
+        } @else {
+          <a routerLink="/login" class="nav-link">Đăng nhập</a>
+          <a routerLink="/register" class="nav-link">Đăng ký</a>
+        }
+
+        <a routerLink="/cart" class="cart-icon">
+          <i class="fas fa-shopping-cart text-xl"></i>
+          @if (cartItemCount() > 0) {
+            <span class="cart-count">{{ cartItemCount() }}</span>
+          }
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-button" (click)="toggleMenu()">
+          <i class="fas" [class.fa-bars]="!isMenuOpen()" [class.fa-times]="isMenuOpen()"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" [class.hidden]="!isMenuOpen()">
+    <div class="mobile-menu-content">
+      <a routerLink="/" (click)="closeMenu()" class="mobile-nav-link">Trang chủ</a>
+      <a routerLink="/shop" (click)="closeMenu()" class="mobile-nav-link">Cửa hàng</a>
+      <a routerLink="/about" (click)="closeMenu()" class="mobile-nav-link">Giới thiệu</a>
+      <a routerLink="/contact" (click)="closeMenu()" class="mobile-nav-link">Liên hệ</a>
+      @if (!currentUser()) {
+        <a routerLink="/login" (click)="closeMenu()" class="mobile-nav-link">Đăng nhập</a>
+        <a routerLink="/register" (click)="closeMenu()" class="mobile-nav-link">Đăng ký</a>
+      }
+    </div>
+  </div>
+</header>
