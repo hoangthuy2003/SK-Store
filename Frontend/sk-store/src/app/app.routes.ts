@@ -38,7 +38,6 @@ export const routes: Routes = [
   { path: 'orders', component: OrderListComponent, canActivate: [AuthGuard] },
   { path: 'orders/:id', component: OrderDetailComponent, canActivate: [AuthGuard] },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
-  
   // Wildcard route
   { path: '**', redirectTo: '' }
 ];

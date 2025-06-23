@@ -9,14 +9,17 @@ import { CreateOrderRequestDto } from '../../models/order.model';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { VndCurrencyPipe } from '../../pipes/vnd-currency.pipe';
+import { PaymentService, PayOsPaymentResponse } from '../../services/payment.service';
+import { PayosPaymentModalComponent } from '../payos-payment-modal/payos-payment-modal.component';
 @Component({
   selector: 'app-checkout',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, VndCurrencyPipe],
+  imports: [CommonModule, ReactiveFormsModule, VndCurrencyPipe, PayosPaymentModalComponent ],
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
+  private paymentService = inject(PaymentService);
   private fb = inject(FormBuilder);
   private cartService = inject(CartService);
   private orderService = inject(OrderService);
@@ -24,7 +27,8 @@ export class CheckoutComponent implements OnInit {
 
   checkoutForm: FormGroup;
   cart$: Observable<CartDto | null> = this.cartService.cart$;
-  
+   isPayOsModalOpen = signal(false);
+  payOsData = signal<PayOsPaymentResponse | null>(null);
   isProcessing = signal(false);
   errorMessage = signal<string | null>(null);
 
@@ -33,7 +37,8 @@ export class CheckoutComponent implements OnInit {
       recipientName: ['', [Validators.required, Validators.minLength(3)]],
       recipientPhoneNumber: ['', [Validators.required, Validators.pattern(/^0\d{9}$/)]],
       shippingAddress: ['', [Validators.required, Validators.minLength(10)]],
-      notes: ['']
+      notes: [''],
+      paymentMethod: ['COD', Validators.required]
     });
   }
 
@@ -57,23 +62,34 @@ export class CheckoutComponent implements OnInit {
     this.isProcessing.set(true);
     this.errorMessage.set(null);
 
-    const orderData: CreateOrderRequestDto = {
-      ...this.checkoutForm.value,
-      paymentMethod: 'COD' // Hiện tại chỉ hỗ trợ COD
-    };
+    const orderData: CreateOrderRequestDto = this.checkoutForm.value;
 
     this.orderService.createOrder(orderData).subscribe({
       next: (createdOrder) => {
-        this.isProcessing.set(false);
-        // Xóa giỏ hàng sau khi đặt hàng thành công
-        this.cartService.clearCart().subscribe(); // Tải lại để cập nhật giỏ hàng trống
-        // Điều hướng đến trang cảm ơn hoặc trang chi tiết đơn hàng
-        this.router.navigate(['/orders', createdOrder.orderId], { state: { success: true } });
+        // Nếu là COD, xử lý như cũ
+        if (orderData.paymentMethod === 'COD') {
+          this.isProcessing.set(false);
+          this.cartService.clearCart().subscribe();
+          this.router.navigate(['/orders', createdOrder.orderId], { state: { success: true } });
+        } 
+        // Nếu là VNPay, gọi để lấy URL
+        else if (orderData.paymentMethod === 'PayOS') {
+         this.paymentService.createPayOsLink(createdOrder.orderId).subscribe({
+            next: (res) => {
+              this.isProcessing.set(false);
+              this.payOsData.set(res);
+              this.isPayOsModalOpen.set(true); // Mở modal
+            },
+            error: (err) => {
+              this.isProcessing.set(false);
+              this.errorMessage.set('Không thể tạo link thanh toán. Vui lòng thử lại.');
+            }
+          });
+        }
       },
       error: (err) => {
         this.isProcessing.set(false);
-        this.errorMessage.set(err.error?.message || 'Đã xảy ra lỗi khi đặt hàng. Vui lòng thử lại.');
-        console.error(err);
+        this.errorMessage.set(err.error?.message || 'Đã xảy ra lỗi khi đặt hàng.');
       }
     });
   }

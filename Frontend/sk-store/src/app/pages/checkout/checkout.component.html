@@ -33,9 +33,26 @@
             <label for="notes" class="form-label">Ghi chú (tùy chọn)</label>
             <textarea id="notes" formControlName="notes" rows="3" class="form-input"></textarea>
           </div>
-        </form>
+  <!-- <<< THÊM LỰA CHỌN THANH TOÁN >>> -->
+  <div class="mt-6">
+    <h2 class="text-lg font-medium text-gray-900">Phương thức thanh toán</h2>
+    <fieldset class="mt-4">
+      <legend class="sr-only">Payment type</legend>
+      <div class="space-y-4">
+        <div class="flex items-center">
+          <input id="cod" value="COD" formControlName="paymentMethod" type="radio" class="h-4 w-4 border-gray-300 text-primary focus:ring-primary">
+          <label for="cod" class="ml-3 block text-sm font-medium text-gray-700">Thanh toán khi nhận hàng (COD)</label>
+        </div>
+        <div class="flex items-center">
+          <input id="payos" value="PayOS" formControlName="paymentMethod" type="radio" class="h-4 w-4 border-gray-300 text-primary focus:ring-primary">
+          <label for="payos" class="ml-3 block text-sm font-medium text-gray-700">Thanh toán online</label>
+        </div>
       </div>
-
+    </fieldset>
+  </div>
+  </form>
+</div>
+      
       <!-- Order Summary -->
       <div class="lg:col-span-5">
         <div class="bg-white p-6 rounded-lg shadow-sm sticky top-24">
@@ -87,7 +104,7 @@
                 <!-- ... (svg spinner) -->
                 <span>Đang xử lý...</span>
             } @else {
-                <span>Đặt hàng (COD)</span>
+                <span>Đặt hàng</span>
             }
         </button>
           }
@@ -95,4 +112,12 @@
       </div>
     </div>
   </div>
+  
 </div>
+
+@if(isPayOsModalOpen() && payOsData()) {
+  <app-payos-payment-modal 
+    [paymentData]="payOsData()!"
+    (close)="isPayOsModalOpen.set(false)">
+  </app-payos-payment-modal>
+}

@@ -1,0 +1,46 @@
+<div class="fixed inset-0 bg-black bg-opacity-60 z-50 flex justify-center items-center p-4">
+  <div class="bg-white rounded-lg shadow-xl w-full max-w-sm p-6 text-center relative">
+    <button (click)="closeModal()" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+    
+    <h3 class="text-lg font-semibold text-gray-900 mb-2">Quét mã để thanh toán</h3>
+    
+    <!-- <<< THÊM LOGIC KIỂM TRA Ở ĐÂY >>> -->
+    @if(paymentData.data) {
+      <p class="text-sm text-gray-500 mb-4">Sử dụng App ngân hàng hoặc Ví điện tử để quét mã VietQR</p>
+      @if(paymentData.data?.qrCode) {
+  <!-- <<< SỬA LẠI THUỘC TÍNH [src] Ở ĐÂY >>> -->
+  <img [src]="safeQrCodeUrl()" alt="Mã QR thanh toán" class="w-64 h-64 mx-auto border rounded-lg">
+}
+      <div class="text-left mt-4 space-y-2 text-sm">
+        <div class="flex justify-between">
+          <span class="text-gray-500">Số tiền:</span>
+          <span class="font-bold text-primary">{{ paymentData.data.amount | vndCurrency }}</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-gray-500">Nội dung:</span>
+          <span class="font-semibold">{{ paymentData.data.description }}</span>
+        </div>
+      </div>
+
+      <div class="mt-6 bg-gray-50 p-3 rounded-lg">
+        <p class="text-xs text-gray-600">Sau khi thanh toán thành công, đơn hàng sẽ được tự động xác nhận. Bạn có thể đóng cửa sổ này.</p>
+      </div>
+
+      <button (click)="checkOrderStatus()" class="mt-4 w-full btn-primary">
+        Tôi đã thanh toán
+      </button>
+    } @else {
+      <!-- Hiển thị khi có lỗi -->
+      <div class="my-8">
+        <i class="fas fa-exclamation-triangle text-5xl text-red-400 mb-4"></i>
+        <p class="font-semibold text-red-600">Không thể tạo mã thanh toán</p>
+        <p class="text-sm text-gray-500 mt-1">{{ paymentData.desc }}</p>
+      </div>
+      <button (click)="closeModal()" class="mt-4 w-full btn-secondary">
+        Đóng
+      </button>
+    }
+  </div>
+</div>
