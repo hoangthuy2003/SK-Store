@@ -1,0 +1,45 @@
+<div class="flex h-screen bg-gray-100">
+  <!-- Sidebar -->
+  <aside class="w-64 flex-shrink-0 bg-gray-800 text-white">
+    <div class="p-4 text-2xl font-bold border-b border-gray-700">
+      <a routerLink="/admin">SK Store Admin</a>
+    </div>
+    <nav class="mt-6">
+      <a routerLink="/admin/dashboard" routerLinkActive="bg-gray-700" class="nav-link">
+        <i class="fas fa-tachometer-alt fa-fw mr-3"></i>Dashboard
+      </a>
+      <a routerLink="/admin/products" routerLinkActive="bg-gray-700" class="nav-link">
+        <i class="fas fa-box-open fa-fw mr-3"></i>Sản phẩm
+      </a>
+      <a routerLink="/admin/orders" routerLinkActive="bg-gray-700" class="nav-link">
+        <i class="fas fa-receipt fa-fw mr-3"></i>Đơn hàng
+      </a>
+      <a routerLink="/admin/users" routerLinkActive="bg-gray-700" class="nav-link">
+        <i class="fas fa-users fa-fw mr-3"></i>Người dùng
+      </a>
+      <a routerLink="/admin/categories" routerLinkActive="bg-gray-700" class="nav-link">
+        <i class="fas fa-tags fa-fw mr-3"></i>Danh mục
+      </a>
+      <a routerLink="/admin/brands" routerLinkActive="bg-gray-700" class="nav-link">
+        <i class="fas fa-copyright fa-fw mr-3"></i>Thương hiệu
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="flex-1 flex flex-col overflow-hidden">
+    <header class="bg-white shadow-sm p-4">
+      <!-- Header content (e.g., user profile, logout) can go here -->
+      <div class="flex justify-end">
+        <button (click)="logout()" class="text-gray-600 hover:text-primary">
+          <i class="fas fa-sign-out-alt fa-fw mr-1"></i>
+          Đăng xuất
+        </button>
+      </div>
+    </header>
+    <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-6">
+      <!-- Nội dung của các trang con sẽ được hiển thị ở đây -->
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

@@ -51,7 +51,9 @@ namespace Services.Implementations
                     CategoryName = product.Category?.CategoryName ?? "N/A",
                     BrandName = product.Brand?.BrandName ?? "N/A",
                     AverageRating = averageRating,
-                    ReviewCount = reviewCount
+                    ReviewCount = reviewCount,
+                    StockQuantity = product.StockQuantity,
+                    IsActive = product.IsActive
                 });
             }
             return productDtos;

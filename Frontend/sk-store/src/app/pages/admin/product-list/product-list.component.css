@@ -1,0 +1,55 @@
+.btn-primary {
+  background-color: var(--color-primary, #2563eb);
+  color: #fff;
+  font-weight: bold;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 0.5rem;
+  transition-property: background-color, color;
+  transition-duration: 150ms;
+  display: flex;
+  align-items: center;
+}
+.btn-primary:hover {
+  background-color: rgba(37, 99, 235, 0.9);
+}
+.th-cell {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.td-cell {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  white-space: nowrap;
+  font-size: 0.875rem;
+}
+.btn-icon {
+  padding: 0.5rem;
+  border-radius: 9999px;
+  transition-property: background-color, color;
+  transition-duration: 150ms;
+}
+.btn-edit {
+  color: #3b82f6;
+}
+.btn-edit:hover {
+  background-color: #dbeafe;
+}
+.btn-delete {
+  color: #ef4444;
+}
+.btn-delete:hover {
+  background-color: #fee2e2;
+}

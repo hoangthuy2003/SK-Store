@@ -1,0 +1,68 @@
+<div class="container mx-auto">
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-2xl font-bold text-gray-800">Quản lý Sản phẩm</h1>
+    <button class="btn-primary">
+      <i class="fas fa-plus mr-2"></i>Thêm sản phẩm
+    </button>
+  </div>
+
+  <!-- Product Table -->
+  <div class="bg-white shadow-md rounded-lg overflow-hidden">
+    @if (isLoading()) {
+      <p class="p-4">Đang tải danh sách sản phẩm...</p>
+    } @else {
+      <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+          <tr>
+            <th class="th-cell">ID</th>
+            <th class="th-cell">Sản phẩm</th>
+            <th class="th-cell">Giá</th>
+            <th class="th-cell">Tồn kho</th>
+            <th class="th-cell">Trạng thái</th>
+            <th class="th-cell">Hành động</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+          @for (product of products(); track product.productId) {
+            <tr>
+              <td class="td-cell font-mono">{{ product.productId }}</td>
+              <td class="td-cell">
+                <div class="flex items-center">
+                  <img [src]="product.primaryImageUrl || 'assets/images/placeholder.jpg'" [alt]="product.productName" class="w-12 h-12 object-contain mr-4 rounded">
+                  <div>
+                    <div class="font-medium text-gray-900">{{ product.productName }}</div>
+                    <div class="text-sm text-gray-500">{{ product.categoryName }} / {{ product.brandName }}</div>
+                  </div>
+                </div>
+              </td>
+              <td class="td-cell font-semibold text-green-600">{{ product.price | vndCurrency }}</td>
+              <td class="td-cell">{{ product.stockQuantity }}</td>
+              <td class="td-cell">
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full"
+                      [ngClass]="product.isActive ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'">
+                  {{ product.isActive ? 'Hoạt động' : 'Ẩn' }}
+                </span>
+              </td>
+              <td class="td-cell space-x-2">
+                <button class="btn-icon btn-edit"><i class="fas fa-pencil-alt"></i></button>
+                <button class="btn-icon btn-delete"><i class="fas fa-trash-alt"></i></button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    }
+  </div>
+
+  <!-- Pagination -->
+  @if (totalProducts() > pageSize) {
+    <div class="mt-6">
+      <app-pagination
+        [currentPage]="currentPage()"
+        [totalItems]="totalProducts()"
+        [pageSize]="pageSize"
+        (pageChange)="onPageChange($event)">
+      </app-pagination>
+    </div>
+  }
+</div>

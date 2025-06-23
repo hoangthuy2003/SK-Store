@@ -8,6 +8,9 @@ export interface ProductDto {
   brandName: string;
   averageRating: number;
   reviewCount: number;
+  // --- THÊM 2 DÒNG DƯỚI ĐÂY ---
+  stockQuantity: number;
+  isActive: boolean;
 }
 
 // Định nghĩa cho tham số lọc sản phẩm

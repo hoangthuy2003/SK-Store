@@ -14,5 +14,7 @@ namespace Application.DTOs.Product
         public string BrandName { get; set; } = null!; // Tên thương hiệu
         public double AverageRating { get; set; } // Đánh giá trung bình
         public int ReviewCount { get; set; } // Số lượng đánh giá
+        public int StockQuantity { get; set; } // Thêm tồn kho
+        public bool IsActive { get; set; }      // Thêm trạng thái
     }
 }
