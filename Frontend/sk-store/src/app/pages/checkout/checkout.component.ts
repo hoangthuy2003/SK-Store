@@ -8,11 +8,11 @@ import { CartDto } from '../../models/cart.model';
 import { CreateOrderRequestDto } from '../../models/order.model';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-
+import { VndCurrencyPipe } from '../../pipes/vnd-currency.pipe';
 @Component({
   selector: 'app-checkout',
   standalone: true,
-  imports: [CommonModule, RouterLink, ReactiveFormsModule],
+  imports: [CommonModule, RouterLink, ReactiveFormsModule, VndCurrencyPipe],
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css']
 })
@@ -78,8 +78,5 @@ export class CheckoutComponent implements OnInit {
     });
   }
 
-  // Hàm tiện ích
-  formatPrice(price: number): string {
-    return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
-  }
+  
 }

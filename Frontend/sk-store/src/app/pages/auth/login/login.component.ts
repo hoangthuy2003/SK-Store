@@ -4,6 +4,7 @@ import { Router, RouterModule, ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../../services/auth.service';
 import { LoginRequest, AuthResponse, AuthValidation } from '../../../models/auth.model';
+import { NotificationService } from '../../../services/notification.service';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,8 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private authService: AuthService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private notifier: NotificationService // Giả sử bạn có một service để hiển thị thông báo
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -73,7 +75,6 @@ export class LoginComponent implements OnInit {
     }
 
     this.isLoading.set(true);
-    this.errorMessage.set('');
 
     const loginData: LoginRequest = {
       email: this.loginForm.get('email')?.value,
@@ -83,6 +84,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(loginData).subscribe({
       next: (response: AuthResponse) => {
         this.isLoading.set(false);
+         this.notifier.showSuccess('Đăng nhập thành công!'); 
         this.router.navigate(['/']);
       },
       error: (error) => {

@@ -29,7 +29,7 @@
                           <span class="font-semibold">{{ item.productName }}</span>
                         </div>
                       </td>
-                      <td class="py-4">{{ formatPrice(item.unitPrice) }}</td>
+                      <td class="py-4">{{ item.unitPrice | vndCurrency }}</td>
                       <td class="py-4">
                         <div class="flex items-center">
                           <button (click)="updateQuantity(item, item.quantity - 1)" class="quantity-btn" [disabled]="updatingItemId() === item.productId">-</button>
@@ -37,7 +37,7 @@
                           <button (click)="updateQuantity(item, item.quantity + 1)" class="quantity-btn" [disabled]="updatingItemId() === item.productId">+</button>
                         </div>
                       </td>
-                      <td class="py-4 font-semibold">{{ formatPrice(item.totalPrice) }}</td>
+                      <td class="py-4 font-semibold">{{ item.totalPrice | vndCurrency }}</td>
                       <td class="py-4">
                         <button (click)="removeItem(item.productId)" class="text-red-500 hover:text-red-700" [disabled]="updatingItemId() === item.productId">
                           <i class="fas fa-trash-alt"></i>
@@ -56,7 +56,7 @@
               <h2 class="text-lg font-semibold mb-4">Tóm tắt đơn hàng</h2>
               <div class="flex justify-between mb-2">
                 <span>Tạm tính</span>
-                <span>{{ formatPrice(cart.grandTotal) }}</span>
+                <span>{{ cart.grandTotal | vndCurrency }}</span>
               </div>
               <div class="flex justify-between mb-2">
                 <span>Phí vận chuyển</span>
@@ -65,7 +65,7 @@
               <hr class="my-2">
               <div class="flex justify-between mb-2">
                 <span class="font-semibold">Tổng cộng</span>
-                <span class="font-semibold">{{ formatPrice(cart.grandTotal) }}</span>
+                <span class="font-semibold">{{cart.grandTotal | vndCurrency }}</span>
               </div>
               <button 
             routerLink="/checkout"

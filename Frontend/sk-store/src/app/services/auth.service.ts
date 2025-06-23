@@ -5,15 +5,17 @@ import { LoginRequest, RegisterRequest, AuthResponse } from '../models/auth.mode
 import { environment } from '../../environments/environment';
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
-
+import { jwtDecode } from 'jwt-decode';
+import { UserPayload } from '../models/user.model';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private currentUserSubject = new BehaviorSubject<any | null>(null);
+  // THAY ĐỔI: Sử dụng UserPayload thay vì any
+  private currentUserSubject = new BehaviorSubject<UserPayload | null>(null);
   public currentUser$ = this.currentUserSubject.asObservable();
+
   private readonly TOKEN_KEY = 'auth_token';
-  private readonly USER_KEY = 'current_user';
   private isBrowser: boolean;
 
   constructor(
@@ -28,25 +30,33 @@ export class AuthService {
   }
 
   private loadStoredUser(): void {
-    const token = localStorage.getItem(this.TOKEN_KEY);
-    const user = localStorage.getItem(this.USER_KEY);
-    if (token && user) {
-      this.currentUserSubject.next(JSON.parse(user));
+    const token = this.getToken();
+    if (token) {
+      try {
+        const decodedToken: UserPayload = jwtDecode(token);
+        // Kiểm tra token còn hạn không trước khi set
+        if (decodedToken.exp * 1000 > Date.now()) {
+          this.currentUserSubject.next(decodedToken);
+        } else {
+          // Token hết hạn, xóa nó đi
+          this.logout();
+        }
+      } catch (error) {
+        console.error("Failed to decode token", error);
+        this.logout();
+      }
     }
   }
-// Thêm vào AuthService (src/app/services/auth.service.ts)
-public isUserInRole(requiredRole: string): boolean {
-  const user = this.currentUserSubject.value; // Lấy thông tin user từ BehaviorSubject
-  if (!user || !user.role) {
-    return false;
+
+  public isUserInRole(requiredRole: string): boolean {
+    const user = this.currentUserSubject.value;
+    if (!user || !user.role) {
+      return false;
+    }
+    // `user.role` giờ đã được định kiểu chặt chẽ
+    return user.role === requiredRole;
   }
-  // Giả sử claim role trong token có tên là 'role'
-  // Có thể là một mảng hoặc một chuỗi, cần xử lý cho cả 2 trường hợp
-  if (Array.isArray(user.role)) {
-    return user.role.includes(requiredRole);
-  }
-  return user.role === requiredRole;
-}
+
   getToken(): string | null {
     if (this.isBrowser) {
       return localStorage.getItem(this.TOKEN_KEY);
@@ -55,21 +65,9 @@ public isUserInRole(requiredRole: string): boolean {
   }
 
   isAuthenticated(): boolean {
-    const token = this.getToken();
-    if (!token) return false;
-    
-    // Kiểm tra token hết hạn
-    try {
-      const tokenData = JSON.parse(atob(token.split('.')[1]));
-      return tokenData.exp * 1000 > Date.now();
-    } catch {
-      return false;
-    }
-  }
-
-  getAuthHeaders(): HttpHeaders {
-    const token = this.getToken();
-    return new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const user = this.currentUserSubject.value;
+    // Chỉ cần kiểm tra xem có user trong subject hay không
+    return !!user;
   }
 
   login(request: LoginRequest): Observable<AuthResponse> {
@@ -79,10 +77,12 @@ public isUserInRole(requiredRole: string): boolean {
           if (response.isSuccess && response.token) {
             if (this.isBrowser) {
               localStorage.setItem(this.TOKEN_KEY, response.token);
-              // Lưu thông tin user từ token
-              const tokenData = JSON.parse(atob(response.token.split('.')[1]));
-              localStorage.setItem(this.USER_KEY, JSON.stringify(tokenData));
-              this.currentUserSubject.next(tokenData);
+              try {
+                const decodedToken: UserPayload = jwtDecode(response.token);
+                this.currentUserSubject.next(decodedToken);
+              } catch (error) {
+                console.error("Failed to decode token on login", error);
+              }
             }
           }
         })
@@ -96,7 +96,6 @@ public isUserInRole(requiredRole: string): boolean {
   logout(): void {
     if (this.isBrowser) {
       localStorage.removeItem(this.TOKEN_KEY);
-      localStorage.removeItem(this.USER_KEY);
     }
     this.currentUserSubject.next(null);
     this.router.navigate(['/login']);

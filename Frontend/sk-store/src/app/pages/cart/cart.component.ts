@@ -4,11 +4,11 @@ import { RouterLink } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 import { CartDto, CartItemDto } from '../../models/cart.model';
 import { Observable } from 'rxjs';
-
+import { VndCurrencyPipe } from '../../pipes/vnd-currency.pipe';
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, VndCurrencyPipe],
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
@@ -63,8 +63,5 @@ export class CartComponent implements OnInit {
     });
   }
 
-  // Hàm tiện ích
-  formatPrice(price: number): string {
-    return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
-  }
+  
 }

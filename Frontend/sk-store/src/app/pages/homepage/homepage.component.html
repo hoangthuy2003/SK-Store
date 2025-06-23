@@ -40,7 +40,7 @@
                                 <span class="text-gray-600 ml-1">{{ product.averageRating.toFixed(1) }} ({{ product.reviewCount }} đánh giá)</span>
                             </div>
                             <div class="flex items-center mt-auto">
-                                <span class="text-lg font-bold text-blue-600">{{ formatPrice(product.price) }}</span>
+                                <span class="text-lg font-bold text-blue-600">{{  product.price | vndCurrency }}</span>
                                 <button class="ml-auto w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 hover:bg-blue-100 transition">
                                     <i class="fas fa-shopping-cart"></i>
                                 </button>

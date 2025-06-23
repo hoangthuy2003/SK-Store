@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ProductService } from '../../services/product.service';
 import { ProductDto } from '../../models/product.model';
-
+import { VndCurrencyPipe } from '../../pipes/vnd-currency.pipe';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -11,7 +11,8 @@ import { ProductDto } from '../../models/product.model';
   standalone: true,
   imports: [
     CommonModule, // Thay thế NgIf, NgFor, NgClass
-    RouterLink
+    RouterLink,
+    VndCurrencyPipe 
   ]
 })
 export class HomepageComponent implements OnInit {
@@ -44,11 +45,5 @@ export class HomepageComponent implements OnInit {
     });
   }
 
-  // Hàm tiện ích để format giá tiền
-  formatPrice(price: number): string {
-    return new Intl.NumberFormat('vi-VN', {
-      style: 'currency',
-      currency: 'VND'
-    }).format(price);
-  }
+  
 }

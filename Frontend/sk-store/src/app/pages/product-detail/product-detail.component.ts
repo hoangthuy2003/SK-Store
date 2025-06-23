@@ -6,11 +6,11 @@ import { CartService } from '../../services/cart.service'; // <<< THÊM IMPORT
 import { AddItemToCartDto } from '../../models/cart.model'; // <<< THÊM IMPORT
 import { ProductService } from '../../services/product.service';
 import { ProductDetailDto } from '../../models/product.model';
-
+import { VndCurrencyPipe } from '../../pipes/vnd-currency.pipe';
 @Component({
   selector: 'app-product-detail',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, VndCurrencyPipe],
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css']
 })
@@ -91,10 +91,7 @@ private cartService = inject(CartService);
     this.quantity.update(q => (q > 1 ? q - 1 : 1));
   }
 
-  // Hàm tiện ích
-  formatPrice(price: number): string {
-    return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
-  }
+  
 
   getStarRating(rating: number): number[] {
     return Array(5).fill(0).map((_, i) => i < Math.round(rating) ? 1 : 0);

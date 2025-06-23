@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { CartService } from '../../services/cart.service'; // <<< THÊM IMPORT
 import { UserProfile } from '../../models/user.model';
-
+import { UserPayload } from '../../models/user.model';
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -13,15 +13,13 @@ import { UserProfile } from '../../models/user.model';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  // Sửa lại cách inject service cho gọn hơn
   private authService = inject(AuthService);
-  private cartService = inject(CartService); // <<< INJECT CART SERVICE
+  private cartService = inject(CartService);
 
-  currentUser = signal<UserProfile | null>(null);
+  // THAY ĐỔI: Sử dụng UserPayload
+  currentUser = signal<UserPayload | null>(null);
   isMenuOpen = signal(false);
   isUserMenuOpen = signal(false);
-  
-  // Signal cartItemCount sẽ được cập nhật tự động từ service
   cartItemCount = signal(0);
 
   ngOnInit(): void {

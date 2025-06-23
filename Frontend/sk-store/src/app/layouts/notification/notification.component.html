@@ -1,0 +1,28 @@
+<!-- Vùng chứa các thông báo, cố định ở góc trên bên phải -->
+<div class="fixed top-5 right-5 z-[100] space-y-3 w-80">
+  <!-- Sử dụng @for để lặp qua các thông báo từ signal của service -->
+  @for (notification of notificationService.notifications(); track notification.id) {
+    <div 
+      class="flex items-start p-4 rounded-lg shadow-lg text-white animate-slide-in-right"
+      [ngClass]="getNotificationClass(notification.type)">
+      
+      <!-- Icon -->
+      <div class="flex-shrink-0">
+        <i class="fas" [ngClass]="getNotificationIcon(notification.type)"></i>
+      </div>
+
+      <!-- Message -->
+      <div class="ml-3 flex-1">
+        <p class="text-sm font-medium">{{ notification.message }}</p>
+      </div>
+
+      <!-- Close Button -->
+      <div class="ml-4 flex-shrink-0">
+        <button (click)="notificationService.removeNotification(notification.id)" class="inline-flex text-white opacity-70 hover:opacity-100">
+          <span class="sr-only">Close</span>
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+  }
+</div>

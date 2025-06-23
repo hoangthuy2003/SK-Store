@@ -25,12 +25,13 @@
                     {{ order.orderDate | date:'dd/MM/yyyy HH:mm' }}
                   </td>
                   <td class="px-6 py-4 font-semibold">
-                    {{ formatPrice(order.totalAmount) }}
+                    {{  order.totalAmount | vndCurrency }}
                   </td>
                   <td class="px-6 py-4">
-                    <span class="px-2 py-1 text-xs font-medium rounded-full" [ngClass]="getStatusClass(order.orderStatus)">
-                      {{ order.orderStatus }}
-                    </span>
+                    <span class="px-2 py-1 text-xs font-medium rounded-full" 
+        [ngClass]="utilsService.getOrderStatusClass(order.orderStatus)">
+    {{ order.orderStatus }}
+  </span>
                   </td>
                   <td class="px-6 py-4 text-right">
                     <a [routerLink]="['/orders', order.orderId]" class="font-medium text-primary hover:underline">Xem chi tiết</a>

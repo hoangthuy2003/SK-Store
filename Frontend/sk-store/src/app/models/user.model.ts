@@ -14,7 +14,31 @@ export interface User {
     roleId: number;
     roleName: string;
 }
+export interface UpdateUserProfileDto {
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  gender: string;
+  dateOfBirth: string; // Sử dụng string để dễ dàng bind với form input type="date"
+}
 
+export interface ChangePasswordDto {
+  oldPassword: string;
+  newPassword: string;
+  confirmNewPassword: string;
+}
+export interface UserPayload {
+  sub: string; // User ID
+  email: string;
+  firstname: string;
+  lastname: string;
+  role: 'Admin' | 'User'; // Sử dụng union type để có kiểu dữ liệu chặt chẽ
+  nbf: number; // Not Before
+  exp: number; // Expiration Time
+  iat: number; // Issued At
+  iss: string; // Issuer
+  aud: string; // Audience
+}
 export interface UserProfile {
     userId: number;
     email: string;

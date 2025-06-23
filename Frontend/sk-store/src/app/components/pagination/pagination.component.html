@@ -1,0 +1,38 @@
+<nav class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6 mt-8" aria-label="Pagination">
+  <div class="hidden sm:block">
+    <p class="text-sm text-gray-700">
+      Hiển thị
+      <span class="font-medium">{{ (currentPage - 1) * pageSize + 1 }}</span>
+      đến
+      <!-- SỬA DÒNG NÀY: Thay Math.min thành Math.min -->
+      <span class="font-medium">{{ Math.min(currentPage * pageSize, totalItems) }}</span>
+      của
+      <span class="font-medium">{{ totalItems }}</span>
+      kết quả
+    </p>
+  </div>
+  <div class="flex flex-1 justify-between sm:justify-end">
+    <button (click)="goToPrevious()" [disabled]="currentPage === 1" class="relative inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0 disabled:opacity-50 disabled:cursor-not-allowed">
+      Trước
+    </button>
+    <div class="hidden sm:flex sm:items-center sm:space-x-1 mx-4">
+      @for(page of paginationData().pages; track $index) {
+        @if(page === '...') {
+          <span class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300">...</span>
+        } @else {
+          <button (click)="changePage(page)" 
+                  [class.bg-primary]="currentPage === page"
+                  [class.text-white]="currentPage === page"
+                  [class.text-gray-900]="currentPage !== page"
+                  [class.ring-primary]="currentPage === page"
+                  class="relative inline-flex items-center px-4 py-2 text-sm font-semibold ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+            {{ page }}
+          </button>
+        }
+      }
+    </div>
+    <button (click)="goToNext()" [disabled]="currentPage === paginationData().totalPages" class="relative ml-3 inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0 disabled:opacity-50 disabled:cursor-not-allowed">
+      Sau
+    </button>
+  </div>
+</nav>

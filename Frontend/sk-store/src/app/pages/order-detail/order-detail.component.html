@@ -17,9 +17,10 @@
             <p class="text-sm text-gray-500">Đặt lúc: {{ order.orderDate | date:'HH:mm, dd/MM/yyyy' }}</p>
           </div>
           <div class="mt-4 md:mt-0">
-            <span class="text-sm font-medium px-3 py-1.5 rounded-full" [ngClass]="getStatusClass(order.orderStatus)">
-              {{ order.orderStatus }}
-            </span>
+           <span class="text-sm font-medium px-3 py-1.5 rounded-full" 
+        [ngClass]="utilsService.getOrderStatusClass(order.orderStatus)">
+    {{ order.orderStatus }}
+  </span>
           </div>
         </div>
 
@@ -37,7 +38,7 @@
                       <p class="text-sm text-gray-500">Số lượng: {{ item.quantity }}</p>
                     </div>
                   </div>
-                  <p class="font-semibold">{{ formatPrice(item.unitPrice * item.quantity) }}</p>
+                 <p class="font-semibold">{{ (item.unitPrice * item.quantity) | vndCurrency }}</p>
                 </div>
               }
             </div>
@@ -59,16 +60,16 @@
               <div class="space-y-2 text-sm">
                 <div class="flex justify-between">
                   <span class="text-gray-600">Tạm tính:</span>
-                  <span>{{ formatPrice(order.totalAmount - order.shippingFee) }}</span>
+                  <span>{{ (order.totalAmount - order.shippingFee) | vndCurrency }}</span>
                 </div>
                 <div class="flex justify-between">
                   <span class="text-gray-600">Phí vận chuyển:</span>
-                  <span>{{ formatPrice(order.shippingFee) }}</span>
+                  <span>{{ order.shippingFee | vndCurrency }}</span>
                 </div>
                 <hr class="my-2">
                 <div class="flex justify-between font-bold text-base">
                   <span>Tổng cộng:</span>
-                  <span>{{ formatPrice(order.totalAmount) }}</span>
+                  <span>{{ order.totalAmount | vndCurrency }}</span>
                 </div>
               </div>
             </div>
