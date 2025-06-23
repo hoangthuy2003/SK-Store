@@ -20,6 +20,7 @@ export interface ProductFilterParameters {
   searchTerm?: string | null;
   pageNumber: number;
   pageSize: number;
+  isActive?: boolean | null;
   // Thêm các tham số sắp xếp nếu cần
   // sortBy?: string;
   // sortDirection?: 'asc' | 'desc';
@@ -65,3 +66,24 @@ export interface ProductDetailDto {
   averageRating: number;
   reviewCount: number;
 }
+
+export interface CreateProductDto {
+  productName: string;
+  description?: string;
+  price: number;
+  stockQuantity: number;
+  categoryId: number;
+  brandId: number;
+  isActive: boolean;
+  // Tạm thời chưa xử lý Images và Attributes trong form này cho đơn giản
+}
+export interface UpdateProductDto { // <<< THÊM EXPORT VÀO ĐÂY
+  productName?: string;
+  description?: string;
+  price?: number;
+  stockQuantity?: number;
+  categoryId?: number;
+  brandId?: number;
+  isActive?: boolean;
+}
+

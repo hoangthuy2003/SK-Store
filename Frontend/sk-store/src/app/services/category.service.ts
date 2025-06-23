@@ -1,9 +1,9 @@
 import { Injectable, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { catchError, shareReplay } from 'rxjs/operators';
+import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
+import { Observable, of, throwError } from 'rxjs';
+import { catchError, shareReplay, tap, map } from 'rxjs/operators'; // Thêm map
 import { environment } from '../../environments/environment';
-import { CategoryDto } from '../models/category.model';
+import { CategoryDto, CreateCategoryDto, UpdateCategoryDto } from '../models/category.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,23 +11,56 @@ import { CategoryDto } from '../models/category.model';
 export class CategoryService {
   private http = inject(HttpClient);
   private apiUrl = `${environment.apiUrl}/api/categories`;
+  private allCategories$: Observable<CategoryDto[]> | null = null; // Cache cho tất cả categories
 
-  // Cache lại kết quả để không phải gọi API mỗi lần vào trang shop
-  private categories$: Observable<CategoryDto[]> | null = null;
+  // Phương thức lấy dữ liệu CÓ PHÂN TRANG (cho trang list)
+  getPagedCategories(page: number, pageSize: number): Observable<HttpResponse<CategoryDto[]>> {
+    const params = new HttpParams()
+        .set('pageNumber', page.toString())
+        .set('pageSize', pageSize.toString());
+    return this.http.get<CategoryDto[]>(this.apiUrl, { params, observe: 'response' });
+  }
 
-  getCategories(): Observable<CategoryDto[]> {
-    if (!this.categories$) {
-      this.categories$ = this.http.get<CategoryDto[]>(this.apiUrl).pipe(
-        shareReplay(1), // Cache và replay kết quả cho các subscriber sau
+  // <<< THÊM PHƯƠNG THỨC MỚI ĐỂ LẤY TẤT CẢ >>>
+  // Phương thức này sẽ lấy tất cả danh mục, không phân trang, và cache lại
+  getAllCategories(): Observable<CategoryDto[]> {
+    if (!this.allCategories$) {
+      // Gọi API không có tham số phân trang
+      this.allCategories$ = this.http.get<CategoryDto[]>(this.apiUrl).pipe(
+        shareReplay(1), // Cache lại kết quả
         catchError(this.handleError)
       );
     }
-    return this.categories$;
+    return this.allCategories$;
+  }
+
+  // ... (các phương thức create, update, delete giữ nguyên nhưng cần sửa clearCache)
+
+  createCategory(category: CreateCategoryDto): Observable<CategoryDto> {
+    return this.http.post<CategoryDto>(this.apiUrl, category).pipe(tap(() => this.clearCache()));
+  }
+
+  updateCategory(id: number, category: UpdateCategoryDto): Observable<void> {
+    return this.http.put<void>(`${this.apiUrl}/${id}`, category).pipe(tap(() => this.clearCache()));
+  }
+
+  deleteCategory(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`).pipe(tap(() => this.clearCache()));
+  }
+
+  private clearCache() {
+    // Xóa cả hai cache khi có thay đổi
+    this.allCategories$ = null;
   }
 
   private handleError(error: any): Observable<never> {
-    console.error('An error occurred in CategoryService:', error);
-    // Có thể throw error để component tự xử lý
-    throw new Error('Failed to load categories. Please try again later.');
+    // ...
+    const errorMessage = error.error?.message || 'Lỗi xử lý danh mục.';
+    return throwError(() => new Error(errorMessage));
+  }
+  getCategoryById(id: number): Observable<CategoryDto> {
+    return this.http.get<CategoryDto>(`${this.apiUrl}/${id}`).pipe(
+      catchError(this.handleError)
+    );
   }
 }

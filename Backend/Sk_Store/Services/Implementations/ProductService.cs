@@ -276,25 +276,39 @@ namespace Services.Implementations
             }
         }
 
-        public async Task<bool> DeleteProductAsync(int productId)
+        public async Task<(bool Success, string ErrorMessage)> DeleteProductAsync(int productId)
         {
             var product = await _unitOfWork.Products.GetByIdAsync(productId);
+
             if (product == null)
             {
-                // _logger?.LogWarning($"Product with ID {productId} not found for deletion.");
-                return false;
+                return (false, $"Sản phẩm với ID {productId} không tồn tại.");
             }
 
-            // Lưu ý: EF Core sẽ tự động xử lý cascade delete cho ProductImages và ProductAttributes
-            // nếu chúng được cấu hình onDelete: Cascade trong OnModelCreating của DbContext.
-            // Nếu không, bạn có thể cần xóa chúng thủ công trước khi xóa product.
-            // Với cấu hình mặc định (không có ClientSetNull), thì khi xóa Product, các record liên quan
-            // trong ProductImages, ProductAttributes, OrderItems, Reviews (có ProductId là FK) sẽ bị xóa theo.
-            // Tuy nhiên, Reviews có UserId là nullable và onDelete: SetNull, nên khi User bị xóa, Review.UserId sẽ là null.
+            // Kiểm tra xem sản phẩm đã bị ẩn chưa để tránh thao tác thừa
+            if (!product.IsActive)
+            {
+                return (false, "Sản phẩm này đã ở trạng thái ẩn.");
+            }
 
-            await _unitOfWork.Products.DeleteAsync(product);
+            // Thay vì xóa, chúng ta cập nhật trạng thái IsActive
+            product.IsActive = false;
+            product.LastUpdatedDate = DateTime.UtcNow; // Cập nhật ngày thay đổi
+
+            // Không cần gọi _unitOfWork.Products.UpdateAsync(product) vì product đã được track
             await _unitOfWork.CompleteAsync();
-            return true;
+
+            return (true, string.Empty); // Trả về thành công
+        }
+
+        // ... (bên trong class ProductService)
+
+        // <<< THÊM PHƯƠNG THỨC MỚI NÀY >>>
+        public async Task<int> CountProductsAsync(ProductFilterParameters filterParams)
+        {
+            // Xóa bỏ phân trang trước khi đếm
+            var countFilters = filterParams;
+            return await _unitOfWork.Products.CountProductsAsync(countFilters);
         }
     }
 }

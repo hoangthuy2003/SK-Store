@@ -1,12 +1,14 @@
 import { Component, OnInit, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpResponse } from '@angular/common/http';
+import { RouterLink } from '@angular/router'; // <<< THÊM IMPORT
 
 // Models
 import { ProductDto, ProductFilterParameters } from '../../../models/product.model';
 
 // Services
 import { ProductService } from '../../../services/product.service';
+import { NotificationService } from '../../../services/notification.service'; // <<< THÊM IMPORT
 
 // Pipes & Components
 import { VndCurrencyPipe } from '../../../pipes/vnd-currency.pipe';
@@ -15,12 +17,13 @@ import { PaginationComponent } from '../../../components/pagination/pagination.c
 @Component({
   selector: 'app-admin-product-list',
   standalone: true,
-  imports: [CommonModule, VndCurrencyPipe, PaginationComponent],
+  imports: [CommonModule, VndCurrencyPipe, PaginationComponent, RouterLink], // <<< THÊM RouterLink
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
 export class AdminProductListComponent implements OnInit {
   private productService = inject(ProductService);
+  private notifier = inject(NotificationService); // <<< THÊM INJECT
 
   // State signals
   isLoading = signal(true);
@@ -28,7 +31,7 @@ export class AdminProductListComponent implements OnInit {
   
   // Pagination signals
   currentPage = signal(1);
-  pageSize = 10; // Hiển thị 10 sản phẩm mỗi trang cho admin
+  pageSize = 5;
   totalProducts = signal(0);
 
   ngOnInit(): void {
@@ -39,20 +42,19 @@ export class AdminProductListComponent implements OnInit {
     this.isLoading.set(true);
     const filters: ProductFilterParameters = {
       pageNumber: this.currentPage(),
-      pageSize: this.pageSize
+      pageSize: this.pageSize,
+      isActive: null // Chỉ lấy sản phẩm đang hoạt động
     };
 
     this.productService.getProductsWithCount(filters).subscribe({
       next: (response: HttpResponse<any>) => {
-        // Backend trả về ProductDto, nhưng chúng ta cần thêm stockQuantity và isActive
-        // Giả sử API getProducts trả về đủ thông tin này
         this.products.set(response.body || []);
         const totalCount = response.headers.get('X-Total-Count');
         this.totalProducts.set(totalCount ? +totalCount : 0);
         this.isLoading.set(false);
       },
       error: (err) => {
-        console.error("Failed to fetch products for admin", err);
+        this.notifier.showError("Không thể tải danh sách sản phẩm.");
         this.isLoading.set(false);
       }
     });
@@ -62,4 +64,19 @@ export class AdminProductListComponent implements OnInit {
     this.currentPage.set(page);
     this.fetchProducts();
   }
+
+  onDeleteProduct(productId: number): void {
+  if (confirm('Bạn có chắc chắn muốn ẩn sản phẩm này không?')) {
+    this.productService.deleteProduct(productId).subscribe({
+      next: () => {
+        this.notifier.showSuccess('Ẩn sản phẩm thành công!'); // Sửa thông báo thành công
+        // Tải lại danh sách sản phẩm ở trang hiện tại
+        this.fetchProducts(); 
+      },
+      error: (err) => {
+        this.notifier.showError(err.message);
+      }
+    });
+  }
+}
 }

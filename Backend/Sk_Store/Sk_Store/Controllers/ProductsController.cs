@@ -42,13 +42,16 @@ namespace Sk_Store.Controllers // Đảm bảo namespace này đúng với proje
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> GetProducts([FromQuery] ProductFilterParameters filterParams)
         {
-            // Bạn có thể thêm validation cho filterParams ở đây nếu cần,
-            // ví dụ: PageSize không được quá lớn.
-            if (filterParams.PageSize > 100) // Ví dụ giới hạn PageSize
-            {
-                filterParams.PageSize = 100;
-            }
+            // Lấy danh sách sản phẩm cho trang hiện tại
             var products = await _productService.GetProductsAsync(filterParams);
+
+            // Đếm tổng số sản phẩm khớp với bộ lọc (không tính phân trang)
+            var totalProducts = await _productService.CountProductsAsync(filterParams);
+
+            // Thêm header X-Total-Count vào response
+            Response.Headers.Append("X-Total-Count", totalProducts.ToString());
+            Response.Headers.Append("Access-Control-Expose-Headers", "X-Total-Count");
+
             return Ok(products);
         }
 
@@ -148,17 +151,13 @@ namespace Sk_Store.Controllers // Đảm bảo namespace này đúng với proje
         }
 
         // DELETE: api/products/{id}
-        /// <summary>
-        /// Xóa một sản phẩm (Yêu cầu quyền Admin).
-        /// </summary>
-        /// <param name="id">ID của sản phẩm cần xóa.</param>
-        /// <returns>204 No Content nếu thành công, hoặc lỗi nếu có.</returns>
         [HttpDelete("{id:int}")]
         [Authorize(Roles = "Admin")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)] // Giữ lại để Swagger biết có thể trả về lỗi này
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteProduct(int id)
         {
             if (id <= 0)
@@ -166,12 +165,19 @@ namespace Sk_Store.Controllers // Đảm bảo namespace này đúng với proje
                 return BadRequest(new { message = "ID sản phẩm không hợp lệ." });
             }
 
-            var success = await _productService.DeleteProductAsync(id);
-            if (!success)
+            // Gọi service và nhận về kết quả (success, errorMessage)
+            var result = await _productService.DeleteProductAsync(id);
+
+            // Nếu không thành công (success == false)
+            if (!result.Success)
             {
-                // _logger?.LogWarning($"Failed to delete product with ID {id}. Service returned false (product might not exist).");
-                return NotFound(new { message = $"Sản phẩm với ID {id} không tồn tại hoặc không thể xóa." });
+                // Trả về lỗi 400 Bad Request với thông báo lỗi từ service.
+                // Lỗi này có thể là "Không tìm thấy sản phẩm" hoặc "Sản phẩm đã bị ẩn".
+                // Dùng 400 là hợp lý cho các lỗi nghiệp vụ.
+                return BadRequest(new { message = result.ErrorMessage });
             }
+
+            // Nếu thành công, trả về 204 No Content
             return NoContent();
         }
     }

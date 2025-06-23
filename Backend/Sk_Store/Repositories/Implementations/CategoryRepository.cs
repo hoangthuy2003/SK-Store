@@ -1,4 +1,5 @@
 ﻿using BusinessObjects;
+using Microsoft.EntityFrameworkCore;
 using Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,13 @@ namespace Repositories.Implementations
     {
         public CategoryRepository(SkstoreContext context) : base(context)
         {
+        }
+        public async Task<IEnumerable<Category>> GetPagedCategoriesAsync(CategoryFilterParameters filterParams)
+        {
+            return await _dbSet
+                .Skip((filterParams.PageNumber - 1) * filterParams.PageSize)
+                .Take(filterParams.PageSize)
+                .ToListAsync();
         }
     }
 }

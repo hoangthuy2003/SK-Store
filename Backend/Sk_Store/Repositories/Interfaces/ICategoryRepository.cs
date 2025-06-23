@@ -9,5 +9,6 @@ namespace Repositories.Interfaces
 {
     public interface ICategoryRepository:IGenericRepository<Category>
     {
+        Task<IEnumerable<Category>> GetPagedCategoriesAsync(CategoryFilterParameters filterParams);
     }
 }

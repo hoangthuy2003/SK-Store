@@ -4,6 +4,7 @@ using Application.DTOs.Category;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http; // Required for StatusCodes
 using Microsoft.AspNetCore.Mvc;
+using Repositories;
 using Services.Interfaces;
 using Sk_Store.Services.Interfaces; // Namespace for ICategoryService
 using System.Collections.Generic;
@@ -26,24 +27,21 @@ namespace Sk_Store.Controllers // Ensure this namespace matches your project
         }
 
         // GET: api/categories
-        /// <summary>
-        /// Lấy tất cả danh mục.
-        /// </summary>
-        /// <returns>Danh sách các danh mục.</returns>
+
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<CategoryDto>), StatusCodes.Status200OK)]
-        public async Task<IActionResult> GetAllCategories()
+        public async Task<IActionResult> GetAllCategories([FromQuery] CategoryFilterParameters filterParams)
         {
-            var categories = await _categoryService.GetAllCategoriesAsync();
+            var categories = await _categoryService.GetAllCategoriesAsync(filterParams);
+            var totalCount = await _categoryService.GetTotalCategoriesCountAsync();
+
+            Response.Headers.Append("X-Total-Count", totalCount.ToString());
+            Response.Headers.Append("Access-Control-Expose-Headers", "X-Total-Count");
+
             return Ok(categories);
         }
-
         // GET: api/categories/{id}
-        /// <summary>
-        /// Lấy thông tin một danh mục theo ID.
-        /// </summary>
-        /// <param name="id">ID của danh mục.</param>
-        /// <returns>Thông tin danh mục hoặc 404 Not Found.</returns>
+
         [HttpGet("{id:int}")]
         [ProducesResponseType(typeof(CategoryDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -62,11 +60,7 @@ namespace Sk_Store.Controllers // Ensure this namespace matches your project
         }
 
         // POST: api/categories
-        /// <summary>
-        /// Tạo một danh mục mới (Yêu cầu quyền Admin).
-        /// </summary>
-        /// <param name="createCategoryDto">DTO chứa thông tin để tạo danh mục.</param>
-        /// <returns>Thông tin danh mục vừa tạo hoặc lỗi nếu có.</returns>
+        
         [HttpPost]
         [Authorize(Roles = "Admin")]
         [ProducesResponseType(typeof(CategoryDto), StatusCodes.Status201Created)]
@@ -90,12 +84,7 @@ namespace Sk_Store.Controllers // Ensure this namespace matches your project
         }
 
         // PUT: api/categories/{id}
-        /// <summary>
-        /// Cập nhật thông tin một danh mục (Yêu cầu quyền Admin).
-        /// </summary>
-        /// <param name="id">ID của danh mục cần cập nhật.</param>
-        /// <param name="updateCategoryDto">DTO chứa thông tin cập nhật.</param>
-        /// <returns>204 No Content nếu thành công, hoặc lỗi nếu có.</returns>
+        
         [HttpPut("{id:int}")]
         [Authorize(Roles = "Admin")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -129,15 +118,10 @@ namespace Sk_Store.Controllers // Ensure this namespace matches your project
         }
 
         // DELETE: api/categories/{id}
-        /// <summary>
-        /// Xóa một danh mục (Yêu cầu quyền Admin).
-        /// </summary>
-        /// <param name="id">ID của danh mục cần xóa.</param>
-        /// <returns>204 No Content nếu thành công, hoặc lỗi nếu có.</returns>
         [HttpDelete("{id:int}")]
         [Authorize(Roles = "Admin")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)] // For invalid operations like deleting a category with products
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -147,18 +131,15 @@ namespace Sk_Store.Controllers // Ensure this namespace matches your project
             {
                 return BadRequest(new { message = "ID danh mục không hợp lệ." });
             }
-            var success = await _categoryService.DeleteCategoryAsync(id);
-            if (!success)
+
+            var result = await _categoryService.DeleteCategoryAsync(id);
+
+            if (!result.Success)
             {
-                // Kiểm tra xem danh mục có tồn tại không, hoặc có sản phẩm nào thuộc danh mục không
-                var categoryExists = await _categoryService.GetCategoryByIdAsync(id);
-                if (categoryExists == null)
-                {
-                    return NotFound(new { message = $"Danh mục với ID {id} không tồn tại." });
-                }
-                // CategoryService.DeleteCategoryAsync trả về false nếu có sản phẩm
-                return BadRequest(new { message = $"Không thể xóa danh mục với ID {id}. Danh mục này có thể đang chứa sản phẩm." });
+                // Trả về lỗi 400 Bad Request với thông báo từ service
+                return BadRequest(new { message = result.ErrorMessage });
             }
+
             return NoContent();
         }
     }

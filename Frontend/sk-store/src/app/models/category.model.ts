@@ -3,3 +3,14 @@ export interface CategoryDto {
   categoryName: string;
   description?: string;
 }
+
+// --- THÊM CÁC INTERFACE MỚI ---
+export interface CreateCategoryDto {
+  categoryName: string;
+  description?: string;
+}
+
+export interface UpdateCategoryDto {
+  categoryName?: string;
+  description?: string;
+}

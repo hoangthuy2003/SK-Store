@@ -30,7 +30,13 @@ builder.Services.AddCors(options =>
                                 .AllowAnyMethod();
                       });
 });
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        // Cấu hình này sẽ bảo trình chuyển đổi JSON bỏ qua các vòng lặp tham chiếu
+        // thay vì gây ra lỗi.
+        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+    });
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {

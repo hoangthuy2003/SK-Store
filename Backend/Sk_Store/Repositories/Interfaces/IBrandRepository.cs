@@ -9,5 +9,6 @@ namespace Repositories.Interfaces
 {
     public interface IBrandRepository:IGenericRepository<Brand>
     {
+        Task<IEnumerable<Brand>> GetPagedBrandsAsync(BrandFilterParameters filterParams);
     }
 }

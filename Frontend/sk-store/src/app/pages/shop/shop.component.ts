@@ -102,54 +102,54 @@ export class ShopComponent implements OnInit, OnDestroy {
     this.isLoading.set(true);
     this.error.set(null);
 
+    // <<< SỬA LẠI CÁC LỜI GỌI SERVICE Ở ĐÂY >>>
     forkJoin({
-      categories: this.categoryService.getCategories(),
-      brands: this.brandService.getBrands()
+      categories: this.categoryService.getAllCategories(),
+      brands: this.brandService.getAllBrands()
     }).subscribe({
       next: (data) => {
+        // Giờ đây data.categories và data.brands là mảng
         this.categories.set(data.categories);
         this.brands.set(data.brands);
         this.fetchProducts();
       },
-      error: (err) => {
-        this.error.set(err.message || 'Không thể tải dữ liệu cho bộ lọc.');
-        this.isLoading.set(false);
-      }
+      // ...
     });
   }
 
   /**
    * Lấy danh sách sản phẩm dựa trên các bộ lọc và trang hiện tại.
    */
-  fetchProducts(): void {
-    this.isFetchingProducts.set(true);
+ fetchProducts(): void {
+  this.isFetchingProducts.set(true);
 
-    const filters: ProductFilterParameters = {
-      categoryId: this.activeCategoryId(),
-      brandId: this.activeBrandId(),
-      pageNumber: this.currentPage(),
-      pageSize: this.pageSize,
-      // --- CẬP NHẬT CHO TÌM KIẾM ---
-      searchTerm: this.searchTerm() // Lấy giá trị từ signal
-    };
+  const filters: ProductFilterParameters = {
+    categoryId: this.activeCategoryId(),
+    brandId: this.activeBrandId(),
+    pageNumber: this.currentPage(),
+    pageSize: this.pageSize,
+    searchTerm: this.searchTerm(),
+    // <<< THÊM DÒNG NÀY ĐỂ TRANG SHOP CHỈ LẤY SẢN PHẨM HOẠT ĐỘNG >>>
+    isActive: true 
+  };
 
-    this.productService.getProductsWithCount(filters).subscribe({
-      next: (response: HttpResponse<ProductDto[]>) => {
-        this.products.set(response.body || []);
-        
-        const totalCount = response.headers.get('X-Total-Count');
-        this.totalProducts.set(totalCount ? +totalCount : 0);
-        
-        this.isLoading.set(false); 
-        this.isFetchingProducts.set(false);
-      },
-      error: (err) => {
-        this.error.set(err.message || 'Không thể tải danh sách sản phẩm.');
-        this.isLoading.set(false);
-        this.isFetchingProducts.set(false);
-      }
-    });
-  }
+  this.productService.getProductsWithCount(filters).subscribe({
+    next: (response: HttpResponse<ProductDto[]>) => {
+      this.products.set(response.body || []);
+      
+      const totalCount = response.headers.get('X-Total-Count');
+      this.totalProducts.set(totalCount ? +totalCount : 0);
+      
+      this.isLoading.set(false); 
+      this.isFetchingProducts.set(false);
+    },
+    error: (err) => {
+      this.error.set(err.message || 'Không thể tải danh sách sản phẩm.');
+      this.isLoading.set(false);
+      this.isFetchingProducts.set(false);
+    }
+  });
+}
 
   // --- CẬP NHẬT CHO TÌM KIẾM ---
   /**

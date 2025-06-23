@@ -1,7 +1,8 @@
 <div class="container mx-auto">
   <div class="flex justify-between items-center mb-6">
     <h1 class="text-2xl font-bold text-gray-800">Quản lý Sản phẩm</h1>
-    <button class="btn-primary">
+    <!-- SỬA NÚT NÀY -->
+    <button routerLink="/admin/products/new" class="btn-primary">
       <i class="fas fa-plus mr-2"></i>Thêm sản phẩm
     </button>
   </div>
@@ -44,8 +45,9 @@
                 </span>
               </td>
               <td class="td-cell space-x-2">
-                <button class="btn-icon btn-edit"><i class="fas fa-pencil-alt"></i></button>
-                <button class="btn-icon btn-delete"><i class="fas fa-trash-alt"></i></button>
+                <!-- SỬA CÁC NÚT NÀY -->
+                <button [routerLink]="['/admin/products/edit', product.productId]" class="btn-icon btn-edit"><i class="fas fa-pencil-alt"></i></button>
+                <button (click)="onDeleteProduct(product.productId)" class="btn-icon btn-delete"><i class="fas fa-trash-alt"></i></button>
               </td>
             </tr>
           }

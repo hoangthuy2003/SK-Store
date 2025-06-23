@@ -2,6 +2,7 @@
 using Application.DTOs;
 using Application.DTOs.Brand;
 using BusinessObjects;
+using Repositories;
 using Repositories.UnitOfWork;
 using Services.Interfaces;
 using Sk_Store.Services.Interfaces;
@@ -23,9 +24,10 @@ namespace Services.Implementations // Đảm bảo namespace đúng
             // _logger = logger;
         }
 
-        public async Task<IEnumerable<BrandDto>> GetAllBrandsAsync()
+        public async Task<IEnumerable<BrandDto>> GetAllBrandsAsync(BrandFilterParameters filterParams)
         {
-            var brands = await _unitOfWork.Brands.GetAllAsync();
+            // <<< SỬA LỖI Ở ĐÂY: THAY .Categories THÀNH .Brands >>>
+            var brands = await _unitOfWork.Brands.GetPagedBrandsAsync(filterParams);
             return brands.Select(b => new BrandDto
             {
                 BrandId = b.BrandId,
@@ -33,7 +35,11 @@ namespace Services.Implementations // Đảm bảo namespace đúng
                 Description = b.Description
             });
         }
-
+        public async Task<int> GetTotalBrandsCountAsync()
+        {
+            var allBrands = await _unitOfWork.Brands.GetAllAsync();
+            return allBrands.Count();
+        }
         public async Task<BrandDto?> GetBrandByIdAsync(int brandId)
         {
             var brand = await _unitOfWork.Brands.GetByIdAsync(brandId);
@@ -100,21 +106,26 @@ namespace Services.Implementations // Đảm bảo namespace đúng
             return true;
         }
 
-        public async Task<bool> DeleteBrandAsync(int brandId)
+        // ...
+        public async Task<(bool Success, string ErrorMessage)> DeleteBrandAsync(int brandId)
         {
             var brand = await _unitOfWork.Brands.GetByIdAsync(brandId);
-            if (brand == null) return false;
+            if (brand == null)
+            {
+                return (false, "Thương hiệu không tồn tại.");
+            }
 
+            // Kiểm tra xem có sản phẩm nào thuộc thương hiệu này không
             var productsInBrand = await _unitOfWork.Products.FindAsync(p => p.BrandId == brandId);
             if (productsInBrand.Any())
             {
-                // _logger?.LogWarning($"Cannot delete brand '{brand.BrandName}' (ID: {brandId}) as it contains products.");
-                return false;
+                // Trả về lỗi nghiệp vụ
+                return (false, "Không thể xóa thương hiệu này vì vẫn còn sản phẩm thuộc về nó.");
             }
 
             await _unitOfWork.Brands.DeleteAsync(brand);
             await _unitOfWork.CompleteAsync();
-            return true;
+            return (true, string.Empty);
         }
     }
 }

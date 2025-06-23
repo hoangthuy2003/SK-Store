@@ -1,0 +1,75 @@
+<div class="container mx-auto">
+  <h1 class="text-2xl font-bold text-gray-800 mb-6">
+    {{ isEditMode ? 'Chỉnh sửa Sản phẩm' : 'Thêm Sản phẩm mới' }}
+  </h1>
+
+  @if (isLoading()) {
+    <p>Đang tải dữ liệu...</p>
+  } @else {
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="bg-white p-6 rounded-lg shadow-md space-y-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Product Name -->
+        <div>
+          <label for="productName" class="form-label">Tên sản phẩm</label>
+          <input id="productName" type="text" formControlName="productName" class="form-input">
+        </div>
+
+        <!-- Price -->
+        <div>
+          <label for="price" class="form-label">Giá</label>
+          <input id="price" type="number" formControlName="price" class="form-input">
+        </div>
+
+        <!-- Stock Quantity -->
+        <div>
+          <label for="stockQuantity" class="form-label">Số lượng tồn kho</label>
+          <input id="stockQuantity" type="number" formControlName="stockQuantity" class="form-input">
+        </div>
+
+        <!-- Category -->
+        <div>
+          <label for="categoryId" class="form-label">Danh mục</label>
+          <select id="categoryId" formControlName="categoryId" class="form-input">
+            @for (category of categories(); track category.categoryId) {
+              <option [value]="category.categoryId">{{ category.categoryName }}</option>
+            }
+          </select>
+        </div>
+
+        <!-- Brand -->
+        <div>
+          <label for="brandId" class="form-label">Thương hiệu</label>
+          <select id="brandId" formControlName="brandId" class="form-input">
+            @for (brand of brands(); track brand.brandId) {
+              <option [value]="brand.brandId">{{ brand.brandName }}</option>
+            }
+          </select>
+        </div>
+
+        <!-- Is Active -->
+        <div class="flex items-center">
+          <input id="isActive" type="checkbox" formControlName="isActive" class="h-4 w-4 text-primary rounded border-gray-300 focus:ring-primary">
+          <label for="isActive" class="ml-2 form-label">Hiển thị sản phẩm</label>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div>
+        <label for="description" class="form-label">Mô tả</label>
+        <textarea id="description" formControlName="description" rows="4" class="form-input"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="flex justify-end gap-4 pt-4">
+        <button type="button" (click)="goBack()" class="btn-secondary">Hủy</button>
+        <button type="submit" [disabled]="productForm.invalid || isSaving()" class="btn-primary">
+          @if(isSaving()) {
+            <span>Đang lưu...</span>
+          } @else {
+            <span>Lưu sản phẩm</span>
+          }
+        </button>
+      </div>
+    </form>
+  }
+</div>

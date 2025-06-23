@@ -27,6 +27,30 @@ namespace Repositories.Implementations
                             .ThenInclude(r => r.User) // Include User để lấy thông tin người đánh giá
                          .FirstOrDefaultAsync(p => p.ProductId == id);
         }
+        public async Task<int> CountProductsAsync(ProductFilterParameters productFilter)
+        {
+            var query = _dbSet.AsQueryable();
+
+            if (productFilter.IsActive.HasValue)
+            {
+                query = query.Where(p => p.IsActive == productFilter.IsActive.Value);
+            }
+            if (productFilter.CategoryId.HasValue && productFilter.CategoryId > 0)
+            {
+                query = query.Where(c => c.CategoryId == productFilter.CategoryId);
+            }
+            if (productFilter.BrandId.HasValue && productFilter.BrandId > 0)
+            {
+                query = query.Where(b => b.BrandId == productFilter.BrandId);
+            }
+            if (!string.IsNullOrEmpty(productFilter.SearchTerm))
+            {
+                var searchItemLower = productFilter.SearchTerm.ToLower();
+                query = query.Where(s => s.ProductName.ToLower().Contains(searchItemLower));
+            }
+
+            return await query.CountAsync();
+        }
 
         public async Task<IEnumerable<Product>> GetProductsAsync(ProductFilterParameters productFilter)
         {
@@ -36,7 +60,10 @@ namespace Repositories.Implementations
                         .Include(p => p.ProductImages) // <<< THÊM INCLUDE (để lấy ảnh đại diện)
                         .Include(p => p.Reviews)       // <<< THÊM INCLUDE (để tính rating)
                         .AsQueryable();
-
+            if (productFilter.IsActive.HasValue)
+            {
+                query = query.Where(p => p.IsActive == productFilter.IsActive.Value);
+            }
             if (productFilter.CategoryId.HasValue && productFilter.CategoryId > 0)
             {
                 query = query.Where(c => c.CategoryId == productFilter.CategoryId);

@@ -1,0 +1,33 @@
+<!-- Sửa lại (click) ở đây, truyền vào false vì không cần reload -->
+<div class="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center" (click)="close.emit(false)">
+  <div class="bg-white rounded-lg shadow-xl w-full max-w-md p-6" (click)="$event.stopPropagation()">
+    <h3 class="text-lg font-medium leading-6 text-gray-900 mb-4">Chỉnh sửa Người dùng: {{ user.fullName }}</h3>
+    
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="space-y-4">
+        <!-- Role -->
+        <div>
+          <label for="roleId" class="form-label">Vai trò</label>
+          <select id="roleId" formControlName="roleId" class="form-input">
+            @for(role of roles(); track role.roleId) {
+              <option [value]="role.roleId">{{ role.roleName }}</option>
+            }
+          </select>
+        </div>
+        <!-- IsActive -->
+        <div class="flex items-center">
+          <input id="isActive" type="checkbox" formControlName="isActive" class="h-4 w-4 text-primary rounded border-gray-300 focus:ring-primary">
+          <label for="isActive" class="ml-2 form-label">Tài khoản hoạt động</label>
+        </div>
+      </div>
+
+      <div class="mt-6 flex justify-end gap-4">
+        <!-- Và sửa lại (click) ở đây -->
+        <button type="button" (click)="close.emit(false)" class="btn-secondary">Hủy</button>
+        <button type="submit" [disabled]="userForm.invalid || isSaving()" class="btn-primary">
+          @if(isSaving()) { <span>Đang lưu...</span> } @else { <span>Lưu thay đổi</span> }
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

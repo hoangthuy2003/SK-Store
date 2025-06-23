@@ -2,6 +2,7 @@
 using Application.DTOs;
 using Application.DTOs.Category;
 using BusinessObjects;
+using Repositories;
 using Repositories.UnitOfWork;
 using Services.Interfaces;
 using Sk_Store.Services.Interfaces;
@@ -23,9 +24,9 @@ namespace Services.Implementations // Đảm bảo namespace đúng
             // _logger = logger;
         }
 
-        public async Task<IEnumerable<CategoryDto>> GetAllCategoriesAsync()
+        public async Task<IEnumerable<CategoryDto>> GetAllCategoriesAsync(CategoryFilterParameters filterParams)
         {
-            var categories = await _unitOfWork.Categories.GetAllAsync();
+            var categories = await _unitOfWork.Categories.GetPagedCategoriesAsync(filterParams);
             return categories.Select(c => new CategoryDto
             {
                 CategoryId = c.CategoryId,
@@ -34,6 +35,11 @@ namespace Services.Implementations // Đảm bảo namespace đúng
             });
         }
 
+        public async Task<int> GetTotalCategoriesCountAsync()
+        {
+            var allCategories = await _unitOfWork.Categories.GetAllAsync();
+            return allCategories.Count();
+        }
         public async Task<CategoryDto?> GetCategoryByIdAsync(int categoryId)
         {
             var category = await _unitOfWork.Categories.GetByIdAsync(categoryId);
@@ -102,22 +108,26 @@ namespace Services.Implementations // Đảm bảo namespace đúng
             return true;
         }
 
-        public async Task<bool> DeleteCategoryAsync(int categoryId)
+        // ...
+        public async Task<(bool Success, string ErrorMessage)> DeleteCategoryAsync(int categoryId)
         {
             var category = await _unitOfWork.Categories.GetByIdAsync(categoryId);
-            if (category == null) return false;
+            if (category == null)
+            {
+                return (false, "Danh mục không tồn tại.");
+            }
 
-            // Kiểm tra xem có sản phẩm nào thuộc danh mục này không trước khi xóa (quan trọng!)
+            // Kiểm tra xem có sản phẩm nào thuộc danh mục này không
             var productsInCategory = await _unitOfWork.Products.FindAsync(p => p.CategoryId == categoryId);
             if (productsInCategory.Any())
             {
-                // _logger?.LogWarning($"Cannot delete category '{category.CategoryName}' (ID: {categoryId}) as it contains products.");
-                return false; // Hoặc throw exception / trả về thông báo lỗi
+                // Trả về lỗi nghiệp vụ
+                return (false, "Không thể xóa danh mục này vì vẫn còn sản phẩm thuộc về nó.");
             }
 
             await _unitOfWork.Categories.DeleteAsync(category);
             await _unitOfWork.CompleteAsync();
-            return true;
+            return (true, string.Empty);
         }
     }
 }

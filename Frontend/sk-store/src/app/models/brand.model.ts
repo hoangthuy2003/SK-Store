@@ -3,3 +3,13 @@ export interface BrandDto {
   brandName: string;
   description?: string;
 }
+
+export interface CreateBrandDto {
+  brandName: string;
+  description?: string;
+}
+
+export interface UpdateBrandDto {
+  brandName?: string;
+  description?: string;
+}

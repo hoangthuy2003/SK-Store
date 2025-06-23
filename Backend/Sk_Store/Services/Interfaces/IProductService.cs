@@ -43,8 +43,8 @@ namespace Services.Interfaces // Đảm bảo namespace này đúng với projec
         /// </summary>
         /// <param name="productId">ID của sản phẩm cần xóa.</param>
         /// <returns>True nếu xóa thành công, False nếu thất bại.</returns>
-        Task<bool> DeleteProductAsync(int productId);
-
+        Task<(bool Success, string ErrorMessage)> DeleteProductAsync(int productId);
+        Task<int> CountProductsAsync(ProductFilterParameters filterParams);
         // Bạn có thể thêm các phương thức khác ở đây nếu cần, ví dụ:
         // Task<IEnumerable<ProductDto>> GetFeaturedProductsAsync();
         // Task<IEnumerable<ProductDto>> GetRelatedProductsAsync(int productId);

@@ -27,10 +27,10 @@ namespace Sk_Store.Controllers
         [HttpGet]
         public async Task<IActionResult> GetUsers([FromQuery] UserFilterParametersDto filterParams)
         {
+            // Service đã được thiết kế để trả về cả danh sách và tổng số lượng
             var (users, totalCount) = await _userService.GetUsersAsync(filterParams);
 
-            // Tư duy chuyên gia: Trả về tổng số lượng bản ghi qua header 'X-Total-Count'.
-            // Frontend sẽ dùng thông tin này để xây dựng giao diện phân trang.
+            // Thêm header X-Total-Count vào response
             Response.Headers.Append("X-Total-Count", totalCount.ToString());
             Response.Headers.Append("Access-Control-Expose-Headers", "X-Total-Count");
 
