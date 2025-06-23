@@ -12,7 +12,7 @@ import { VndCurrencyPipe } from '../../pipes/vnd-currency.pipe';
 @Component({
   selector: 'app-checkout',
   standalone: true,
-  imports: [CommonModule, RouterLink, ReactiveFormsModule, VndCurrencyPipe],
+  imports: [CommonModule, ReactiveFormsModule, VndCurrencyPipe],
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css']
 })

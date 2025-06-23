@@ -45,7 +45,15 @@ export interface ResetPasswordRequest {
 export interface VerifyEmailRequest {
     otp: string;
 }
+export interface ForgotPasswordDto {
+  email: string;
+}
 
+export interface ResetPasswordDto {
+  email: string;
+  otp: string;
+  newPassword: string;
+}
 export class AuthValidation {
     static email(email: string): { [key: string]: boolean } | null {
         if (!email) {

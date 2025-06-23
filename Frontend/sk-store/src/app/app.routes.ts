@@ -11,9 +11,14 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { OrderListComponent } from './pages/order-list/order-list.component';
 import { OrderDetailComponent } from './pages/order-detail/order-detail.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+
+import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './pages/auth/reset-password/reset-password.component';
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+   { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'reset-password', component: ResetPasswordComponent },
   { path: '', component: HomepageComponent },
   { path: 'shop', component: ShopComponent },
   { path: 'products/:id', component: ProductDetailComponent }, 

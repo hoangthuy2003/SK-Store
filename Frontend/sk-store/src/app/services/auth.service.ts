@@ -1,7 +1,7 @@
 import { Injectable, PLATFORM_ID, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable, tap, throwError } from 'rxjs';
-import { LoginRequest, RegisterRequest, AuthResponse } from '../models/auth.model';
+import { LoginRequest, RegisterRequest, AuthResponse, ForgotPasswordDto, ResetPasswordDto } from '../models/auth.model';
 import { environment } from '../../environments/environment';
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
@@ -101,17 +101,7 @@ export class AuthService {
     this.router.navigate(['/login']);
   }
 
-  forgotPassword(email: string): Observable<any> {
-    return this.http.post(`${environment.apiUrl}/api/auth/forgot-password`, { email });
-  }
-
-  resetPassword(email: string, otp: string, newPassword: string): Observable<any> {
-    return this.http.post(`${environment.apiUrl}/api/auth/reset-password`, {
-      email,
-      otp,
-      newPassword
-    });
-  }
+  
 
   verifyEmail(otp: string): Observable<any> {
     return this.http.post(`${environment.apiUrl}/api/auth/verify-email`, { otp });
@@ -119,5 +109,13 @@ export class AuthService {
 
   sendVerificationEmail(): Observable<any> {
     return this.http.post(`${environment.apiUrl}/api/auth/send-verification-email`, {});
+  }
+
+   forgotPassword(data: ForgotPasswordDto): Observable<any> {
+    return this.http.post(`${environment.apiUrl}/api/auth/forgot-password`, data);
+  }
+
+  resetPassword(data: ResetPasswordDto): Observable<any> {
+    return this.http.post(`${environment.apiUrl}/api/auth/reset-password`, data);
   }
 } 

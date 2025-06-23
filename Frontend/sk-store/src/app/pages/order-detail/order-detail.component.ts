@@ -10,7 +10,7 @@ import { UtilsService } from '../../services/utils.service';
 @Component({
   selector: 'app-order-detail',
   standalone: true,
-  imports: [CommonModule, RouterLink, VndCurrencyPipe],
+  imports: [CommonModule, VndCurrencyPipe],
   templateUrl: './order-detail.component.html',
   styleUrls: ['./order-detail.component.css']
 })
