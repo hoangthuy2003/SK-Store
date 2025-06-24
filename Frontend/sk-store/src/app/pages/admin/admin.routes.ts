@@ -7,6 +7,7 @@ import { AdminCategoryFormComponent } from './category-form/category-form.compon
 import { AdminBrandListComponent } from './brand-list/brand-list.component';
 import { AdminBrandFormComponent } from './brand-form/brand-form.component';
 import { AdminUserListComponent } from './user-list/user-list.component';
+import { AdminOrderListComponent } from './order-list/order-list.component';
 export const ADMIN_ROUTES: Routes = [
   {
     path: '',
@@ -16,7 +17,7 @@ export const ADMIN_ROUTES: Routes = [
       { path: 'products', component: AdminProductListComponent },
       { path: 'products/new', component: AdminProductEditComponent },
       { path: 'products/edit/:id', component: AdminProductEditComponent },
-      
+      { path: 'orders', component: AdminOrderListComponent },
       { path: 'categories', component: AdminCategoryListComponent },
       { path: 'categories/new', component: AdminCategoryFormComponent },
       { path: 'categories/edit/:id', component: AdminCategoryFormComponent },

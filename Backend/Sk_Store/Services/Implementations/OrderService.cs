@@ -21,7 +21,25 @@ namespace Services.Implementations // Hoặc Sk_Store.Services.Implementations
             _unitOfWork = unitOfWork;
             _shoppingCartService = shoppingCartService;
         }
+        public async Task<bool> UpdateOrderPaymentStatusAsync(int orderId, string newPaymentStatus)
+        {
+            var order = await _unitOfWork.Orders.GetByIdAsync(orderId);
+            if (order == null)
+            {
+                return false; // Hoặc throw exception
+            }
 
+            // Có thể thêm logic kiểm tra xem newPaymentStatus có hợp lệ không
+            var validStatuses = new List<string> { "Unpaid", "Paid", "Failed", "Refunded" };
+            if (!validStatuses.Contains(newPaymentStatus))
+            {
+                return false;
+            }
+
+            order.PaymentStatus = newPaymentStatus;
+            await _unitOfWork.CompleteAsync();
+            return true;
+        }
         public async Task<(OrderDto? Order, string? ErrorMessage)> CreateOrderAsync(int userId, CreateOrderRequestDto orderRequestDto)
         {
             var cart = await _unitOfWork.ShoppingCarts.GetCartByUserIdAsync(userId);
@@ -174,78 +192,29 @@ namespace Services.Implementations // Hoặc Sk_Store.Services.Implementations
 
 
         // Chức năng Admin
-        public async Task<IEnumerable<OrderDto>> GetAllOrdersAsync(int pageNumber, int pageSize, string? statusFilter, string? sortOrder)
+        // ... (thay thế action GetAllOrdersAsync và CountAllOrdersAsync)
+        public async Task<(IEnumerable<OrderDto> Orders, int TotalCount)> GetAllOrdersAsync(OrderFilterParametersDto filterParams)
         {
-            var query = _unitOfWork.Context.Orders
-                                     .Include(o => o.OrderItems)
-                                        .ThenInclude(oi => oi.Product)
-                                     .Include(o => o.User) // Để lấy thông tin người dùng
-                                     .AsQueryable();
+            var (orders, totalCount) = await _unitOfWork.Orders.GetPagedOrdersAsync(filterParams);
 
-            if (!string.IsNullOrEmpty(statusFilter))
+            // Mapping sang DTO
+            var orderDtos = orders.Select(order => new OrderDto
             {
-                query = query.Where(o => o.OrderStatus.ToLower() == statusFilter.ToLower());
-            }
-
-            // Sắp xếp
-            switch (sortOrder?.ToLower())
-            {
-                case "date_asc":
-                    query = query.OrderBy(o => o.OrderDate);
-                    break;
-                case "total_desc":
-                    query = query.OrderByDescending(o => o.TotalAmount);
-                    break;
-                case "total_asc":
-                    query = query.OrderBy(o => o.TotalAmount);
-                    break;
-                default: // date_desc (mặc định)
-                    query = query.OrderByDescending(o => o.OrderDate);
-                    break;
-            }
-
-            var orders = await query.Skip((pageNumber - 1) * pageSize)
-                                    .Take(pageSize)
-                                    .ToListAsync();
-
-            return orders.Select(order => new OrderDto // Ánh xạ thủ công hoặc dùng AutoMapper
-            {
+                // ... (giữ nguyên logic mapping đã có)
                 OrderId = order.OrderId,
                 UserId = order.UserId,
                 UserFullName = order.User != null ? $"{order.User.FirstName} {order.User.LastName}".Trim() : "N/A",
-                UserEmail = order.User?.Email,
                 OrderDate = order.OrderDate,
                 OrderStatus = order.OrderStatus,
                 TotalAmount = order.TotalAmount,
-                ShippingAddress = order.ShippingAddress,
-                RecipientName = order.RecipientName,
-                RecipientPhoneNumber = order.RecipientPhoneNumber,
-                PaymentMethod = order.PaymentMethod,
                 PaymentStatus = order.PaymentStatus,
-                DeliveryDate = order.DeliveryDate,
-                ShippingFee = order.ShippingFee ?? 0,
-                Notes = order.Notes,
-                OrderItems = order.OrderItems.Select(oi => new OrderItemDto
-                {
-                    ProductId = oi.ProductId,
-                    ProductName = oi.Product?.ProductName ?? "N/A",
-                    UnitPrice = oi.UnitPrice,
-                    Quantity = oi.Quantity,
-                    ProductImageUrl = oi.Product?.ProductImages?.FirstOrDefault(img => img.IsPrimary)?.ImageUrl
-                }).ToList()
+                // ... các trường khác
             }).ToList();
+
+            return (orderDtos, totalCount);
         }
 
-        public async Task<int> CountAllOrdersAsync(string? statusFilter)
-        {
-            var query = _unitOfWork.Context.Orders.AsQueryable();
-            if (!string.IsNullOrEmpty(statusFilter))
-            {
-                query = query.Where(o => o.OrderStatus.ToLower() == statusFilter.ToLower());
-            }
-            return await query.CountAsync();
-        }
-
+        
 
         public async Task<bool> UpdateOrderStatusAsync(int orderId, string newStatus, int adminUserId)
         {

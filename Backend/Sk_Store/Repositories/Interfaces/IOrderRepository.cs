@@ -1,4 +1,5 @@
-﻿using BusinessObjects;
+﻿using Application.DTOs.Order;
+using BusinessObjects;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -13,5 +14,7 @@ namespace Repositories.Interfaces
         /// Lấy chi tiết một đơn hàng, bao gồm OrderItems và thông tin Product liên quan.
         /// </summary>
         Task<Order?> GetOrderDetailsAsync(int orderId);
+
+        Task<(IEnumerable<Order> Orders, int TotalCount)> GetPagedOrdersAsync(OrderFilterParametersDto filterParams);
     }
 }

@@ -30,10 +30,23 @@ namespace Sk_Store.Controllers
             return userId;
         }
 
-        // POST: api/orders
-        /// <summary>
-        /// Tạo một đơn hàng mới từ giỏ hàng của người dùng.
-        /// </summary>
+        [HttpPut("admin/{id:int}/payment-status")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> UpdateOrderPaymentStatus(int id, [FromBody] UpdateOrderPaymentStatusDto statusDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var success = await _orderService.UpdateOrderPaymentStatusAsync(id, statusDto.NewPaymentStatus);
+
+            if (!success)
+            {
+                return BadRequest(new { message = $"Không thể cập nhật trạng thái thanh toán cho đơn hàng ID {id}. Đơn hàng có thể không tồn tại hoặc trạng thái mới không hợp lệ." });
+            }
+            return Ok(new { message = $"Trạng thái thanh toán của đơn hàng ID {id} đã được cập nhật." });
+        }
         [HttpPost]
         public async Task<IActionResult> CreateOrder([FromBody] CreateOrderRequestDto orderRequestDto)
         {
@@ -57,10 +70,7 @@ namespace Sk_Store.Controllers
             return CreatedAtAction(nameof(GetOrderById), new { id = order.OrderId }, order);
         }
 
-        // GET: api/orders (Lịch sử đơn hàng của người dùng)
-        /// <summary>
-        /// Lấy lịch sử đơn hàng của người dùng đang đăng nhập (phân trang).
-        /// </summary>
+        
         [HttpGet]
         public async Task<IActionResult> GetMyOrders([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
@@ -78,10 +88,6 @@ namespace Sk_Store.Controllers
             return Ok(orders);
         }
 
-        // GET: api/orders/{id} (Chi tiết đơn hàng cho người dùng hoặc admin)
-        /// <summary>
-        /// Lấy thông tin chi tiết của một đơn hàng theo ID.
-        /// </summary>
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetOrderById(int id)
         {
@@ -105,36 +111,17 @@ namespace Sk_Store.Controllers
         }
 
 
-        // === ADMIN ENDPOINTS ===
-        // GET: api/orders/admin/all
-        /// <summary>
-        /// [Admin] Lấy tất cả đơn hàng với tùy chọn lọc và sắp xếp.
-        /// </summary>
         [HttpGet("admin/all")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> GetAllOrdersForAdmin(
-            [FromQuery] int pageNumber = 1,
-            [FromQuery] int pageSize = 10,
-            [FromQuery] string? statusFilter = null,
-            [FromQuery] string? sortOrder = "date_desc") // Mặc định: mới nhất trước
+        public async Task<IActionResult> GetAllOrdersForAdmin([FromQuery] OrderFilterParametersDto filterParams)
         {
-            if (pageNumber < 1) pageNumber = 1;
-            if (pageSize < 1) pageSize = 10;
-            if (pageSize > 100) pageSize = 100;
+            var (orders, totalCount) = await _orderService.GetAllOrdersAsync(filterParams);
 
-            var orders = await _orderService.GetAllOrdersAsync(pageNumber, pageSize, statusFilter, sortOrder);
-            var totalOrders = await _orderService.CountAllOrdersAsync(statusFilter);
-
-            Response.Headers.Append("X-Total-Count", totalOrders.ToString());
+            Response.Headers.Append("X-Total-Count", totalCount.ToString());
             Response.Headers.Append("Access-Control-Expose-Headers", "X-Total-Count");
 
             return Ok(orders);
         }
-
-        // PUT: api/orders/admin/{id}/status
-        /// <summary>
-        /// [Admin] Cập nhật trạng thái của một đơn hàng.
-        /// </summary>
         [HttpPut("admin/{id:int}/status")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateOrderStatus(int id, [FromBody] UpdateOrderStatusDto statusDto)

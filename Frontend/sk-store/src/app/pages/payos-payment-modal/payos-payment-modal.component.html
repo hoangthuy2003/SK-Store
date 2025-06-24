@@ -9,9 +9,9 @@
     <!-- <<< THÊM LOGIC KIỂM TRA Ở ĐÂY >>> -->
     @if(paymentData.data) {
       <p class="text-sm text-gray-500 mb-4">Sử dụng App ngân hàng hoặc Ví điện tử để quét mã VietQR</p>
-      @if(paymentData.data?.qrCode) {
+      @if(safeQrCodeUrl()) {
   <!-- <<< SỬA LẠI THUỘC TÍNH [src] Ở ĐÂY >>> -->
-  <img [src]="safeQrCodeUrl()" alt="Mã QR thanh toán" class="w-64 h-64 mx-auto border rounded-lg">
+ <img [src]="safeQrCodeUrl()" alt="Mã QR thanh toán" class="w-64 h-64 mx-auto border rounded-lg">
 }
       <div class="text-left mt-4 space-y-2 text-sm">
         <div class="flex justify-between">

@@ -34,7 +34,26 @@ export interface OrderDto {
   deliveryDate?: string;
   shippingFee: number;
   notes?: string;
-  orderItems: OrderItemDto[];
   userFullName?: string;
   userEmail?: string;
+  orderItems: OrderItemDto[];
+}
+export interface UpdateOrderPaymentStatusDto {
+  newPaymentStatus: string;
+}
+// DTO cho tham số lọc đơn hàng của Admin
+export interface OrderFilterParameters {
+  orderStatus?: string | null;
+  paymentStatus?: string | null;
+  searchTerm?: string | null;
+  fromDate?: string | null;
+  toDate?: string | null;
+  pageNumber: number;
+  pageSize: number;
+}
+
+// <<< THÊM EXPORT VÀO INTERFACE NÀY >>>
+// DTO để cập nhật trạng thái đơn hàng
+export interface UpdateOrderStatusDto {
+  newStatus: string;
 }
