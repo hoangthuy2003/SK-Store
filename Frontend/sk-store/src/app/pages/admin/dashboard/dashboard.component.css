@@ -1,0 +1,28 @@
+.kpi-card {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+}
+.kpi-icon {
+  font-size: 2.25rem;
+  opacity: 0.5;
+}
+.kpi-title {
+  font-size: 0.875rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.kpi-value {
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+.chart-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 1rem;
+}

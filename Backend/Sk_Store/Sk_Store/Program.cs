@@ -88,7 +88,7 @@ builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IReviewService, ReviewService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
-
+builder.Services.AddScoped<IDashboardService, DashboardService>();
 builder.Services.AddHttpClient();
 builder.Services.AddAuthentication(options =>
 {

@@ -8,12 +8,14 @@ import { AdminBrandListComponent } from './brand-list/brand-list.component';
 import { AdminBrandFormComponent } from './brand-form/brand-form.component';
 import { AdminUserListComponent } from './user-list/user-list.component';
 import { AdminOrderListComponent } from './order-list/order-list.component';
+import { AdminDashboardComponent } from './dashboard/dashboard.component';
 export const ADMIN_ROUTES: Routes = [
   {
     path: '',
     component: AdminLayoutComponent,
     children: [
-      { path: '', redirectTo: 'products', pathMatch: 'full' },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' }, // Redirect về dashboard
+      { path: 'dashboard', component: AdminDashboardComponent }, // Thêm route cho dashboard
       { path: 'products', component: AdminProductListComponent },
       { path: 'products/new', component: AdminProductEditComponent },
       { path: 'products/edit/:id', component: AdminProductEditComponent },

@@ -1,5 +1,6 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+// Thêm ActivatedRoute vào đây nếu chưa có
 import { Router, RouterModule, ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../../services/auth.service';
@@ -24,8 +25,8 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private authService: AuthService,
     private router: Router,
-    private route: ActivatedRoute,
-    private notifier: NotificationService // Giả sử bạn có một service để hiển thị thông báo
+    private route: ActivatedRoute, // Đảm bảo đã inject ActivatedRoute
+    private notifier: NotificationService
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -34,40 +35,36 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Kiểm tra nếu đã đăng nhập thì chuyển về trang chủ
+    // Logic ngOnInit giữ nguyên
     if (this.authService.isAuthenticated()) {
-      this.router.navigate(['/']);
+      // Nếu đã đăng nhập, kiểm tra vai trò và điều hướng
+      if (this.authService.isUserInRole('Admin')) {
+        this.router.navigate(['/admin/dashboard']);
+      } else {
+        this.router.navigate(['/']);
+      }
       return;
     }
 
-    // Lấy thông báo từ query params nếu có
     this.route.queryParams.subscribe(params => {
       if (params['message']) {
         this.successMessage.set(params['message']);
       }
-    });
-
-    // Check for success message in query params
-    this.route.queryParams.subscribe(params => {
       if (params['registered']) {
         this.successMessage.set('Đăng ký thành công! Vui lòng đăng nhập.');
       }
     });
   }
 
+  // getErrorMessage và các hàm khác giữ nguyên
   getErrorMessage(controlName: string): string {
-    const control = this.loginForm.get(controlName);
-    if (!control) return '';
-
-    if (control.hasError('required')) {
-      return 'Vui lòng nhập thông tin này';
-    }
-    if (control.hasError('email')) {
-      return 'Email không đúng định dạng';
-    }
+    // ...
     return '';
   }
 
+  // =================================================================
+  // THAY THẾ TOÀN BỘ PHƯƠNG THỨC onSubmit BẰNG PHIÊN BẢN NÀY
+  // =================================================================
   onSubmit(): void {
     if (this.loginForm.invalid) {
       this.markFormGroupTouched(this.loginForm);
@@ -84,11 +81,22 @@ export class LoginComponent implements OnInit {
     this.authService.login(loginData).subscribe({
       next: (response: AuthResponse) => {
         this.isLoading.set(false);
-         this.notifier.showSuccess('Đăng nhập thành công!'); 
-        this.router.navigate(['/']);
+        this.notifier.showSuccess('Đăng nhập thành công!');
+
+        // **LOGIC ĐIỀU HƯỚNG MỚI**
+        // Kiểm tra vai trò của người dùng vừa đăng nhập
+        if (this.authService.isUserInRole('Admin')) {
+          // Nếu là Admin, luôn điều hướng đến trang dashboard
+          this.router.navigate(['/admin/dashboard']);
+        } else {
+          // Nếu là người dùng thường, kiểm tra xem có returnUrl không
+          const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+          this.router.navigateByUrl(returnUrl);
+        }
       },
       error: (error) => {
         this.isLoading.set(false);
+        // Logic xử lý lỗi giữ nguyên
         if (error.error?.validation) {
           const validation = error.error.validation as AuthValidation;
           if (validation.email) {
@@ -116,4 +124,4 @@ export class LoginComponent implements OnInit {
   togglePasswordVisibility(): void {
     this.hidePassword.update(value => !value);
   }
-} 
+}
