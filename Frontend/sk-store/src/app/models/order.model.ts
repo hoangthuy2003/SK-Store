@@ -42,15 +42,20 @@ export interface UpdateOrderPaymentStatusDto {
   newPaymentStatus: string;
 }
 // DTO cho tham số lọc đơn hàng của Admin
+// ...
 export interface OrderFilterParameters {
   orderStatus?: string | null;
   paymentStatus?: string | null;
   searchTerm?: string | null;
+  
+  // <<< THÊM 2 DÒNG NÀY >>>
   fromDate?: string | null;
   toDate?: string | null;
+
   pageNumber: number;
   pageSize: number;
 }
+// ...
 
 // <<< THÊM EXPORT VÀO INTERFACE NÀY >>>
 // DTO để cập nhật trạng thái đơn hàng

@@ -1,69 +1,132 @@
 <div class="container mx-auto">
-    <h1 class="text-2xl font-bold text-gray-800 mb-6">Quản lý Đơn hàng</h1>
-    <!-- Filter Section (sẽ thêm sau cho đơn giản) -->
+  <!-- Header -->
+  <div class="flex flex-col md:flex-row justify-between md:items-center mb-6 gap-4">
+    <div>
+      <h1 class="text-2xl font-bold text-gray-800">Quản lý Đơn hàng</h1>
+      <p class="text-sm text-gray-500">Xem, lọc và cập nhật trạng thái các đơn hàng.</p>
+    </div>
+  </div>
 
-    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+  <!-- Card chứa bộ lọc và bảng -->
+  <div class="bg-white shadow-md rounded-lg overflow-hidden">
+    <!-- Filter Section -->
+    <div class="p-4 border-b border-gray-200" [formGroup]="filterForm">
+      <!-- <<< SỬA LẠI GRID LAYOUT ĐỂ CÓ 6 CỘT >>> -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
+        
+        <!-- Search Input -->
+        <div class="lg:col-span-2">
+          <label for="search" class="sr-only">Tìm kiếm</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <i class="fas  text-gray-400"></i>
+            </div>
+            <input type="text" id="search" formControlName="searchTerm" class="form-input pl-10" placeholder="Tìm theo email khách hàng...">
+          </div>
+        </div>
+
+        <!-- Order Status Filter -->
+        <div>
+          <select formControlName="orderStatus" class="form-input">
+            <option value="">Tất cả TT Đơn hàng</option>
+            @for(status of orderStatuses; track status) {
+              <option [value]="status">{{ status }}</option>
+            }
+          </select>
+        </div>
+
+        <!-- <<< THÊM LẠI BỘ LỌC TRẠNG THÁI THANH TOÁN >>> -->
+        <div>
+          <select formControlName="paymentStatus" class="form-input">
+            <option value="">Tất cả TT Thanh toán</option>
+            @for(status of paymentStatuses; track status) {
+              <option [value]="status">{{ status }}</option>
+            }
+          </select>
+        </div>
+
+        <!-- Date Filters -->
+        
+
+      </div>
+    </div>
+
+    <!-- Table Section (Nội dung bên trong không thay đổi) -->
+    <div class="overflow-x-auto">
+      @if (isLoading()) {
+        <div class="p-4">
+          @for(i of [1,2,3,4,5,6,7]; track i) {
+            <div class="h-14 bg-gray-200 rounded-md animate-pulse mb-2"></div>
+          }
+        </div>
+      } @else if (orders().length > 0) {
         <table class="min-w-full divide-y divide-gray-200">
-            <thead class="bg-gray-50">
-                <tr>
-                    <th class="th-cell">Mã ĐH</th>
-                    <th class="th-cell">Khách hàng</th>
-                    <th class="th-cell">Ngày đặt</th>
-                    <th class="th-cell">Tổng tiền</th>
-                    <th class="th-cell">TT Thanh toán</th>
-                    <th class="th-cell">TT Đơn hàng</th>
-                    <th class="th-cell">Hành động</th>
-                </tr>
-            </thead>
-            <tbody class="bg-white divide-y divide-gray-200">
-                @for (order of orders(); track order.orderId) {
-                <tr>
-                    <td class="td-cell font-mono">#{{ order.orderId }}</td>
-                    <td class="td-cell">
-                        <div class="font-medium text-gray-900">{{ order.userFullName }}</div>
-                        <div class="text-sm text-gray-500">{{ order.userEmail }}</div>
-                    </td>
-                    <td class="td-cell">{{ order.orderDate | date:'dd/MM/yyyy HH:mm' }}</td>
-                    <td class="td-cell font-semibold">{{ order.totalAmount | vndCurrency }}</td>
-                    <td class="td-cell">
-                        <select (change)="onPaymentStatusChange(order, $event)"
-        [disabled]="updatingPaymentStatusForOrderId() === order.orderId"
-        class="w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
-        [ngClass]="order.paymentStatus === 'Paid' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'">
-    @for(status of paymentStatuses; track status) {
-        <option [value]="status" [selected]="status === order.paymentStatus">{{ status }}</option>
-    }
-</select>
-                    </td>
-
-                    <!-- Cột Trạng thái đơn hàng giữ nguyên như cũ -->
-                    <td class="td-cell">
-                        <select (change)="onStatusChange(order, $event)"
-        [disabled]="updatingStatusForOrderId() === order.orderId"
-        class="w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
-        [ngClass]="utilsService.getOrderStatusClass(order.orderStatus)">
-    @for(status of orderStatuses; track status) {
-        <option [value]="status" [selected]="status === order.orderStatus">{{ status }}</option>
-    }
-</select>
-                    </td>
-                    <td class="td-cell">
-                        <!-- <<< SỬA LẠI NÚT NÀY >>> -->
-                        <a [routerLink]="['/orders', order.orderId]" class="btn-icon btn-edit" title="Xem chi tiết">
-                            <i class="fas fa-eye"></i>
-                        </a>
-                        <!-- Thêm các nút khác nếu cần, ví dụ: nút để mở modal cập nhật trạng thái -->
-                    </td>
-                </tr>
-                }
-            </tbody>
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="th-cell">Mã ĐH</th>
+              <th class="th-cell">Khách hàng</th>
+              <th class="th-cell">Ngày đặt</th>
+              <th class="th-cell">Tổng tiền</th>
+              <th class="th-cell">TT Thanh toán</th>
+              <th class="th-cell">TT Đơn hàng</th>
+              <th class="th-cell">Hành động</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            @for (order of orders(); track order.orderId) {
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="td-cell font-mono text-gray-500">#{{ order.orderId }}</td>
+                <td class="td-cell">
+                  <div class="font-medium text-gray-900">{{ order.userFullName }}</div>
+                  <div class="text-sm text-gray-500">{{ order.userEmail }}</div>
+                </td>
+                <td class="td-cell text-gray-500">{{ order.orderDate | date:'dd/MM/yyyy HH:mm' }}</td>
+                <td class="td-cell font-semibold">{{ order.totalAmount | vndCurrency }}</td>
+                <td class="td-cell">
+                  <select [value]="order.paymentStatus" (change)="onPaymentStatusChange(order, $event)"
+                          [disabled]="updatingPaymentStatusForOrderId() === order.orderId"
+                          class="status-select"
+                          [ngClass]="order.paymentStatus === 'Paid' ? 'status-paid' : 'status-unpaid'">
+                    @for(status of paymentStatuses; track status) {
+                      <option [value]="status" [selected]="status === order.paymentStatus">{{ status }}</option>
+                    }
+                  </select>
+                </td>
+                <td class="td-cell">
+                  <select [value]="order.orderStatus" (change)="onStatusChange(order, $event)"
+                          [disabled]="updatingStatusForOrderId() === order.orderId"
+                          class="status-select"
+                          [ngClass]="utilsService.getOrderStatusClass(order.orderStatus)">
+                    @for(status of orderStatuses; track status) {
+                      <option [value]="status" [selected]="status === order.orderStatus">{{ status }}</option>
+                    }
+                  </select>
+                </td>
+                <td class="td-cell">
+                  <a [routerLink]="['/orders', order.orderId]" class="btn-icon btn-edit" title="Xem chi tiết">
+                    <i class="fas fa-eye"></i>
+                  </a>
+                </td>
+              </tr>
+            }
+          </tbody>
         </table>
+      } @else {
+        <div class="text-center py-16">
+          <i class="fas fa-receipt text-5xl text-gray-300 mb-4"></i>
+          <h3 class="text-lg font-semibold text-gray-700">Không tìm thấy đơn hàng nào</h3>
+          <p class="text-sm text-gray-500 mt-1">Hãy thử thay đổi bộ lọc hoặc kiểm tra lại sau.</p>
+          <button (click)="resetFilters()" class="btn-secondary mt-4">Xóa bộ lọc</button>
+        </div>
+      }
     </div>
+  </div>
 
-    @if (totalItems() > pageSize) {
+  <!-- Pagination -->
+  @if (totalItems() > pageSize) {
     <div class="mt-6">
-        <app-pagination [currentPage]="currentPage()" [totalItems]="totalItems()" [pageSize]="pageSize"
-            (pageChange)="onPageChange($event)"></app-pagination>
+      <app-pagination [currentPage]="currentPage()" [totalItems]="totalItems()" [pageSize]="pageSize"
+        (pageChange)="onPageChange($event)"></app-pagination>
     </div>
-    }
+  }
 </div>

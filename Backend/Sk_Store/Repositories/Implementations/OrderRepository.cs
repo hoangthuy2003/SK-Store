@@ -36,6 +36,7 @@ namespace Repositories.Implementations
             return await query.OrderByDescending(o => o.OrderDate).ToListAsync();
         }
 
+        // ... (trong file OrderRepository.cs)
         public async Task<(IEnumerable<Order> Orders, int TotalCount)> GetPagedOrdersAsync(OrderFilterParametersDto filterParams)
         {
             var query = _dbSet.Include(o => o.User).AsNoTracking().AsQueryable();
@@ -49,21 +50,32 @@ namespace Repositories.Implementations
             {
                 query = query.Where(o => o.PaymentStatus == filterParams.PaymentStatus);
             }
+
+            // =================================================================
+            // <<< SỬA LẠI LOGIC LỌC NGÀY MỘT CÁCH TRIỆT ĐỂ >>>
+            // =================================================================
             if (filterParams.FromDate.HasValue)
             {
-                query = query.Where(o => o.OrderDate >= filterParams.FromDate.Value);
+                // Lấy ngày, tháng, năm từ tham số và tạo một đối tượng DateTime mới tại thời điểm bắt đầu ngày ở múi giờ UTC.
+                var from = filterParams.FromDate.Value;
+                var fromDateUtc = new DateTime(from.Year, from.Month, from.Day, 0, 0, 0, DateTimeKind.Utc);
+                query = query.Where(o => o.OrderDate >= fromDateUtc);
             }
             if (filterParams.ToDate.HasValue)
             {
-                query = query.Where(o => o.OrderDate <= filterParams.ToDate.Value.AddDays(1).AddTicks(-1)); // Đến cuối ngày
+                // Tương tự, tạo một đối tượng DateTime mới và cộng thêm 1 ngày để lấy tất cả đơn hàng cho đến hết ngày đã chọn.
+                var to = filterParams.ToDate.Value;
+                var toDateUtc = new DateTime(to.Year, to.Month, to.Day, 0, 0, 0, DateTimeKind.Utc).AddDays(1);
+                query = query.Where(o => o.OrderDate < toDateUtc);
             }
+            // =================================================================
+            // <<< KẾT THÚC PHẦN SỬA LỖI >>>
+            // =================================================================
+
             if (!string.IsNullOrEmpty(filterParams.SearchTerm))
             {
-                var term = filterParams.SearchTerm.ToLower();
-                query = query.Where(o => o.OrderId.ToString() == term ||
-                                         o.User.FirstName.ToLower().Contains(term) ||
-                                         o.User.LastName.ToLower().Contains(term) ||
-                                         o.User.Email.ToLower().Contains(term));
+                var term = filterParams.SearchTerm.ToLower().Trim();
+                query = query.Where(o => o.User.Email.ToLower().Contains(term));
             }
 
             // Đếm tổng số lượng trước khi phân trang

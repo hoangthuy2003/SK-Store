@@ -1,38 +1,59 @@
 <div class="container mx-auto">
-  <div class="flex justify-between items-center mb-6">
-    <h1 class="text-2xl font-bold text-gray-800">Quản lý Thương hiệu</h1>
-    <button routerLink="/admin/brands/new" class="btn-primary">
+  <!-- Header -->
+  <div class="flex flex-col md:flex-row justify-between md:items-center mb-6 gap-4">
+    <div>
+      <h1 class="text-2xl font-bold text-gray-800">Quản lý Thương hiệu</h1>
+      <p class="text-sm text-gray-500">Thêm, sửa, xóa các thương hiệu của cửa hàng.</p>
+    </div>
+    <button (click)="openModal()" class="btn-primary">
       <i class="fas fa-plus mr-2"></i>Thêm Thương hiệu
     </button>
   </div>
-  <div class="bg-white shadow-md rounded-lg overflow-x-auto">
-    @if (isLoading()) {
-      <p class="p-4 text-gray-500">Đang tải danh sách thương hiệu...</p>
-    } @else {
-      <table class="min-w-full divide-y divide-gray-200">
-        <thead class="bg-gray-50">
-          <tr>
-            <th class="th-cell">ID</th>
-            <th class="th-cell">Tên Thương hiệu</th>
-            <th class="th-cell">Mô tả</th>
-            <th class="th-cell">Hành động</th>
-          </tr>
-        </thead>
-        <tbody class="bg-white divide-y divide-gray-200">
-          @for (brand of brands(); track brand.brandId) {
-            <tr>
-              <td class="td-cell font-mono">{{ brand.brandId }}</td>
-              <td class="td-cell font-medium text-gray-900">{{ brand.brandName }}</td>
-              <td class="td-cell text-gray-500">{{ brand.description }}</td>
-              <td class="td-cell space-x-2">
-                <button [routerLink]="['/admin/brands/edit', brand.brandId]" class="btn-icon btn-edit"><i class="fas fa-pencil-alt"></i></button>
-                <button (click)="onDelete(brand.brandId)" class="btn-icon btn-delete"><i class="fas fa-trash-alt"></i></button>
-              </td>
-            </tr>
+
+  <!-- Card chứa bảng -->
+  <div class="bg-white shadow-md rounded-lg overflow-hidden">
+    <div class="overflow-x-auto">
+      @if (isLoading()) {
+        <!-- Skeleton Loading -->
+        <div class="p-4">
+          @for(i of [1,2,3,4,5]; track i) {
+            <div class="h-12 bg-gray-200 rounded-md animate-pulse mb-2"></div>
           }
-        </tbody>
-      </table>
-    }
+        </div>
+      } @else if (brands().length > 0) {
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="th-cell w-16">ID</th>
+              <th class="th-cell">Tên Thương hiệu</th>
+              <th class="th-cell">Mô tả</th>
+              <th class="th-cell w-32">Hành động</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            @for (brand of brands(); track brand.brandId) {
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="td-cell font-mono text-gray-500">{{ brand.brandId }}</td>
+                <td class="td-cell font-medium text-gray-900">{{ brand.brandName }}</td>
+                <td class="td-cell text-gray-500 max-w-sm truncate">{{ brand.description || 'Không có mô tả' }}</td>
+                <td class="td-cell space-x-2">
+                  <button (click)="openModal(brand)" class="btn-icon btn-edit" title="Chỉnh sửa"><i class="fas fa-pencil-alt"></i></button>
+                  <button (click)="onDelete(brand.brandId)" class="btn-icon btn-delete" title="Xóa"><i class="fas fa-trash-alt"></i></button>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      } @else {
+        <!-- Empty State -->
+        <div class="text-center py-16">
+          <i class="fas fa-copyright text-5xl text-gray-300 mb-4"></i>
+          <h3 class="text-lg font-semibold text-gray-700">Chưa có thương hiệu nào</h3>
+          <p class="text-sm text-gray-500 mt-1">Hãy bắt đầu bằng cách thêm một thương hiệu mới.</p>
+          <button (click)="openModal()" class="btn-primary mt-4">Thêm Thương hiệu</button>
+        </div>
+      }
+    </div>
   </div>
 
   <!-- Pagination -->
@@ -47,3 +68,11 @@
     </div>
   }
 </div>
+
+<!-- Hiển thị modal -->
+@if(isModalOpen()) {
+  <app-brand-modal 
+    [brand]="selectedBrand()" 
+    (close)="handleModalClose($event)">
+  </app-brand-modal>
+}

@@ -6,11 +6,12 @@ import { BrandService } from '../../../services/brand.service';
 import { NotificationService } from '../../../services/notification.service';
 import { BrandDto } from '../../../models/brand.model';
 import { PaginationComponent } from '../../../components/pagination/pagination.component';
+import { BrandModalComponent } from '../brand-modal/brand-modal.component'; // <<< THÊM IMPORT
 
 @Component({
   selector: 'app-admin-brand-list',
   standalone: true,
-  imports: [CommonModule, RouterLink, PaginationComponent],
+  imports: [CommonModule, RouterLink, PaginationComponent, BrandModalComponent], // <<< THÊM BrandModalComponent
   templateUrl: './brand-list.component.html',
   styleUrls: ['../admin-shared.css']
 })
@@ -21,10 +22,13 @@ export class AdminBrandListComponent implements OnInit {
   brands = signal<BrandDto[]>([]);
   isLoading = signal(true);
   
-  // Pagination signals
   currentPage = signal(1);
   pageSize = 6;
   totalItems = signal(0);
+
+  // <<< THÊM CÁC STATE CHO MODAL >>>
+  isModalOpen = signal(false);
+  selectedBrand = signal<BrandDto | null>(null);
 
   ngOnInit(): void {
     this.loadBrands();
@@ -32,7 +36,6 @@ export class AdminBrandListComponent implements OnInit {
 
   loadBrands(): void {
     this.isLoading.set(true);
-    // Gọi đúng phương thức getPagedBrands với các tham số phân trang
     this.brandService.getPagedBrands(this.currentPage(), this.pageSize).subscribe({
       next: (response: HttpResponse<BrandDto[]>) => {
         this.brands.set(response.body || []);
@@ -40,7 +43,7 @@ export class AdminBrandListComponent implements OnInit {
         this.totalItems.set(totalCount ? +totalCount : 0);
         this.isLoading.set(false);
       },
-      error: (err) => {
+      error: () => {
         this.notifier.showError("Không thể tải danh sách thương hiệu.");
         this.isLoading.set(false);
       }
@@ -52,12 +55,24 @@ export class AdminBrandListComponent implements OnInit {
     this.loadBrands();
   }
 
+  // <<< THÊM CÁC HÀM XỬ LÝ MODAL >>>
+  openModal(brand: BrandDto | null = null): void {
+    this.selectedBrand.set(brand);
+    this.isModalOpen.set(true);
+  }
+
+  handleModalClose(shouldReload: boolean): void {
+    this.isModalOpen.set(false);
+    if (shouldReload) {
+      this.loadBrands();
+    }
+  }
+
   onDelete(id: number): void {
-    if (confirm('Bạn có chắc muốn xóa thương hiệu này?')) {
+    if (confirm('Bạn có chắc muốn xóa thương hiệu này? Thao tác này không thể hoàn tác.')) {
       this.brandService.deleteBrand(id).subscribe({
         next: () => {
           this.notifier.showSuccess('Xóa thương hiệu thành công!');
-          // Tải lại dữ liệu sau khi xóa
           this.loadBrands();
         },
         error: (err) => this.notifier.showError(err.message)

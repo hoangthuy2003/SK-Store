@@ -1,36 +1,64 @@
 <div class="container mx-auto">
-  <div class="flex justify-between items-center mb-6">
-    <h1 class="text-2xl font-bold text-gray-800">Quản lý Danh mục</h1>
-    <button routerLink="/admin/categories/new" class="btn-primary">
+  <!-- Header -->
+  <div class="flex flex-col md:flex-row justify-between md:items-center mb-6 gap-4">
+    <div>
+      <h1 class="text-2xl font-bold text-gray-800">Quản lý Danh mục</h1>
+      <p class="text-sm text-gray-500">Thêm, sửa, xóa các danh mục sản phẩm của cửa hàng.</p>
+    </div>
+    <!-- THAY ĐỔI: Nút này sẽ gọi hàm openModal() -->
+    <button (click)="openModal()" class="btn-primary">
       <i class="fas fa-plus mr-2"></i>Thêm Danh mục
     </button>
   </div>
-  <div class="bg-white shadow-md rounded-lg overflow-x-auto">
-    <table class="min-w-full divide-y divide-gray-200">
-      <thead class="bg-gray-50">
-        <tr>
-          <th class="th-cell">ID</th>
-          <th class="th-cell">Tên Danh mục</th>
-          <th class="th-cell">Mô tả</th>
-          <th class="th-cell">Hành động</th>
-        </tr>
-      </thead>
-      <tbody class="bg-white divide-y divide-gray-200">
-        @for (category of categories(); track category.categoryId) {
-          <tr>
-            <td class="td-cell font-mono">{{ category.categoryId }}</td>
-            <td class="td-cell font-medium text-gray-900">{{ category.categoryName }}</td>
-            <td class="td-cell text-gray-500">{{ category.description }}</td>
-            <td class="td-cell space-x-2">
-              <button [routerLink]="['/admin/categories/edit', category.categoryId]" class="btn-icon btn-edit"><i class="fas fa-pencil-alt"></i></button>
-              <button (click)="onDelete(category.categoryId)" class="btn-icon btn-delete"><i class="fas fa-trash-alt"></i></button>
-            </td>
-          </tr>
-        }
-      </tbody>
-    </table>
+
+  <!-- Card chứa bảng -->
+  <div class="bg-white shadow-md rounded-lg overflow-hidden">
+    <div class="overflow-x-auto">
+      @if (isLoading()) {
+        <!-- Skeleton Loading -->
+        <div class="p-4">
+          @for(i of [1,2,3,4,5]; track i) {
+            <div class="h-12 bg-gray-200 rounded-md animate-pulse mb-2"></div>
+          }
+        </div>
+      } @else if (categories().length > 0) {
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="th-cell w-16">ID</th>
+              <th class="th-cell">Tên Danh mục</th>
+              <th class="th-cell">Mô tả</th>
+              <th class="th-cell w-32">Hành động</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            @for (category of categories(); track category.categoryId) {
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="td-cell font-mono text-gray-500">{{ category.categoryId }}</td>
+                <td class="td-cell font-medium text-gray-900">{{ category.categoryName }}</td>
+                <td class="td-cell text-gray-500 max-w-sm truncate">{{ category.description || 'Không có mô tả' }}</td>
+                <td class="td-cell space-x-2">
+                  <!-- THAY ĐỔI: Các nút này gọi hàm openModal() và onDelete() -->
+                  <button (click)="openModal(category)" class="btn-icon btn-edit" title="Chỉnh sửa"><i class="fas fa-pencil-alt"></i></button>
+                  <button (click)="onDelete(category.categoryId)" class="btn-icon btn-delete" title="Xóa"><i class="fas fa-trash-alt"></i></button>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      } @else {
+        <!-- Empty State -->
+        <div class="text-center py-16">
+          <i class="fas fa-tags text-5xl text-gray-300 mb-4"></i>
+          <h3 class="text-lg font-semibold text-gray-700">Chưa có danh mục nào</h3>
+          <p class="text-sm text-gray-500 mt-1">Hãy bắt đầu bằng cách thêm một danh mục mới.</p>
+          <button (click)="openModal()" class="btn-primary mt-4">Thêm Danh mục</button>
+        </div>
+      }
+    </div>
   </div>
 
+  <!-- Pagination -->
   @if (totalItems() > pageSize) {
     <div class="mt-6">
       <app-pagination
@@ -42,3 +70,11 @@
     </div>
   }
 </div>
+
+<!-- THÊM: Hiển thị modal một cách có điều kiện -->
+@if(isModalOpen()) {
+  <app-category-modal 
+    [category]="selectedCategory()" 
+    (close)="handleModalClose($event)">
+  </app-category-modal>
+}

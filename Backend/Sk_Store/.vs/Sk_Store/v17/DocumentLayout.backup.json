@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "D:\\SK_Store_Website\\Backend\\Sk_Store\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\implementations\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\implementations\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\interfaces\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\interfaces\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\order\\orderfilterparametersdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\order\\orderfilterparametersdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|d:\\sk_store_website\\backend\\sk_store\\sk_store\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|solutionrelative:sk_store\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\dashboard\\dashboardstatsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\dashboard\\dashboardstatsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\implementations\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\implementations\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|d:\\sk_store_website\\backend\\sk_store\\sk_store\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -49,14 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\implementations\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\implementations\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\interfaces\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\interfaces\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\order\\orderfilterparametersdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\order\\orderfilterparametersdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|d:\\sk_store_website\\backend\\sk_store\\sk_store\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -469,59 +469,31 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DashboardController.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\DashboardController.cs",
-              "RelativeDocumentMoniker": "Sk_Store\\Controllers\\DashboardController.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\DashboardController.cs",
-              "RelativeToolTip": "Sk_Store\\Controllers\\DashboardController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T08:00:43.656Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DashboardService.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\DashboardService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\DashboardService.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\DashboardService.cs*",
-              "RelativeToolTip": "Services\\Implementations\\DashboardService.cs*",
-              "ViewState": "AgIAADoAAAAAAAAAAAAywFcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T08:00:26.154Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "IDashboardService.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IDashboardService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IDashboardService.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IDashboardService.cs*",
-              "RelativeToolTip": "Services\\Interfaces\\IDashboardService.cs*",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IDashboardService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IDashboardService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T08:00:15.133Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T08:00:15.133Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "DashboardStatsDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Dashboard\\DashboardStatsDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Dashboard\\DashboardStatsDto.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Dashboard\\DashboardStatsDto.cs*",
-              "RelativeToolTip": "Application\\DTOs\\Dashboard\\DashboardStatsDto.cs*",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Dashboard\\DashboardStatsDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Dashboard\\DashboardStatsDto.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAswC8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T07:59:49.456Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T07:59:49.456Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "OrderService.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\OrderService.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\OrderService.cs",
@@ -533,45 +505,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Program.cs",
               "RelativeDocumentMoniker": "Sk_Store\\Program.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Program.cs*",
-              "RelativeToolTip": "Sk_Store\\Program.cs*",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAAAFoAAABCAAAAAAAAAA==",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Program.cs",
+              "RelativeToolTip": "Sk_Store\\Program.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAGIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T17:34:44.979Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-26T17:34:44.979Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UpdateOrderPaymentStatusDto.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\UpdateOrderPaymentStatusDto.cs",
-              "RelativeDocumentMoniker": "Application\\DTOs\\Order\\UpdateOrderPaymentStatusDto.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\UpdateOrderPaymentStatusDto.cs",
-              "RelativeToolTip": "Application\\DTOs\\Order\\UpdateOrderPaymentStatusDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "OrderFilterParametersDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\OrderFilterParametersDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Order\\OrderFilterParametersDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\OrderFilterParametersDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Order\\OrderFilterParametersDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T03:27:53.805Z"
+              "WhenOpened": "2025-06-24T02:33:53.831Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "OrderRepository.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\OrderRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\OrderRepository.cs",
               "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\OrderRepository.cs",
               "RelativeToolTip": "Repositories\\Implementations\\OrderRepository.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAA1wCUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAswFoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-28T16:19:36.845Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 1,
               "Title": "IOrderRepository.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IOrderRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IOrderRepository.cs",
@@ -583,7 +554,43 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
+              "Title": "DashboardService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\DashboardService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\DashboardService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\DashboardService.cs",
+              "RelativeToolTip": "Services\\Implementations\\DashboardService.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAywFcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T08:00:26.154Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "Sk_Store\\Controllers\\DashboardController.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "Sk_Store\\Controllers\\DashboardController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T08:00:43.656Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UpdateOrderPaymentStatusDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\UpdateOrderPaymentStatusDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Order\\UpdateOrderPaymentStatusDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\UpdateOrderPaymentStatusDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Order\\UpdateOrderPaymentStatusDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T03:27:53.805Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "IOrderService.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IOrderService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IOrderService.cs",
@@ -595,7 +602,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "EmailService.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\EmailService.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\EmailService.cs",
@@ -607,7 +614,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "OrdersController.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\OrdersController.cs",
               "RelativeDocumentMoniker": "Sk_Store\\Controllers\\OrdersController.cs",
@@ -619,7 +626,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "CategoryService.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\CategoryService.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\CategoryService.cs",
@@ -628,18 +635,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-31T15:05:20.587Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "OrderFilterParametersDto.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\OrderFilterParametersDto.cs",
-              "RelativeDocumentMoniker": "Application\\DTOs\\Order\\OrderFilterParametersDto.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\OrderFilterParametersDto.cs",
-              "RelativeToolTip": "Application\\DTOs\\Order\\OrderFilterParametersDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T02:33:53.831Z"
             },
             {
               "$type": "Document",
