@@ -9,6 +9,7 @@ import { ProductDto, ProductFilterParameters } from '../../../models/product.mod
 // Services
 import { ProductService } from '../../../services/product.service';
 import { NotificationService } from '../../../services/notification.service'; // <<< THÊM IMPORT
+import { ImageService } from '../../../services/image.service';
 
 // Pipes & Components
 import { VndCurrencyPipe } from '../../../pipes/vnd-currency.pipe';
@@ -24,6 +25,7 @@ import { PaginationComponent } from '../../../components/pagination/pagination.c
 export class AdminProductListComponent implements OnInit {
   private productService = inject(ProductService);
   private notifier = inject(NotificationService); // <<< THÊM INJECT
+  private imageService = inject(ImageService);
 
   // State signals
   isLoading = signal(true);
@@ -66,17 +68,25 @@ export class AdminProductListComponent implements OnInit {
   }
 
   onDeleteProduct(productId: number): void {
-  if (confirm('Bạn có chắc chắn muốn ẩn sản phẩm này không?')) {
-    this.productService.deleteProduct(productId).subscribe({
-      next: () => {
-        this.notifier.showSuccess('Ẩn sản phẩm thành công!'); // Sửa thông báo thành công
-        // Tải lại danh sách sản phẩm ở trang hiện tại
-        this.fetchProducts(); 
-      },
-      error: (err) => {
-        this.notifier.showError(err.message);
-      }
-    });
+    if (confirm('Bạn có chắc chắn muốn ẩn sản phẩm này không?')) {
+      this.productService.deleteProduct(productId).subscribe({
+        next: () => {
+          this.notifier.showSuccess('Ẩn sản phẩm thành công!'); // Sửa thông báo thành công
+          // Tải lại danh sách sản phẩm ở trang hiện tại
+          this.fetchProducts(); 
+        },
+        error: (err) => {
+          this.notifier.showError(err.message);
+        }
+      });
+    }
   }
-}
+
+  // Helper method để get image URL
+  getImageUrl(imageUrl: string | undefined): string {
+    if (!imageUrl) {
+      return this.imageService.getPlaceholderUrl();
+    }
+    return this.imageService.getFullImageUrl(imageUrl);
+  }
 }

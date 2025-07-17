@@ -11,7 +11,7 @@ import { BrandModalComponent } from '../brand-modal/brand-modal.component'; // <
 @Component({
   selector: 'app-admin-brand-list',
   standalone: true,
-  imports: [CommonModule, RouterLink, PaginationComponent, BrandModalComponent], // <<< THÊM BrandModalComponent
+  imports: [CommonModule, PaginationComponent, BrandModalComponent], // <<< THÊM BrandModalComponent
   templateUrl: './brand-list.component.html',
   styleUrls: ['../admin-shared.css']
 })

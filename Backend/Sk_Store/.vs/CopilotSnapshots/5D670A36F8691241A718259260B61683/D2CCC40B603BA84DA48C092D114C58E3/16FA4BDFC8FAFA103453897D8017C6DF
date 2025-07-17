@@ -1,0 +1,110 @@
+﻿using BusinessObjects;
+
+namespace Repositories.Interfaces
+{
+    /// <summary>
+    /// Interface cho repository quản lý ảnh sản phẩm
+    /// </summary>
+    public interface IProductImageRepository
+    {
+        /// <summary>
+        /// Lấy ảnh theo ID
+        /// </summary>
+        /// <param name="imageId">ID của ảnh</param>
+        /// <returns>ProductImage object hoặc null nếu không tìm thấy</returns>
+        Task<ProductImage?> GetByIdAsync(int imageId);
+
+        /// <summary>
+        /// Lấy tất cả ảnh của một sản phẩm
+        /// </summary>
+        /// <param name="productId">ID của sản phẩm</param>
+        /// <returns>Danh sách ảnh của sản phẩm</returns>
+        Task<IEnumerable<ProductImage>> GetImagesByProductIdAsync(int productId);
+
+        /// <summary>
+        /// Lấy ảnh chính của sản phẩm
+        /// </summary>
+        /// <param name="productId">ID của sản phẩm</param>
+        /// <returns>Ảnh chính hoặc null nếu không có</returns>
+        Task<ProductImage?> GetPrimaryImageByProductIdAsync(int productId);
+
+        /// <summary>
+        /// Lấy tất cả ảnh phụ của sản phẩm
+        /// </summary>
+        /// <param name="productId">ID của sản phẩm</param>
+        /// <returns>Danh sách ảnh phụ</returns>
+        Task<IEnumerable<ProductImage>> GetSecondaryImagesByProductIdAsync(int productId);
+
+        /// <summary>
+        /// Thêm ảnh mới
+        /// </summary>
+        /// <param name="productImage">Ảnh cần thêm</param>
+        /// <returns>Ảnh đã được thêm</returns>
+        Task<ProductImage> AddAsync(ProductImage productImage);
+
+        /// <summary>
+        /// Thêm nhiều ảnh cùng lúc
+        /// </summary>
+        /// <param name="productImages">Danh sách ảnh cần thêm</param>
+        /// <returns>Danh sách ảnh đã được thêm</returns>
+        Task<IEnumerable<ProductImage>> AddRangeAsync(IEnumerable<ProductImage> productImages);
+
+        /// <summary>
+        /// Cập nhật thông tin ảnh
+        /// </summary>
+        /// <param name="productImage">Ảnh cần cập nhật</param>
+        /// <returns>Ảnh đã được cập nhật</returns>
+        Task<ProductImage> UpdateAsync(ProductImage productImage);
+
+        /// <summary>
+        /// Xóa ảnh theo ID
+        /// </summary>
+        /// <param name="imageId">ID của ảnh cần xóa</param>
+        /// <returns>True nếu xóa thành công, False nếu không tìm thấy</returns>
+        Task<bool> DeleteAsync(int imageId);
+
+        /// <summary>
+        /// Xóa ảnh theo object
+        /// </summary>
+        /// <param name="productImage">Ảnh cần xóa</param>
+        /// <returns>True nếu xóa thành công</returns>
+        Task<bool> DeleteAsync(ProductImage productImage);
+
+        /// <summary>
+        /// Xóa tất cả ảnh của một sản phẩm
+        /// </summary>
+        /// <param name="productId">ID của sản phẩm</param>
+        /// <returns>Số lượng ảnh đã xóa</returns>
+        Task<int> DeleteAllByProductIdAsync(int productId);
+
+        /// <summary>
+        /// Đặt ảnh làm ảnh chính (và bỏ primary của các ảnh khác)
+        /// </summary>
+        /// <param name="imageId">ID của ảnh sẽ thành ảnh chính</param>
+        /// <param name="productId">ID của sản phẩm</param>
+        /// <returns>True nếu thành công</returns>
+        Task<bool> SetPrimaryImageAsync(int imageId, int productId);
+
+        /// <summary>
+        /// Kiểm tra ảnh có thuộc về sản phẩm không
+        /// </summary>
+        /// <param name="imageId">ID của ảnh</param>
+        /// <param name="productId">ID của sản phẩm</param>
+        /// <returns>True nếu ảnh thuộc về sản phẩm</returns>
+        Task<bool> ImageBelongsToProductAsync(int imageId, int productId);
+
+        /// <summary>
+        /// Đếm số lượng ảnh của sản phẩm
+        /// </summary>
+        /// <param name="productId">ID của sản phẩm</param>
+        /// <returns>Số lượng ảnh</returns>
+        Task<int> CountImagesByProductIdAsync(int productId);
+
+        /// <summary>
+        /// Kiểm tra ảnh có tồn tại không
+        /// </summary>
+        /// <param name="imageId">ID của ảnh</param>
+        /// <returns>True nếu tồn tại</returns>
+        Task<bool> ExistsAsync(int imageId);
+    }
+}

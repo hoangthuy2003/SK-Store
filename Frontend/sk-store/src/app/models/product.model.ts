@@ -87,3 +87,48 @@ export interface UpdateProductDto { // <<< THÊM EXPORT VÀO ĐÂY
   isActive?: boolean;
 }
 
+// DTOs cho upload file
+export interface CreateProductWithFilesDto {
+  productName: string;
+  description?: string;
+  price: number;
+  stockQuantity: number;
+  categoryId: number;
+  brandId: number;
+  isActive: boolean;
+  primaryImageIndex?: number;
+  // ImageFiles sẽ được thêm vào FormData, không cần define ở đây
+}
+
+export interface UpdateProductWithFilesDto {
+  productName?: string;
+  description?: string;
+  price?: number;
+  stockQuantity?: number;
+  categoryId?: number;
+  brandId?: number;
+  isActive?: boolean;
+  primaryImageIndex?: number;
+  replaceAllImages?: boolean;
+  imagesToDelete?: number[]; // Thêm property này
+  // ImageFiles sẽ được thêm vào FormData
+}
+
+export interface ProductFileUploadResponse {
+  productId: number;
+  productName: string;
+  price: number;
+  productImages: ProductImageDto[];
+}
+
+export interface CreateProductAttributeDto {
+  attributeName: string;
+  attributeValue: string;
+}
+
+export interface UpdateProductAttributeDto {
+  attributeId?: number;
+  attributeName: string;
+  attributeValue: string;
+}
+

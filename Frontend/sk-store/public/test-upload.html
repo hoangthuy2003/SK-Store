@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Upload Ảnh Sản Phẩm - SK Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Upload Ảnh Sản Phẩm</h1>
+    
+    <form id="uploadForm">
+        <div class="form-group">
+            <label for="productName">Tên sản phẩm *</label>
+            <input type="text" id="productName" name="productName" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="description">Mô tả</label>
+            <textarea id="description" name="description" rows="3"></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="price">Giá *</label>
+            <input type="number" id="price" name="price" step="0.01" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="stockQuantity">Số lượng tồn kho *</label>
+            <input type="number" id="stockQuantity" name="stockQuantity" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="categoryId">ID Danh mục *</label>
+            <input type="number" id="categoryId" name="categoryId" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="brandId">ID Thương hiệu *</label>
+            <input type="number" id="brandId" name="brandId" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="primaryImageIndex">Index ảnh chính (bắt đầu từ 0)</label>
+            <input type="number" id="primaryImageIndex" name="primaryImageIndex" value="0" min="0">
+        </div>
+        
+        <div class="form-group">
+            <label for="imageFiles">Chọn ảnh sản phẩm (JPG, JPEG, PNG - max 5MB/file)</label>
+            <input type="file" id="imageFiles" name="imageFiles" multiple accept="image/*,.jpg,.jpeg,.png">
+        </div>
+        
+        <div class="form-group">
+            <label for="token">JWT Token *</label>
+            <textarea id="token" name="token" rows="3" placeholder="Nhập JWT token từ API login" required></textarea>
+        </div>
+        
+        <button type="submit">Tạo sản phẩm với ảnh</button>
+    </form>
+    
+    <div id="result" class="result" style="display: none;"></div>
+    
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = 'Đang upload...';
+            
+            try {
+                const formData = new FormData();
+                
+                // Thêm dữ liệu text
+                formData.append('ProductName', document.getElementById('productName').value);
+                formData.append('Description', document.getElementById('description').value);
+                formData.append('Price', document.getElementById('price').value);
+                formData.append('StockQuantity', document.getElementById('stockQuantity').value);
+                formData.append('CategoryId', document.getElementById('categoryId').value);
+                formData.append('BrandId', document.getElementById('brandId').value);
+                formData.append('IsActive', 'true');
+                formData.append('PrimaryImageIndex', document.getElementById('primaryImageIndex').value);
+                
+                // Thêm files
+                const fileInput = document.getElementById('imageFiles');
+                for (let i = 0; i < fileInput.files.length; i++) {
+                    formData.append('ImageFiles', fileInput.files[i]);
+                }
+                
+                const token = document.getElementById('token').value.trim();
+                
+                const response = await fetch('http://localhost:4200/api/products/upload', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': 'Bearer ' + token
+                    },
+                    body: formData
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    resultDiv.innerHTML = 
+                        '<h3 class="success">✅ Upload thành công!</h3>' +
+                        '<p><strong>Product ID:</strong> ' + result.productId + '</p>' +
+                        '<p><strong>Tên sản phẩm:</strong> ' + result.productName + '</p>' +
+                        '<p><strong>Giá:</strong> ' + result.price.toLocaleString() + ' VNĐ</p>' +
+                        '<h4>Ảnh đã upload:</h4>' +
+                        '<div>' +
+                            result.productImages.map(img => 
+                                '<div style="margin: 10px 0;">' +
+                                    '<img src="https://localhost:7131' + img.imageUrl + '" alt="Product Image" style="max-width: 200px; height: auto; border: 1px solid #ddd;">' +
+                                    '<p>' + (img.isPrimary ? '⭐ Ảnh chính' : 'Ảnh phụ') + '</p>' +
+                                '</div>'
+                            ).join('') +
+                        '</div>';
+                } else {
+                    resultDiv.innerHTML = 
+                        '<h3 class="error">❌ Lỗi upload!</h3>' +
+                        '<p><strong>Status:</strong> ' + response.status + '</p>' +
+                        '<p><strong>Message:</strong> ' + (result.message || 'Unknown error') + '</p>' +
+                        '<pre>' + JSON.stringify(result, null, 2) + '</pre>';
+                }
+            } catch (error) {
+                resultDiv.innerHTML = 
+                    '<h3 class="error">❌ Lỗi kết nối!</h3>' +
+                    '<p>' + error.message + '</p>';
+            }
+        });
+    </script>
+</body>
+</html>

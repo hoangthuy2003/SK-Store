@@ -75,17 +75,17 @@
     
     <form id="productForm">
         <div class="form-group">
-            <label for="productName">Tên s?n ph?m:</label>
+            <label for="productName">Tï¿½n s?n ph?m:</label>
             <input type="text" id="productName" name="productName" required>
         </div>
         
         <div class="form-group">
-            <label for="description">Mô t?:</label>
+            <label for="description">Mï¿½ t?:</label>
             <textarea id="description" name="description" rows="3"></textarea>
         </div>
         
         <div class="form-group">
-            <label for="price">Giá:</label>
+            <label for="price">Giï¿½:</label>
             <input type="number" id="price" name="price" step="0.01" min="0.01" required>
         </div>
         
@@ -111,13 +111,13 @@
         </div>
         
         <div class="form-group">
-            <label for="primaryImageIndex">?nh chính (ch? s? b?t ??u t? 0):</label>
+            <label for="primaryImageIndex">?nh chï¿½nh (ch? s? b?t ??u t? 0):</label>
             <input type="number" id="primaryImageIndex" name="primaryImageIndex" min="0" value="0">
         </div>
         
         <div class="form-group">
             <label for="authToken">JWT Token (Bearer):</label>
-            <input type="text" id="authToken" name="authToken" placeholder="Nh?p JWT token ?? xác th?c">
+            <input type="text" id="authToken" name="authToken" placeholder="Nh?p JWT token ?? xï¿½c th?c">
         </div>
         
         <button type="submit">T?o s?n ph?m</button>
@@ -157,7 +157,7 @@
             try {
                 const formData = new FormData();
                 
-                // Thêm thông tin s?n ph?m
+                // Thï¿½m thï¿½ng tin s?n ph?m
                 formData.append('ProductName', document.getElementById('productName').value);
                 formData.append('Description', document.getElementById('description').value);
                 formData.append('Price', document.getElementById('price').value);
@@ -166,7 +166,7 @@
                 formData.append('BrandId', document.getElementById('brandId').value);
                 formData.append('PrimaryImageIndex', document.getElementById('primaryImageIndex').value);
                 
-                // Thêm files
+                // Thï¿½m files
                 const files = document.getElementById('imageFiles').files;
                 for (let i = 0; i < files.length; i++) {
                     formData.append('ImageFiles', files[i]);
@@ -191,16 +191,16 @@
                 
                 if (response.ok) {
                     resultDiv.innerHTML = `<div class="success">
-                        <h3>Thành công!</h3>
-                        <p>S?n ph?m ?ã ???c t?o v?i ID: ${result.productId}</p>
-                        <p>Tên: ${result.productName}</p>
+                        <h3>Thï¿½nh cï¿½ng!</h3>
+                        <p>S?n ph?m ?ï¿½ ???c t?o v?i ID: ${result.productId}</p>
+                        <p>Tï¿½n: ${result.productName}</p>
                         <p>S? ?nh: ${result.productImages.length}</p>
                         <pre>${JSON.stringify(result, null, 2)}</pre>
                     </div>`;
                 } else {
                     resultDiv.innerHTML = `<div class="error">
                         <h3>L?i!</h3>
-                        <p>${result.message || 'Có l?i x?y ra'}</p>
+                        <p>${result.message || 'Cï¿½ l?i x?y ra'}</p>
                         <pre>${JSON.stringify(result, null, 2)}</pre>
                     </div>`;
                 }

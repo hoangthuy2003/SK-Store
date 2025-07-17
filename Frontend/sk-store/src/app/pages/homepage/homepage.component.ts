@@ -2,6 +2,7 @@ import { Component, OnInit, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ProductService } from '../../services/product.service';
+import { ImageService } from '../../services/image.service';
 import { ProductDto } from '../../models/product.model';
 import { VndCurrencyPipe } from '../../pipes/vnd-currency.pipe';
 @Component({
@@ -17,6 +18,7 @@ import { VndCurrencyPipe } from '../../pipes/vnd-currency.pipe';
 })
 export class HomepageComponent implements OnInit {
   private productService = inject(ProductService);
+  private imageService = inject(ImageService);
 
   // State signals
   featuredProducts = signal<ProductDto[]>([]);
@@ -43,6 +45,14 @@ export class HomepageComponent implements OnInit {
         this.isLoading.set(false);
       }
     });
+  }
+
+  // Helper method để get image URL
+  getImageUrl(imageUrl: string | undefined): string {
+    if (!imageUrl) {
+      return this.imageService.getPlaceholderUrl();
+    }
+    return this.imageService.getFullImageUrl(imageUrl);
   }
 
   

@@ -3,20 +3,40 @@
   "WorkspaceRootPath": "D:\\SK_Store_Website\\Backend\\Sk_Store\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|d:\\sk_store_website\\backend\\sk_store\\sk_store\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|solutionrelative:sk_store\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\implementations\\productimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\implementations\\productimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\interfaces\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\interfaces\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\implementations\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\implementations\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\implementations\\fileuploadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\implementations\\fileuploadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\interfaces\\ifileuploadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\interfaces\\ifileuploadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\implementations\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\implementations\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|d:\\sk_store_website\\backend\\sk_store\\sk_store\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|solutionrelative:sk_store\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|d:\\sk_store_website\\backend\\sk_store\\sk_store\\wwwroot\\test-upload.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|solutionrelative:sk_store\\wwwroot\\test-upload.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\interfaces\\ifileuploadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\interfaces\\ifileuploadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\product\\productfileuploaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\product\\productfileuploaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\implementations\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -143,28 +163,12 @@
       "RelativeMoniker": "D:0:0:{C14D48C2-7481-464B-A0E8-601C54CB400C}|Sk_Store\\Sk_Store.csproj|solutionrelative:sk_store\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\implementations\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\implementations\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\implementations\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\implementations\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\implementations\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\implementations\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\interfaces\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\interfaces\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\implementations\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|solutionrelative:repositories\\implementations\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{24EBDE53-99A8-4ABE-94B9-AB9AA7065BC3}|Repositories\\Repositories.csproj|d:\\sk_store_website\\backend\\sk_store\\repositories\\productfilterparameters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -464,18 +468,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SK_Store_Website\\Sk_Store\\Services\\Class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|d:\\sk_store_website\\backend\\sk_store\\services\\implementations\\fileuploadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A1F4FD3-5EA4-44B2-9F00-CCA01C77546C}|Services\\Services.csproj|solutionrelative:services\\implementations\\fileuploadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|d:\\sk_store_website\\backend\\sk_store\\application\\dtos\\product\\productfileuploaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9E1EA47-0688-4939-92BD-E8F3C1F3E51F}|Application\\Application.csproj|solutionrelative:application\\dtos\\product\\productfileuploaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SK_Store_Website\\Backend\\Sk_Store\\ImageUploadGuide.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ImageUploadGuide.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -484,76 +476,111 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 270,
+          "DockedWidth": 176,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Program.cs",
-              "RelativeDocumentMoniker": "Sk_Store\\Program.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Program.cs",
-              "RelativeToolTip": "Sk_Store\\Program.cs",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAAAH4AAAAAAAAAAAAAAA==",
+              "Title": "ProductImageRepository.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\ProductImageRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\ProductImageRepository.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\ProductImageRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\ProductImageRepository.cs",
+              "ViewState": "AgIAAAwBAAAAAAAAAAA0wAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T17:34:44.979Z",
+              "WhenOpened": "2025-07-17T04:17:55.965Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FileUploadService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\FileUploadService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\FileUploadService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\FileUploadService.cs",
+              "RelativeToolTip": "Services\\Implementations\\FileUploadService.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAA5wFkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T04:12:43.428Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "OrderRepository.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\OrderRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementations\\OrderRepository.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\OrderRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementations\\OrderRepository.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAuwFoAAAAJAAAAAAAAAA==",
+              "Title": "IFileUploadService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IFileUploadService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IFileUploadService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IFileUploadService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IFileUploadService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T16:19:36.845Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-17T04:12:18.474Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "Sk_Store\\Controllers\\ProductsController.cs",
               "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\ProductsController.cs",
               "RelativeToolTip": "Sk_Store\\Controllers\\ProductsController.cs",
-              "ViewState": "AgIAAPkAAAAAAAAAAAAuwDcAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAkBAAAAAAAAAABYwPMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-31T14:34:18.145Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "OrderService.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\OrderService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\OrderService.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\OrderService.cs",
-              "RelativeToolTip": "Services\\Implementations\\OrderService.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAACkAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "IProductRepository.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IProductRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IProductRepository.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IProductRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAYwAkAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T10:45:16.769Z",
+              "WhenOpened": "2025-05-28T14:51:14.623Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\ProductRepository.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\ProductRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\ProductRepository.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAzwEEAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T15:47:53.881Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DashboardStatsDto.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Dashboard\\DashboardStatsDto.cs",
-              "RelativeDocumentMoniker": "Application\\DTOs\\Dashboard\\DashboardStatsDto.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Dashboard\\DashboardStatsDto.cs",
-              "RelativeToolTip": "Application\\DTOs\\Dashboard\\DashboardStatsDto.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAswC8AAAABAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "ProductFileUploadDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\ProductFileUploadDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Product\\ProductFileUploadDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\ProductFileUploadDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Product\\ProductFileUploadDto.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAA5wF8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T07:59:49.456Z"
+              "WhenOpened": "2025-07-17T04:07:45.282Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\OrderRepository.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\OrderRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\OrderRepository.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAYwFoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T16:19:36.845Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "IDashboardService.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IDashboardService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IDashboardService.cs",
@@ -566,6 +593,56 @@
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IProductService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IProductService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IProductService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IProductService.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAABYwD8AAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T14:12:49.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\ProductService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\ProductService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\ProductService.cs",
+              "RelativeToolTip": "Services\\Implementations\\ProductService.cs",
+              "ViewState": "AgIAAMsBAAAAAAAAAABYwM4BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T14:13:12.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "DashboardStatsDto.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Dashboard\\DashboardStatsDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Dashboard\\DashboardStatsDto.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Dashboard\\DashboardStatsDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Dashboard\\DashboardStatsDto.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAswC8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T07:59:49.456Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\OrderService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\OrderService.cs",
+              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\OrderService.cs",
+              "RelativeToolTip": "Services\\Implementations\\OrderService.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAACkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T10:45:16.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "OrderFilterParametersDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\OrderFilterParametersDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Order\\OrderFilterParametersDto.cs",
@@ -577,7 +654,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "IOrderRepository.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IOrderRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IOrderRepository.cs",
@@ -589,7 +666,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "DashboardService.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\DashboardService.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\DashboardService.cs",
@@ -601,7 +678,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\DashboardController.cs",
               "RelativeDocumentMoniker": "Sk_Store\\Controllers\\DashboardController.cs",
@@ -613,7 +690,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "UpdateOrderPaymentStatusDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\UpdateOrderPaymentStatusDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Order\\UpdateOrderPaymentStatusDto.cs",
@@ -625,7 +702,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 20,
               "Title": "IOrderService.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IOrderService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IOrderService.cs",
@@ -637,7 +714,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "EmailService.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\EmailService.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\EmailService.cs",
@@ -649,7 +726,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "OrdersController.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\OrdersController.cs",
               "RelativeDocumentMoniker": "Sk_Store\\Controllers\\OrdersController.cs",
@@ -661,7 +738,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 19,
               "Title": "CategoryService.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\CategoryService.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\CategoryService.cs",
@@ -673,7 +750,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 22,
               "Title": "PaymentController.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\PaymentController.cs",
               "RelativeDocumentMoniker": "Sk_Store\\Controllers\\PaymentController.cs",
@@ -685,7 +762,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 23,
               "Title": "BrandsController.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\BrandsController.cs",
               "RelativeDocumentMoniker": "Sk_Store\\Controllers\\BrandsController.cs",
@@ -697,7 +774,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 24,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\appsettings.json",
               "RelativeDocumentMoniker": "Sk_Store\\appsettings.json",
@@ -709,7 +786,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 27,
               "Title": "IBrandService.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IBrandService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IBrandService.cs",
@@ -721,7 +798,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 25,
               "Title": "VnPayLibrary.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\VnPayLibrary.cs",
               "RelativeDocumentMoniker": "Services\\VnPayLibrary.cs",
@@ -733,7 +810,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 29,
               "Title": "ICategoryService.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\ICategoryService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\ICategoryService.cs",
@@ -745,7 +822,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 31,
               "Title": "IBrandRepository.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IBrandRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IBrandRepository.cs",
@@ -757,7 +834,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 32,
               "Title": "CategoriesController.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\CategoriesController.cs",
               "RelativeDocumentMoniker": "Sk_Store\\Controllers\\CategoriesController.cs",
@@ -769,7 +846,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 26,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IAuthService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IAuthService.cs",
@@ -781,7 +858,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 30,
               "Title": "ICategoryRepository.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\ICategoryRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\ICategoryRepository.cs",
@@ -793,7 +870,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 28,
               "Title": "BrandService.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\BrandService.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\BrandService.cs",
@@ -805,7 +882,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 33,
               "Title": "CategoryRepository.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\CategoryRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\CategoryRepository.cs",
@@ -817,7 +894,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 34,
               "Title": "BrandRepository.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\BrandRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\BrandRepository.cs",
@@ -829,31 +906,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 35,
               "Title": "IUnitOfWork.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\UnitOfWork\\IUnitOfWork.cs",
               "RelativeDocumentMoniker": "Repositories\\UnitOfWork\\IUnitOfWork.cs",
               "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\UnitOfWork\\IUnitOfWork.cs",
               "RelativeToolTip": "Repositories\\UnitOfWork\\IUnitOfWork.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAIwA4AAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAOBgwA4AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-29T06:13:08.684Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 36,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\UnitOfWork\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "Repositories\\UnitOfWork\\UnitOfWork.cs",
               "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\UnitOfWork\\UnitOfWork.cs",
               "RelativeToolTip": "Repositories\\UnitOfWork\\UnitOfWork.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAiwDgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAABYwDoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-29T06:13:31.868Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 37,
               "Title": "BrandFilterParameters.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\BrandFilterParameters.cs",
               "RelativeDocumentMoniker": "Repositories\\BrandFilterParameters.cs",
@@ -865,7 +942,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 38,
               "Title": "CategoryFilterParameters.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\CategoryFilterParameters.cs",
               "RelativeDocumentMoniker": "Repositories\\CategoryFilterParameters.cs",
@@ -877,7 +954,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 39,
               "Title": "UsersController.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "Sk_Store\\Controllers\\UsersController.cs",
@@ -889,33 +966,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\ProductService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\ProductService.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\ProductService.cs",
-              "RelativeToolTip": "Services\\Implementations\\ProductService.cs",
-              "ViewState": "AgIAANsBAAAAAAAAAABiwOABAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T14:13:12.385Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "IProductService.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IProductService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IProductService.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IProductService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IProductService.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAABYwEQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T14:12:49.943Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 40,
               "Title": "ReviewService.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\ReviewService.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\ReviewService.cs",
@@ -927,7 +978,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 41,
               "Title": "UserService.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\UserService.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\UserService.cs",
@@ -939,31 +990,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "IProductRepository.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IProductRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IProductRepository.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IProductRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IProductRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAYwA0AAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T14:51:14.623Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "ProductRepository.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\ProductRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementations\\ProductRepository.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\ProductRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementations\\ProductRepository.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAwB0AAABYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T15:47:53.881Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "ProductFilterParameters.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\ProductFilterParameters.cs",
               "RelativeDocumentMoniker": "Repositories\\ProductFilterParameters.cs",
@@ -975,7 +1002,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 47,
               "Title": "Repositories.csproj",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Repositories.csproj",
               "RelativeDocumentMoniker": "Repositories\\Repositories.csproj",
@@ -987,7 +1014,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "ProfileController.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\ProfileController.cs",
               "RelativeDocumentMoniker": "Sk_Store\\Controllers\\ProfileController.cs",
@@ -999,7 +1026,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "ProductDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\ProductDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Product\\ProductDto.cs",
@@ -1011,7 +1038,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 46,
               "Title": "SkstoreContext.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\SkstoreContext.cs",
               "RelativeDocumentMoniker": "Repositories\\SkstoreContext.cs",
@@ -1023,7 +1050,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "AuthController.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Sk_Store\\Controllers\\AuthController.cs",
@@ -1035,7 +1062,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 48,
               "Title": "Services.csproj",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Services.csproj",
               "RelativeDocumentMoniker": "Services\\Services.csproj",
@@ -1047,7 +1074,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 55,
               "Title": "UpdateOrderStatusDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\UpdateOrderStatusDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Order\\UpdateOrderStatusDto.cs",
@@ -1059,7 +1086,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 49,
               "Title": "AuthService.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\AuthService.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\AuthService.cs",
@@ -1067,11 +1094,12 @@
               "RelativeToolTip": "Services\\Implementations\\AuthService.cs",
               "ViewState": "AgIAAE8AAAAAAAAAAAAIwI0AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T04:47:40.456Z"
+              "WhenOpened": "2025-05-29T04:47:40.456Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 54,
               "Title": "CreateReviewDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Review\\CreateReviewDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Review\\CreateReviewDto.cs",
@@ -1083,7 +1111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 51,
               "Title": "IReviewService.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IReviewService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IReviewService.cs",
@@ -1095,7 +1123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 50,
               "Title": "ReviewsController.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\ReviewsController.cs",
               "RelativeDocumentMoniker": "Sk_Store\\Controllers\\ReviewsController.cs",
@@ -1107,7 +1135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 53,
               "Title": "IReviewRepository.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IReviewRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IReviewRepository.cs",
@@ -1119,7 +1147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 52,
               "Title": "ReviewRepository.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\ReviewRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\ReviewRepository.cs",
@@ -1131,19 +1159,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 56,
               "Title": "GenericRepository.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\GenericRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\GenericRepository.cs",
               "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\GenericRepository.cs",
               "RelativeToolTip": "Repositories\\Implementations\\GenericRepository.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACYAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAABSwCYAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-27T03:09:16.167Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 57,
               "Title": "OrderSummaryDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\OrderSummaryDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Order\\OrderSummaryDto.cs",
@@ -1155,7 +1183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 58,
               "Title": "OrderDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\OrderDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Order\\OrderDto.cs",
@@ -1167,7 +1195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 59,
               "Title": "OrderItemDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\OrderItemDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Order\\OrderItemDto.cs",
@@ -1179,7 +1207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 60,
               "Title": "CreateOrderRequestDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Order\\CreateOrderRequestDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Order\\CreateOrderRequestDto.cs",
@@ -1191,7 +1219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 63,
               "Title": "ShoppingCartsController.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\Controllers\\ShoppingCartsController.cs",
               "RelativeDocumentMoniker": "Sk_Store\\Controllers\\ShoppingCartsController.cs",
@@ -1199,12 +1227,11 @@
               "RelativeToolTip": "Sk_Store\\Controllers\\ShoppingCartsController.cs",
               "ViewState": "AgIAAHsAAAAAAAAAAAA1wI0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T10:19:08.783Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T10:19:08.783Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 62,
               "Title": "ShoppingCartService.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\ShoppingCartService.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\ShoppingCartService.cs",
@@ -1212,12 +1239,11 @@
               "RelativeToolTip": "Services\\Implementations\\ShoppingCartService.cs",
               "ViewState": "AgIAADMAAAAAAAAAAAAlwDcAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T10:17:36.187Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T10:17:36.187Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 67,
               "Title": "AddItemToCartDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\ShoppingCart\\AddItemToCartDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\ShoppingCart\\AddItemToCartDto.cs",
@@ -1229,7 +1255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 66,
               "Title": "IShoppingCartService.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IShoppingCartService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IShoppingCartService.cs",
@@ -1237,12 +1263,11 @@
               "RelativeToolTip": "Services\\Interfaces\\IShoppingCartService.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAASwBcAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T10:15:08.915Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T10:15:08.915Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 64,
               "Title": "CartDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\ShoppingCart\\CartDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\ShoppingCart\\CartDto.cs",
@@ -1254,7 +1279,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 61,
               "Title": "ShoppingCartRepository.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\ShoppingCartRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\ShoppingCartRepository.cs",
@@ -1266,7 +1291,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 68,
               "Title": "UpdateCartItemQuantityDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\ShoppingCart\\UpdateCartItemQuantityDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\ShoppingCart\\UpdateCartItemQuantityDto.cs",
@@ -1278,7 +1303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 65,
               "Title": "CartItemDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\ShoppingCart\\CartItemDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\ShoppingCart\\CartItemDto.cs",
@@ -1290,7 +1315,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 71,
               "Title": "ChangePasswordDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\User\\ChangePasswordDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\User\\ChangePasswordDto.cs",
@@ -1302,7 +1327,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 72,
               "Title": "UpdateUserProfileDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\User\\UpdateUserProfileDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\User\\UpdateUserProfileDto.cs",
@@ -1314,7 +1339,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 73,
               "Title": "UserProfileDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\User\\UserProfileDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\User\\UserProfileDto.cs",
@@ -1326,7 +1351,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 69,
               "Title": "IUserService.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IUserService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IUserService.cs",
@@ -1338,7 +1363,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 70,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\User.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\User.cs",
@@ -1350,7 +1375,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 76,
               "Title": "ForgotPasswordDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Auth\\ForgotPasswordDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Auth\\ForgotPasswordDto.cs",
@@ -1362,7 +1387,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 75,
               "Title": "ResetPasswordDto .cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Auth\\ResetPasswordDto .cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Auth\\ResetPasswordDto .cs",
@@ -1374,7 +1399,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 74,
               "Title": "VerifyEmailDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Auth\\VerifyEmailDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Auth\\VerifyEmailDto.cs",
@@ -1386,7 +1411,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 77,
               "Title": "IEmailService.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IEmailService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IEmailService.cs",
@@ -1398,7 +1423,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 79,
               "Title": "IShoppingCartRepository.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IShoppingCartRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IShoppingCartRepository.cs",
@@ -1410,7 +1435,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 78,
               "Title": "Review.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\Review.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\Review.cs",
@@ -1422,7 +1447,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 80,
               "Title": "IUserRepository .cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IUserRepository .cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUserRepository .cs",
@@ -1434,7 +1459,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 82,
               "Title": "IRoleRepository.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IRoleRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IRoleRepository.cs",
@@ -1446,7 +1471,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 81,
               "Title": "RoleRepository.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\RoleRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\RoleRepository.cs",
@@ -1458,7 +1483,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 84,
               "Title": "UserFilterParametersDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\User\\UserFilterParametersDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\User\\UserFilterParametersDto.cs",
@@ -1470,7 +1495,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 85,
               "Title": "UserForAdminUpdateDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\User\\UserForAdminUpdateDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\User\\UserForAdminUpdateDto.cs",
@@ -1478,11 +1503,12 @@
               "RelativeToolTip": "Application\\DTOs\\User\\UserForAdminUpdateDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T15:14:04.745Z"
+              "WhenOpened": "2025-05-31T15:14:04.745Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 86,
               "Title": "UserDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\User\\UserDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\User\\UserDto.cs",
@@ -1494,7 +1520,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 83,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\UserRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\UserRepository.cs",
@@ -1506,7 +1532,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 87,
               "Title": "AuthResponseDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Auth\\AuthResponseDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Auth\\AuthResponseDto.cs",
@@ -1518,7 +1544,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 88,
               "Title": "UpdateBrandDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Brand\\UpdateBrandDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Brand\\UpdateBrandDto.cs",
@@ -1530,7 +1556,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 89,
               "Title": "CreateBrandDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Brand\\CreateBrandDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Brand\\CreateBrandDto.cs",
@@ -1542,7 +1568,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 90,
               "Title": "BrandDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Brand\\BrandDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Brand\\BrandDto.cs",
@@ -1554,7 +1580,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
+              "DocumentIndex": 91,
               "Title": "UpdateCategoryDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Category\\UpdateCategoryDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Category\\UpdateCategoryDto.cs",
@@ -1566,7 +1592,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 91,
+              "DocumentIndex": 92,
               "Title": "CreateCategoryDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Category\\CreateCategoryDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Category\\CreateCategoryDto.cs",
@@ -1578,7 +1604,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 92,
+              "DocumentIndex": 93,
               "Title": "CategoryDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Category\\CategoryDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Category\\CategoryDto.cs",
@@ -1590,7 +1616,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 93,
+              "DocumentIndex": 94,
               "Title": "ProductAttributeDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\ProductAttributeDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Product\\ProductAttributeDto.cs",
@@ -1602,7 +1628,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 95,
               "Title": "CreateProductDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\CreateProductDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Product\\CreateProductDto.cs",
@@ -1610,12 +1636,11 @@
               "RelativeToolTip": "Application\\DTOs\\Product\\CreateProductDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T14:10:37.659Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-31T14:10:37.659Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 95,
+              "DocumentIndex": 96,
               "Title": "UpdateProductDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\UpdateProductDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Product\\UpdateProductDto.cs",
@@ -1623,12 +1648,11 @@
               "RelativeToolTip": "Application\\DTOs\\Product\\UpdateProductDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T14:10:57.17Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-31T14:10:57.17Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 96,
+              "DocumentIndex": 97,
               "Title": "ProductDetailDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\ProductDetailDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Product\\ProductDetailDto.cs",
@@ -1636,12 +1660,11 @@
               "RelativeToolTip": "Application\\DTOs\\Product\\ProductDetailDto.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAA7wCMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T14:10:23.04Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-31T14:10:23.04Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 97,
+              "DocumentIndex": 98,
               "Title": "ReviewDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\ReviewDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Product\\ReviewDto.cs",
@@ -1653,7 +1676,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 98,
+              "DocumentIndex": 99,
               "Title": "ProductImageDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\ProductImageDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Product\\ProductImageDto.cs",
@@ -1665,7 +1688,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 100,
+              "DocumentIndex": 101,
               "Title": "Order.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\Order.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\Order.cs",
@@ -1677,7 +1700,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 99,
+              "DocumentIndex": 100,
               "Title": "RegisterDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Auth\\RegisterDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Auth\\RegisterDto.cs",
@@ -1689,7 +1712,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 101,
+              "DocumentIndex": 102,
               "Title": "IGenericRepository.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IGenericRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IGenericRepository.cs",
@@ -1701,7 +1724,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 102,
+              "DocumentIndex": 103,
               "Title": "LoginDto.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Auth\\LoginDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Auth\\LoginDto.cs",
@@ -1713,7 +1736,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 105,
+              "DocumentIndex": 106,
               "Title": "UserAddressRepository.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Implementations\\UserAddressRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\UserAddressRepository.cs",
@@ -1725,7 +1748,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 104,
+              "DocumentIndex": 105,
               "Title": "Role.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\Role.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\Role.cs",
@@ -1737,7 +1760,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 103,
+              "DocumentIndex": 104,
               "Title": "UserAddress.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\UserAddress.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\UserAddress.cs",
@@ -1749,7 +1772,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 106,
+              "DocumentIndex": 107,
               "Title": "IUserAddressRepository.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Repositories\\Interfaces\\IUserAddressRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUserAddressRepository.cs",
@@ -1761,7 +1784,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 108,
+              "DocumentIndex": 109,
               "Title": "Brand.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\Brand.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\Brand.cs",
@@ -1773,7 +1796,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 107,
+              "DocumentIndex": 108,
               "Title": "CartItem.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\CartItem.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\CartItem.cs",
@@ -1785,7 +1808,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 109,
+              "DocumentIndex": 110,
               "Title": "ShoppingCart.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\ShoppingCart.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\ShoppingCart.cs",
@@ -1797,7 +1820,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 110,
+              "DocumentIndex": 111,
               "Title": "ProductImage.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\ProductImage.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\ProductImage.cs",
@@ -1809,7 +1832,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 111,
+              "DocumentIndex": 112,
               "Title": "ProductAttribute.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\ProductAttribute.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\ProductAttribute.cs",
@@ -1821,7 +1844,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 112,
+              "DocumentIndex": 113,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\Product.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\Product.cs",
@@ -1833,7 +1856,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 113,
+              "DocumentIndex": 114,
               "Title": "OrderItem.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\OrderItem.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\OrderItem.cs",
@@ -1845,7 +1868,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 114,
+              "DocumentIndex": 115,
               "Title": "Category.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\BusinessObjects\\Category.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\Category.cs",
@@ -1857,7 +1880,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 115,
+              "DocumentIndex": 116,
               "Title": "Class1.cs",
               "DocumentMoniker": "D:\\SK_Store_Website\\Sk_Store\\Services\\Class1.cs",
               "RelativeDocumentMoniker": "..\\..\\Sk_Store\\Services\\Class1.cs",
@@ -1869,77 +1892,12 @@
           ]
         },
         {
-          "DockedWidth": 130,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 224,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 118,
-              "Title": "ImageUploadGuide.md",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\ImageUploadGuide.md",
-              "RelativeDocumentMoniker": "ImageUploadGuide.md",
-              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\ImageUploadGuide.md",
-              "RelativeToolTip": "ImageUploadGuide.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJMAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-07-17T02:34:16.807Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "test-upload.html",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\wwwroot\\test-upload.html",
-              "RelativeDocumentMoniker": "Sk_Store\\wwwroot\\test-upload.html",
-              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Sk_Store\\wwwroot\\test-upload.html",
-              "RelativeToolTip": "Sk_Store\\wwwroot\\test-upload.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAANcAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-07-17T02:33:43.277Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IFileUploadService.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IFileUploadService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IFileUploadService.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Interfaces\\IFileUploadService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IFileUploadService.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-17T02:25:53.742Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 116,
-              "Title": "FileUploadService.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\FileUploadService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\FileUploadService.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Services\\Implementations\\FileUploadService.cs",
-              "RelativeToolTip": "Services\\Implementations\\FileUploadService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-17T02:26:11.86Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 117,
-              "Title": "ProductFileUploadDto.cs",
-              "DocumentMoniker": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\ProductFileUploadDto.cs",
-              "RelativeDocumentMoniker": "Application\\DTOs\\Product\\ProductFileUploadDto.cs",
-              "ToolTip": "D:\\SK_Store_Website\\Backend\\Sk_Store\\Application\\DTOs\\Product\\ProductFileUploadDto.cs",
-              "RelativeToolTip": "Application\\DTOs\\Product\\ProductFileUploadDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-17T02:26:36.622Z",
-              "EditorCaption": ""
             }
           ]
         }

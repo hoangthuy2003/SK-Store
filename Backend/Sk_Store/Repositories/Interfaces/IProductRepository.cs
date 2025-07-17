@@ -12,5 +12,7 @@ namespace Repositories.Interfaces
         Task<IEnumerable<Product>> GetProductsAsync(ProductFilterParameters productFilter);
         Task<Product?> GetProductDetailByIdAsync(int id);
         Task<int> CountProductsAsync(ProductFilterParameters productFilter);
+        Task<IEnumerable<ProductImage>> GetImagesByProductIdAsync(int productId);
+        Task DeleteAsync(int imageId);
     }
 }

@@ -1,0 +1,11 @@
+[
+  {
+    "context": [
+      "/api/**"
+    ],
+    "target": "https://localhost:7131",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+]

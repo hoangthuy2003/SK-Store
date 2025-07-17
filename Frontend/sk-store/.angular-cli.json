@@ -1,0 +1,6 @@
+{
+  "analytics": false,
+  "warnings": {
+    "allowSignalWrites": false
+  }
+}

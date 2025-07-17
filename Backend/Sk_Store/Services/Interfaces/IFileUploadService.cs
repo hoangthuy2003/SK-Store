@@ -25,8 +25,8 @@ namespace Services.Interfaces
         /// </summary>
         /// <param name="imageUrl">URL c?a file c?n xóa</param>
         /// <returns>True n?u xóa thành công</returns>
-        Task<bool> DeleteImageAsync(string imageUrl);
-
+        
+        Task DeleteImageAsync(string imageUrl);
         /// <summary>
         /// Ki?m tra xem file có ph?i là ?nh h?p l? không
         /// </summary>

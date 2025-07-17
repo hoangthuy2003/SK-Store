@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Upload Ảnh Sản Phẩm - SK Store</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, select, textarea, button { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px; }
+        button { background-color: #007bff; color: white; cursor: pointer; font-size: 16px; }
+        button:hover { background-color: #0056b3; }
+        .result { margin-top: 20px; padding: 10px; border: 1px solid #ddd; border-radius: 4px; background-color: #f9f9f9; }
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+    <h1>Test Upload Ảnh Sản Phẩm</h1>
+    
+    <form id="uploadForm">
+        <div class="form-group">
+            <label>Tên sản phẩm *</label>
+            <input type="text" id="productName" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Mô tả</label>
+            <textarea id="description" rows="3"></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label>Giá *</label>
+            <input type="number" id="price" step="0.01" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Số lượng tồn kho *</label>
+            <input type="number" id="stockQuantity" required>
+        </div>
+        
+        <div class="form-group">
+            <label>ID Danh mục *</label>
+            <input type="number" id="categoryId" required>
+        </div>
+        
+        <div class="form-group">
+            <label>ID Thương hiệu *</label>
+            <input type="number" id="brandId" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Index ảnh chính (bắt đầu từ 0)</label>
+            <input type="number" id="primaryImageIndex" value="0" min="0">
+        </div>
+        
+        <div class="form-group">
+            <label>Chọn ảnh sản phẩm (JPG, JPEG, PNG - max 5MB/file)</label>
+            <input type="file" id="imageFiles" multiple accept="image/*,.jpg,.jpeg,.png">
+        </div>
+        
+        <div class="form-group">
+            <label>JWT Token *</label>
+            <textarea id="token" rows="3" placeholder="Nhập JWT token từ API login" required></textarea>
+        </div>
+        
+        <button type="submit">Tạo sản phẩm với ảnh</button>
+    </form>
+    
+    <div id="result" class="result" style="display: none;"></div>
+    
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = 'Đang upload...';
+            
+            try {
+                const formData = new FormData();
+                
+                formData.append('ProductName', document.getElementById('productName').value);
+                formData.append('Description', document.getElementById('description').value);
+                formData.append('Price', document.getElementById('price').value);
+                formData.append('StockQuantity', document.getElementById('stockQuantity').value);
+                formData.append('CategoryId', document.getElementById('categoryId').value);
+                formData.append('BrandId', document.getElementById('brandId').value);
+                formData.append('IsActive', 'true');
+                formData.append('PrimaryImageIndex', document.getElementById('primaryImageIndex').value);
+                
+                const fileInput = document.getElementById('imageFiles');
+                for (let i = 0; i < fileInput.files.length; i++) {
+                    formData.append('ImageFiles', fileInput.files[i]);
+                }
+                
+                const token = document.getElementById('token').value.trim();
+                
+                const response = await fetch('http://localhost:4200/api/products/upload', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': 'Bearer ' + token
+                    },
+                    body: formData
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    resultDiv.innerHTML = '<h3 class="success">Upload thành công!</h3>' +
+                        '<p>Product ID: ' + result.productId + '</p>' +
+                        '<p>Tên: ' + result.productName + '</p>' +
+                        '<p>Giá: ' + result.price + ' VNĐ</p>';
+                } else {
+                    resultDiv.innerHTML = '<h3 class="error">Lỗi upload!</h3>' +
+                        '<p>Status: ' + response.status + '</p>';
+                }
+            } catch (error) {
+                resultDiv.innerHTML = '<h3 class="error">Lỗi kết nối!</h3><p>' + error.message + '</p>';
+            }
+        });
+    </script>
+</body>
+</html>

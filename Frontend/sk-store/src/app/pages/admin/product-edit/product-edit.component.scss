@@ -1,0 +1,102 @@
+// Product Edit Component Styles
+
+.image-management {
+  .image-section {
+    border: 2px dashed #e5e7eb;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: #3b82f6;
+      background-color: #f8fafc;
+    }
+
+    &.has-image {
+      border-style: solid;
+      border-color: #10b981;
+    }
+  }
+
+  .image-slot {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+
+    .upload-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover .upload-overlay {
+      opacity: 1;
+    }
+
+    .delete-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: #ef4444;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 12px;
+      z-index: 10;
+
+      &:hover {
+        background: #dc2626;
+      }
+    }
+  }
+
+  .upload-btn {
+    background: #3b82f6;
+    color: white;
+    border: 2px dashed transparent;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #2563eb;
+      border-color: #1d4ed8;
+    }
+  }
+
+  .primary-label {
+    background: linear-gradient(45deg, #f59e0b, #d97706);
+    color: white;
+    font-weight: 600;
+  }
+
+  .secondary-label {
+    background: #6b7280;
+    color: white;
+  }
+}
+
+.form-section {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.image-preview {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

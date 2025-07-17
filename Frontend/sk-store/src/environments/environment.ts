@@ -1,4 +1,5 @@
 export const environment = {
   production: false,
-  apiUrl: 'https://localhost:7131'  // URL của backend API
+  apiUrl: '',  // Sử dụng relative URL với proxy
+  staticUrl: 'https://localhost:7131'  // URL trực tiếp cho static files
 }; 

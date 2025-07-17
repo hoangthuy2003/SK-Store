@@ -29,7 +29,9 @@
               <td class="td-cell font-mono">{{ product.productId }}</td>
               <td class="td-cell">
                 <div class="flex items-center">
-                  <img [src]="product.primaryImageUrl || 'assets/images/placeholder.jpg'" [alt]="product.productName" class="w-12 h-12 object-contain mr-4 rounded">
+                  <img [src]="getImageUrl(product.primaryImageUrl)" [alt]="product.productName" 
+                       class="w-12 h-12 object-contain mr-4 rounded"
+                       (error)="$any($event.target).src = getImageUrl('')">
                   <div>
                     <div class="font-medium text-gray-900">{{ product.productName }}</div>
                     <div class="text-sm text-gray-500">{{ product.categoryName }} / {{ product.brandName }}</div>

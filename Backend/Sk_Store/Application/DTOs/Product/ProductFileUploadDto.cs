@@ -1,91 +1,97 @@
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 
 namespace Application.DTOs.Product
 {
     /// <summary>
-    /// DTO d�ng ?? t?o s?n ph?m v?i file upload
+    /// DTO dùng ?? t?o s?n ph?m v?i file upload
     /// </summary>
     public class CreateProductWithFilesDto
     {
-        [Required(ErrorMessage = "T�n s?n ph?m kh�ng ???c ?? tr?ng.")]
-        [MaxLength(255, ErrorMessage = "T�n s?n ph?m kh�ng ???c v??t qu� 255 k� t?.")]
+        [Required(ErrorMessage = "Tên s?n ph?m không ???c ?? tr?ng.")]
+        [MaxLength(255, ErrorMessage = "Tên s?n ph?m không ???c v??t quá 255 ký t?.")]
         public string ProductName { get; set; } = null!;
 
         public string? Description { get; set; }
 
-        [Required(ErrorMessage = "Gi� s?n ph?m kh�ng ???c ?? tr?ng.")]
-        [Range(0.01, double.MaxValue, ErrorMessage = "Gi� s?n ph?m ph?i l?n h?n 0.")]
+        [Required(ErrorMessage = "Giá s?n ph?m không ???c ?? tr?ng.")]
+        [Range(0.01, double.MaxValue, ErrorMessage = "Giá s?n ph?m ph?i l?n h?n 0.")]
         public decimal Price { get; set; }
 
-        [Required(ErrorMessage = "S? l??ng t?n kho kh�ng ???c ?? tr?ng.")]
-        [Range(0, int.MaxValue, ErrorMessage = "S? l??ng t?n kho kh�ng ???c l� s? �m.")]
+        [Required(ErrorMessage = "S? l??ng t?n kho không ???c ?? tr?ng.")]
+        [Range(0, int.MaxValue, ErrorMessage = "S? l??ng t?n kho không ???c là s? âm.")]
         public int StockQuantity { get; set; }
 
-        [Required(ErrorMessage = "Vui l�ng ch?n danh m?c.")]
+        [Required(ErrorMessage = "Vui lòng ch?n danh m?c.")]
         public int CategoryId { get; set; }
 
-        [Required(ErrorMessage = "Vui l�ng ch?n th??ng hi?u.")]
+        [Required(ErrorMessage = "Vui lòng ch?n th??ng hi?u.")]
         public int BrandId { get; set; }
 
         public bool IsActive { get; set; } = true;
 
         /// <summary>
-        /// Danh s�ch file ?nh upload
+        /// Danh sách file ?nh upload
         /// </summary>
         public IFormFile[]? ImageFiles { get; set; }
 
         /// <summary>
-        /// Index c?a ?nh ch�nh trong danh s�ch ImageFiles (b?t ??u t? 0)
+        /// Index c?a ?nh chính trong danh sách ImageFiles (b?t ??u t? 0)
         /// </summary>
         public int PrimaryImageIndex { get; set; } = 0;
 
         /// <summary>
-        /// Danh s�ch thu?c t�nh s?n ph?m (JSON string ho?c form data)
+        /// Danh sách thu?c tính s?n ph?m (JSON string ho?c form data)
         /// </summary>
         public List<CreateProductAttributeDto>? Attributes { get; set; }
     }
 
     /// <summary>
-    /// DTO d�ng ?? c?p nh?t s?n ph?m v?i file upload
+    /// DTO dùng ?? c?p nh?t s?n ph?m v?i file upload
     /// </summary>
     public class UpdateProductWithFilesDto
     {
-        [MaxLength(255, ErrorMessage = "T�n s?n ph?m kh�ng ???c v??t qu� 255 k� t?.")]
-        public string? ProductName { get; set; }
+        [Required(ErrorMessage = "Tên sản phẩm không được để trống")]
+        [StringLength(200, ErrorMessage = "Tên sản phẩm không được vượt quá 200 ký tự")]
+        public string ProductName { get; set; } = string.Empty;
 
+        [StringLength(2000, ErrorMessage = "Mô tả không được vượt quá 2000 ký tự")]
         public string? Description { get; set; }
 
-        [Range(0.01, double.MaxValue, ErrorMessage = "Gi� s?n ph?m ph?i l?n h?n 0.")]
-        public decimal? Price { get; set; }
+        [Required(ErrorMessage = "Giá sản phẩm không được để trống")]
+        [Range(0, double.MaxValue, ErrorMessage = "Giá phải lớn hơn hoặc bằng 0")]
+        public decimal Price { get; set; }
 
-        [Range(0, int.MaxValue, ErrorMessage = "S? l??ng t?n kho kh�ng ???c l� s? �m.")]
-        public int? StockQuantity { get; set; }
+        [Required(ErrorMessage = "Số lượng tồn kho không được để trống")]
+        [Range(0, int.MaxValue, ErrorMessage = "Số lượng phải lớn hơn hoặc bằng 0")]
+        public int StockQuantity { get; set; }
 
-        public int? CategoryId { get; set; }
+        [Required(ErrorMessage = "Danh mục không được để trống")]
+        public int CategoryId { get; set; }
 
-        public int? BrandId { get; set; }
+        [Required(ErrorMessage = "Thương hiệu không được để trống")]
+        public int BrandId { get; set; }
 
-        public bool? IsActive { get; set; }
+        public bool IsActive { get; set; } = true;
 
         /// <summary>
-        /// Danh s�ch file ?nh m?i c?n upload
+        /// Các file ảnh mới cần upload
         /// </summary>
-        public IFormFile[]? ImageFiles { get; set; }
+        public List<IFormFile>? ImageFiles { get; set; }
 
         /// <summary>
-        /// Index c?a ?nh ch�nh trong danh s�ch ImageFiles m?i (b?t ??u t? 0)
+        /// Index của ảnh chính trong danh sách ImageFiles (0-based)
         /// </summary>
-        public int? PrimaryImageIndex { get; set; }
+        public int PrimaryImageIndex { get; set; } = 0;
 
         /// <summary>
-        /// C� x�a t?t c? ?nh c? kh�ng (true = x�a h?t v� thay b?ng ?nh m?i)
+        /// Có thay thế tất cả ảnh hiện tại hay không
         /// </summary>
         public bool ReplaceAllImages { get; set; } = false;
 
         /// <summary>
-        /// Danh s�ch thu?c t�nh s?n ph?m
+        /// Danh sách ID của các ảnh cần xóa (khi ReplaceAllImages = false)
         /// </summary>
-        public List<UpdateProductAttributeDto>? Attributes { get; set; }
+        public List<int>? ImagesToDelete { get; set; }
     }
 }

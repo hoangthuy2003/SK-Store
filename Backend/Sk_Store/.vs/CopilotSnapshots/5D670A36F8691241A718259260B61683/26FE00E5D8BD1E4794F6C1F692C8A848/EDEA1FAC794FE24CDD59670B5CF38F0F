@@ -1,0 +1,462 @@
+﻿// File: Services/Implementations/ProductService.cs
+using Application.DTOs;
+using Application.DTOs.Product;
+using BusinessObjects;
+using Repositories;
+using Repositories.UnitOfWork;
+using Services.Interfaces;
+using Sk_Store.Services.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Services.Implementations
+{
+    public class ProductService : IProductService
+    {
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IFileUploadService _fileUploadService;
+
+        public ProductService(IUnitOfWork unitOfWork, IFileUploadService fileUploadService)
+        {
+            _unitOfWork = unitOfWork;
+            _fileUploadService = fileUploadService;
+        }
+
+        public async Task<IEnumerable<ProductDto>> GetProductsAsync(ProductFilterParameters filterParams)
+        {
+            var products = await _unitOfWork.Products.GetProductsAsync(filterParams);
+            var productDtos = new List<ProductDto>();
+
+            foreach (var product in products)
+            {
+                var primaryImage = product.ProductImages?.FirstOrDefault(img => img.IsPrimary)?.ImageUrl;
+                double averageRating = 0;
+                int reviewCount = 0;
+
+                if (product.Reviews != null && product.Reviews.Any())
+                {
+                    averageRating = product.Reviews.Average(r => r.Rating);
+                    reviewCount = product.Reviews.Count;
+                }
+
+                productDtos.Add(new ProductDto
+                {
+                    ProductId = product.ProductId,
+                    ProductName = product.ProductName,
+                    Price = product.Price,
+                    PrimaryImageUrl = primaryImage,
+                    CategoryName = product.Category?.CategoryName ?? "N/A",
+                    BrandName = product.Brand?.BrandName ?? "N/A",
+                    AverageRating = averageRating,
+                    ReviewCount = reviewCount,
+                    StockQuantity = product.StockQuantity,
+                    IsActive = product.IsActive
+                });
+            }
+            return productDtos;
+        }
+
+        public async Task<ProductDetailDto?> GetProductByIdAsync(int productId)
+        {
+            var product = await _unitOfWork.Products.GetProductDetailByIdAsync(productId);
+            if (product == null)
+            {
+                return null;
+            }
+
+            var productDetailDto = new ProductDetailDto
+            {
+                ProductId = product.ProductId,
+                ProductName = product.ProductName,
+                Description = product.Description,
+                Price = product.Price,
+                StockQuantity = product.StockQuantity,
+                CategoryId = product.CategoryId,
+                CategoryName = product.Category.CategoryName,
+                BrandId = product.BrandId,
+                BrandName = product.Brand.BrandName,
+                IsActive = product.IsActive,
+                CreationDate = product.CreationDate,
+                LastUpdatedDate = product.LastUpdatedDate,
+                ProductImages = product.ProductImages.Select(img => new ProductImageDto
+                {
+                    ImageId = img.ImageId,
+                    ImageUrl = img.ImageUrl,
+                    IsPrimary = img.IsPrimary
+                }).ToList(),
+                ProductAttributes = product.ProductAttributes.Select(attr => new ProductAttributeDto
+                {
+                    AttributeId = attr.AttributeId,
+                    AttributeName = attr.AttributeName,
+                    AttributeValue = attr.AttributeValue
+                }).ToList(),
+                Reviews = product.Reviews.Select(rev => new ReviewDto
+                {
+                    ReviewId = rev.ReviewId,
+                    UserName = (rev.User != null) ? $"{rev.User.FirstName} {rev.User.LastName}".Trim() : "Anonymous",
+                    Rating = rev.Rating,
+                    Comment = rev.Comment,
+                    ReviewDate = rev.ReviewDate
+                }).ToList()
+            };
+
+            if (productDetailDto.Reviews.Any())
+            {
+                productDetailDto.AverageRating = productDetailDto.Reviews.Average(r => r.Rating);
+                productDetailDto.ReviewCount = productDetailDto.Reviews.Count;
+            }
+            else
+            {
+                productDetailDto.AverageRating = 0;
+                productDetailDto.ReviewCount = 0;
+            }
+
+            return productDetailDto;
+        }
+
+        public async Task<ProductDetailDto?> CreateProductAsync(CreateProductDto createProductDto)
+        {
+            var categoryExists = await _unitOfWork.Categories.GetByIdAsync(createProductDto.CategoryId);
+            if (categoryExists == null)
+            {
+                return null;
+            }
+
+            var brandExists = await _unitOfWork.Brands.GetByIdAsync(createProductDto.BrandId);
+            if (brandExists == null)
+            {
+                return null;
+            }
+
+            var product = new Product
+            {
+                ProductName = createProductDto.ProductName,
+                Description = createProductDto.Description,
+                Price = createProductDto.Price,
+                StockQuantity = createProductDto.StockQuantity,
+                CategoryId = createProductDto.CategoryId,
+                BrandId = createProductDto.BrandId,
+                IsActive = createProductDto.IsActive,
+                CreationDate = DateTime.UtcNow
+            };
+
+            // Thêm product trước để có ProductId
+            await _unitOfWork.Products.AddAsync(product);
+            await _unitOfWork.CompleteAsync();
+
+            // Thêm ảnh sau khi đã có ProductId
+            if (createProductDto.Images != null && createProductDto.Images.Any())
+            {
+                var productImages = new List<ProductImage>();
+                foreach (var imgDto in createProductDto.Images)
+                {
+                    productImages.Add(new ProductImage
+                    {
+                        ProductId = product.ProductId,
+                        ImageUrl = imgDto.ImageUrl,
+                        IsPrimary = imgDto.IsPrimary
+                    });
+                }
+                await _unitOfWork.ProductImages.AddRangeAsync(productImages);
+            }
+
+            // Thêm attributes
+            if (createProductDto.Attributes != null && createProductDto.Attributes.Any())
+            {
+                foreach (var attrDto in createProductDto.Attributes)
+                {
+                    product.ProductAttributes.Add(new ProductAttribute
+                    {
+                        AttributeName = attrDto.AttributeName,
+                        AttributeValue = attrDto.AttributeValue
+                    });
+                }
+            }
+
+            await _unitOfWork.CompleteAsync();
+            return await GetProductByIdAsync(product.ProductId);
+        }
+
+        public async Task<bool> UpdateProductAsync(int productId, UpdateProductDto updateProductDto)
+        {
+            var product = await _unitOfWork.Products.GetByIdAsync(productId);
+            if (product == null)
+            {
+                return false;
+            }
+
+            if (updateProductDto.ProductName != null)
+                product.ProductName = updateProductDto.ProductName;
+            if (updateProductDto.Description != null)
+                product.Description = updateProductDto.Description;
+            if (updateProductDto.Price.HasValue)
+                product.Price = updateProductDto.Price.Value;
+            if (updateProductDto.StockQuantity.HasValue)
+                product.StockQuantity = updateProductDto.StockQuantity.Value;
+            if (updateProductDto.IsActive.HasValue)
+                product.IsActive = updateProductDto.IsActive.Value;
+
+            if (updateProductDto.CategoryId.HasValue && updateProductDto.CategoryId.Value != product.CategoryId)
+            {
+                var categoryExists = await _unitOfWork.Categories.GetByIdAsync(updateProductDto.CategoryId.Value);
+                if (categoryExists == null) return false;
+                product.CategoryId = updateProductDto.CategoryId.Value;
+            }
+
+            if (updateProductDto.BrandId.HasValue && updateProductDto.BrandId.Value != product.BrandId)
+            {
+                var brandExists = await _unitOfWork.Brands.GetByIdAsync(updateProductDto.BrandId.Value);
+                if (brandExists == null) return false;
+                product.BrandId = updateProductDto.BrandId.Value;
+            }
+
+            product.LastUpdatedDate = DateTime.UtcNow;
+
+            // Cập nhật hình ảnh sử dụng ProductImageRepository
+            if (updateProductDto.Images != null)
+            {
+                // Xóa tất cả ảnh cũ
+                await _unitOfWork.ProductImages.DeleteAllByProductIdAsync(productId);
+
+                // Thêm ảnh mới
+                var productImages = new List<ProductImage>();
+                foreach (var imgDto in updateProductDto.Images)
+                {
+                    productImages.Add(new ProductImage
+                    {
+                        ProductId = productId,
+                        ImageUrl = imgDto.ImageUrl,
+                        IsPrimary = imgDto.IsPrimary
+                    });
+                }
+                
+                if (productImages.Any())
+                {
+                    await _unitOfWork.ProductImages.AddRangeAsync(productImages);
+                }
+            }
+
+            // Cập nhật thuộc tính: Xóa cũ, thêm mới
+            if (updateProductDto.Attributes != null)
+            {
+                var productDetail = await _unitOfWork.Products.GetProductDetailByIdAsync(productId);
+                if (productDetail != null)
+                {
+                    var attributesToRemove = productDetail.ProductAttributes.ToList();
+                    foreach (var attr in attributesToRemove)
+                    {
+                        productDetail.ProductAttributes.Remove(attr);
+                    }
+
+                    foreach (var attrDto in updateProductDto.Attributes)
+                    {
+                        productDetail.ProductAttributes.Add(new ProductAttribute
+                        {
+                            AttributeName = attrDto.AttributeName,
+                            AttributeValue = attrDto.AttributeValue
+                        });
+                    }
+                }
+            }
+
+            try
+            {
+                await _unitOfWork.Products.UpdateAsync(product);
+                await _unitOfWork.CompleteAsync();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public async Task<int> CountProductsAsync(ProductFilterParameters filterParams)
+        {
+            return await _unitOfWork.Products.CountProductsAsync(filterParams);
+        }
+
+        public async Task<ProductDetailDto?> CreateProductWithFilesAsync(CreateProductWithFilesDto createProductDto)
+        {
+            var categoryExists = await _unitOfWork.Categories.GetByIdAsync(createProductDto.CategoryId);
+            if (categoryExists == null)
+            {
+                return null;
+            }
+
+            var brandExists = await _unitOfWork.Brands.GetByIdAsync(createProductDto.BrandId);
+            if (brandExists == null)
+            {
+                return null;
+            }
+
+            var product = new Product
+            {
+                ProductName = createProductDto.ProductName,
+                Description = createProductDto.Description,
+                Price = createProductDto.Price,
+                StockQuantity = createProductDto.StockQuantity,
+                CategoryId = createProductDto.CategoryId,
+                BrandId = createProductDto.BrandId,
+                IsActive = createProductDto.IsActive,
+                CreationDate = DateTime.UtcNow
+            };
+
+            // Thêm product trước để có ProductId
+            await _unitOfWork.Products.AddAsync(product);
+            await _unitOfWork.CompleteAsync();
+
+            // Upload và thêm ảnh nếu có
+            if (createProductDto.ImageFiles != null && createProductDto.ImageFiles.Any())
+            {
+                var imageUrls = await _fileUploadService.UploadMultipleImagesAsync(createProductDto.ImageFiles, "products");
+                
+                var productImages = new List<ProductImage>();
+                for (int i = 0; i < imageUrls.Count; i++)
+                {
+                    productImages.Add(new ProductImage
+                    {
+                        ProductId = product.ProductId,
+                        ImageUrl = imageUrls[i],
+                        IsPrimary = i == createProductDto.PrimaryImageIndex
+                    });
+                }
+                
+                await _unitOfWork.ProductImages.AddRangeAsync(productImages);
+            }
+
+            if (createProductDto.Attributes != null && createProductDto.Attributes.Any())
+            {
+                foreach (var attrDto in createProductDto.Attributes)
+                {
+                    product.ProductAttributes.Add(new ProductAttribute
+                    {
+                        AttributeName = attrDto.AttributeName,
+                        AttributeValue = attrDto.AttributeValue
+                    });
+                }
+            }
+
+            await _unitOfWork.CompleteAsync();
+            return await GetProductByIdAsync(product.ProductId);
+        }
+
+        public async Task<ProductDetailDto> UpdateProductWithFilesAsync(int id, UpdateProductWithFilesDto updateDto)
+        {
+            var existingProduct = await _unitOfWork.Products.GetByIdAsync(id);
+            if (existingProduct == null)
+            {
+                throw new KeyNotFoundException($"Không tìm thấy sản phẩm với ID: {id}");
+            }
+
+            // Cập nhật thông tin sản phẩm
+            existingProduct.ProductName = updateDto.ProductName;
+            existingProduct.Description = updateDto.Description;
+            existingProduct.Price = updateDto.Price;
+            existingProduct.StockQuantity = updateDto.StockQuantity;
+            existingProduct.CategoryId = updateDto.CategoryId;
+            existingProduct.BrandId = updateDto.BrandId;
+            existingProduct.IsActive = updateDto.IsActive;
+            existingProduct.LastUpdatedDate = DateTime.UtcNow;
+
+            // Xử lý ảnh
+            if (updateDto.ImageFiles != null && updateDto.ImageFiles.Any())
+            {
+                // Nếu ReplaceAllImages = true, xóa tất cả ảnh cũ
+                if (updateDto.ReplaceAllImages)
+                {
+                    var oldImages = await _unitOfWork.ProductImages.GetImagesByProductIdAsync(id);
+                    foreach (var oldImage in oldImages)
+                    {
+                        // Xóa file vật lý
+                        await _fileUploadService.DeleteImageAsync(oldImage.ImageUrl);
+                    }
+                    // Xóa tất cả records trong database
+                    await _unitOfWork.ProductImages.DeleteAllByProductIdAsync(id);
+                }
+                // Nếu có danh sách ảnh cần xóa
+                else if (updateDto.ImagesToDelete != null && updateDto.ImagesToDelete.Any())
+                {
+                    foreach (var imageId in updateDto.ImagesToDelete)
+                    {
+                        var imageToDelete = await _unitOfWork.ProductImages.GetByIdAsync(imageId);
+                        if (imageToDelete != null && imageToDelete.ProductId == id)
+                        {
+                            // Xóa file vật lý
+                            await _fileUploadService.DeleteImageAsync(imageToDelete.ImageUrl);
+                            // Xóa record trong database
+                            await _unitOfWork.ProductImages.DeleteAsync(imageId);
+                        }
+                    }
+                }
+
+                // Upload ảnh mới
+                var imageUrls = await _fileUploadService.UploadMultipleImagesAsync(updateDto.ImageFiles.ToArray(), "products");
+                
+                var newImages = new List<ProductImage>();
+                for (int i = 0; i < imageUrls.Count; i++)
+                {
+                    newImages.Add(new ProductImage
+                    {
+                        ProductId = id,
+                        ImageUrl = imageUrls[i],
+                        IsPrimary = i == updateDto.PrimaryImageIndex
+                    });
+                }
+
+                // Thêm ảnh mới vào database
+                await _unitOfWork.ProductImages.AddRangeAsync(newImages);
+            }
+
+            // Lưu thay đổi
+            await _unitOfWork.Products.UpdateAsync(existingProduct);
+            await _unitOfWork.CompleteAsync();
+
+            // Trả về sản phẩm đã cập nhật
+            return await GetProductByIdAsync(id) ?? throw new InvalidOperationException("Không thể lấy thông tin sản phẩm sau khi cập nhật");
+        }
+
+        /// <summary>
+        /// Xóa ảnh sản phẩm
+        /// </summary>
+        public async Task DeleteProductImageAsync(int productId, int imageId)
+        {
+            var image = await _unitOfWork.ProductImages.GetByIdAsync(imageId);
+
+            if (image == null)
+            {
+                throw new KeyNotFoundException($"Không tìm thấy ảnh với ID: {imageId}");
+            }
+
+            if (image.ProductId != productId)
+            {
+                throw new ArgumentException("Ảnh không thuộc về sản phẩm này");
+            }
+
+            // Xóa file vật lý
+            await _fileUploadService.DeleteImageAsync(image.ImageUrl);
+
+            // Xóa record trong database (logic tự động đặt ảnh chính mới đã được xử lý trong repository)
+            await _unitOfWork.ProductImages.DeleteAsync(imageId);
+            await _unitOfWork.CompleteAsync();
+        }
+
+        /// <summary>
+        /// Đặt ảnh làm ảnh chính
+        /// </summary>
+        public async Task<bool> SetPrimaryImageAsync(int productId, int imageId)
+        {
+            // Kiểm tra ảnh có thuộc về sản phẩm không
+            var belongsToProduct = await _unitOfWork.ProductImages.ImageBelongsToProductAsync(imageId, productId);
+            if (!belongsToProduct)
+            {
+                return false;
+            }
+
+            // Đặt ảnh làm ảnh chính
+            return await _unitOfWork.ProductImages.SetPrimaryImageAsync(imageId, productId);
+        }
+    }
+}

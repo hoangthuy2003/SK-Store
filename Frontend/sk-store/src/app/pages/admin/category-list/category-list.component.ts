@@ -12,7 +12,7 @@ import { CategoryModalComponent } from '../category-modal/category-modal.compone
   selector: 'app-admin-category-list',
   standalone: true,
   // <<< THÊM CategoryModalComponent VÀO IMPORTS >>>
-  imports: [CommonModule, RouterLink, PaginationComponent, CategoryModalComponent],
+  imports: [CommonModule, PaginationComponent, CategoryModalComponent],
   templateUrl: './category-list.component.html',
   styleUrls: ['../admin-shared.css']
 })

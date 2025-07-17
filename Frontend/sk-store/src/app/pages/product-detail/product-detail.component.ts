@@ -5,6 +5,7 @@ import { switchMap } from 'rxjs/operators';
 import { CartService } from '../../services/cart.service'; // <<< THÊM IMPORT
 import { AddItemToCartDto } from '../../models/cart.model'; // <<< THÊM IMPORT
 import { ProductService } from '../../services/product.service';
+import { ImageService } from '../../services/image.service';
 import { ProductDetailDto } from '../../models/product.model';
 import { VndCurrencyPipe } from '../../pipes/vnd-currency.pipe';
 @Component({
@@ -17,7 +18,8 @@ import { VndCurrencyPipe } from '../../pipes/vnd-currency.pipe';
 export class ProductDetailComponent implements OnInit {
   private route = inject(ActivatedRoute);
   private productService = inject(ProductService);
-private cartService = inject(CartService); 
+  private imageService = inject(ImageService);
+  private cartService = inject(CartService); 
   // State signals
   product = signal<ProductDetailDto | null>(null);
   isLoading = signal(true);
@@ -43,7 +45,8 @@ private cartService = inject(CartService);
       next: (data) => {
         this.product.set(data);
         // Set ảnh chính làm ảnh được chọn ban đầu
-        this.selectedImage.set(data.productImages.find(img => img.isPrimary)?.imageUrl || data.productImages[0]?.imageUrl);
+        const primaryImage = data.productImages.find(img => img.isPrimary)?.imageUrl || data.productImages[0]?.imageUrl;
+        this.selectedImage.set(primaryImage);
         this.isLoading.set(false);
       },
       error: (err) => {
@@ -91,7 +94,13 @@ private cartService = inject(CartService);
     this.quantity.update(q => (q > 1 ? q - 1 : 1));
   }
 
-  
+  // Helper method để get image URL
+  getImageUrl(imageUrl: string | undefined): string {
+    if (!imageUrl) {
+      return this.imageService.getPlaceholderUrl();
+    }
+    return this.imageService.getFullImageUrl(imageUrl);
+  }
 
   getStarRating(rating: number): number[] {
     return Array(5).fill(0).map((_, i) => i < Math.round(rating) ? 1 : 0);

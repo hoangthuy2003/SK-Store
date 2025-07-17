@@ -25,9 +25,10 @@
                     <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition duration-300 flex flex-col">
                         <div class="relative overflow-hidden">
                             <a [routerLink]="['/products', product.productId]">
-                                <img [src]="product.primaryImageUrl || 'assets/images/placeholder.jpg'" 
+                                <img [src]="getImageUrl(product.primaryImageUrl)" 
                                      [alt]="product.productName"
-                                     class="product-image w-full h-48 object-contain p-4">
+                                     class="product-image w-full h-48 object-contain p-4"
+                                     (error)="$any($event.target).src = getImageUrl('')">
                             </a>
                         </div>
                         <div class="p-4 flex flex-col flex-grow">

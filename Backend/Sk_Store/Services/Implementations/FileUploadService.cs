@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Services.Interfaces;
 
@@ -19,10 +19,10 @@ namespace Services.Implementations
         {
             if (!IsValidImage(file))
             {
-                throw new ArgumentException("File kh�ng h?p l?. Ch? ch?p nh?n file ?nh JPG, JPEG, PNG v?i k�ch th??c t?i ?a 5MB.");
+                throw new ArgumentException("File không h?p l?. Ch? ch?p nh?n file ?nh JPG, JPEG, PNG v?i kích th??c t?i ?a 5MB.");
             }
 
-            // T?o t�n file unique ?? tr�nh tr�ng l?p
+            // T?o tên file unique ?? tránh trùng l?p
             var fileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName).ToLower()}";
             
             // T?o ???ng d?n th? m?c l?u tr?
@@ -63,29 +63,29 @@ namespace Services.Implementations
             return imageUrls;
         }
 
-        public async Task<bool> DeleteImageAsync(string imageUrl)
+        public async Task DeleteImageAsync(string imageUrl)
         {
             try
             {
                 if (string.IsNullOrEmpty(imageUrl))
-                    return false;
+                    return;
 
-                // Chuy?n URL th�nh ???ng d?n v?t l�
-                var fileName = Path.GetFileName(imageUrl);
-                var relativePath = imageUrl.TrimStart('/').Replace('/', Path.DirectorySeparatorChar);
-                var filePath = Path.Combine(_webHostEnvironment.WebRootPath, relativePath);
+                // Lấy tên file từ URL (bỏ /images/products/)
+                var fileName = imageUrl.Replace("/images/products/", "");
 
+                // Đường dẫn file vật lý
+                var filePath = Path.Combine(_webHostEnvironment.WebRootPath, "images", "products", fileName);
+
+                // Xóa file nếu tồn tại
                 if (File.Exists(filePath))
                 {
                     File.Delete(filePath);
-                    return true;
                 }
-
-                return false;
             }
-            catch
+            catch (Exception ex)
             {
-                return false;
+                // Log lỗi nhưng không throw exception để không ảnh hưởng đến flow chính
+                Console.WriteLine($"Error deleting file {imageUrl}: {ex.Message}");
             }
         }
 
@@ -94,7 +94,7 @@ namespace Services.Implementations
             if (file == null || file.Length == 0)
                 return false;
 
-            // Ki?m tra k�ch th??c file
+            // Ki?m tra kích th??c file
             if (file.Length > MaxFileSize)
                 return false;
 

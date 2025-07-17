@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
 import { AdminProductListComponent } from './product-list/product-list.component';
-import { AdminProductEditComponent } from './product-edit/product-edit.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
 import { AdminCategoryListComponent } from './category-list/category-list.component';
 import { AdminBrandListComponent } from './brand-list/brand-list.component';
 import { AdminUserListComponent } from './user-list/user-list.component';
@@ -16,8 +16,8 @@ export const ADMIN_ROUTES: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: AdminDashboardComponent },
       { path: 'products', component: AdminProductListComponent },
-      { path: 'products/new', component: AdminProductEditComponent },
-      { path: 'products/edit/:id', component: AdminProductEditComponent },
+      { path: 'products/new', component: ProductEditComponent },
+      { path: 'products/edit/:id', component: ProductEditComponent },
       { path: 'orders', component: AdminOrderListComponent },
       
       // <<< ĐẢM BẢO PHẦN CATEGORY CHỈ CÓ 1 DÒNG DUY NHẤT NHƯ THẾ NÀY >>>

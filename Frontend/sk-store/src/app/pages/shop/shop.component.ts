@@ -12,6 +12,7 @@ import { VndCurrencyPipe } from '../../pipes/vnd-currency.pipe';
 import { ProductService } from '../../services/product.service';
 import { CategoryService } from '../../services/category.service';
 import { BrandService } from '../../services/brand.service';
+import { ImageService } from '../../services/image.service';
 
 // Models
 import { ProductDto, ProductFilterParameters } from '../../models/product.model';
@@ -33,6 +34,7 @@ export class ShopComponent implements OnInit, OnDestroy {
   private productService = inject(ProductService);
   private categoryService = inject(CategoryService);
   private brandService = inject(BrandService);
+  private imageService = inject(ImageService);
 
   // State signals
   isLoading = signal(true);
@@ -190,5 +192,13 @@ export class ShopComponent implements OnInit, OnDestroy {
       this.activeBrandId.set(brandId);
       this.currentPage.set(1);
     }
+  }
+
+  // Helper method để get image URL
+  getImageUrl(imageUrl: string | undefined): string {
+    if (!imageUrl) {
+      return this.imageService.getPlaceholderUrl();
+    }
+    return this.imageService.getFullImageUrl(imageUrl);
   }
 }

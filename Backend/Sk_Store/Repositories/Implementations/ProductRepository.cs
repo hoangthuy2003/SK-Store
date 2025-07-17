@@ -51,7 +51,29 @@ namespace Repositories.Implementations
 
             return await query.CountAsync();
         }
+        // Thêm các method này vào ProductImageRepository class
 
+        /// <summary>
+        /// Lấy tất cả ảnh của sản phẩm
+        /// </summary>
+        public async Task<IEnumerable<ProductImage>> GetImagesByProductIdAsync(int productId)
+        {
+            return await _context.ProductImages
+                .Where(pi => pi.ProductId == productId)
+                .ToListAsync();
+        }
+
+        /// <summary>
+        /// Xóa ảnh theo ID
+        /// </summary>
+        public async Task DeleteAsync(int imageId)
+        {
+            var image = await _context.ProductImages.FindAsync(imageId);
+            if (image != null)
+            {
+                _context.ProductImages.Remove(image);
+            }
+        }
         public async Task<IEnumerable<Product>> GetProductsAsync(ProductFilterParameters productFilter)
         {
             var query = _dbSet
