@@ -31,13 +31,6 @@ namespace Services.Interfaces // Đảm bảo namespace này đúng với projec
         Task<ProductDetailDto?> CreateProductAsync(CreateProductDto createProductDto);
 
         /// <summary>
-        /// Tạo một sản phẩm mới với file upload.
-        /// </summary>
-        /// <param name="createProductDto">DTO chứa thông tin và file để tạo sản phẩm.</param>
-        /// <returns>ProductDetailDto của sản phẩm vừa tạo.</returns>
-        Task<ProductDetailDto?> CreateProductWithFilesAsync(CreateProductWithFilesDto createProductDto);
-
-        /// <summary>
         /// Cập nhật thông tin một sản phẩm hiện có.
         /// </summary>
         /// <param name="productId">ID của sản phẩm cần cập nhật.</param>
@@ -46,20 +39,11 @@ namespace Services.Interfaces // Đảm bảo namespace này đúng với projec
         Task<bool> UpdateProductAsync(int productId, UpdateProductDto updateProductDto);
 
         /// <summary>
-        /// Cập nhật một sản phẩm với file upload.
-        /// </summary>
-        /// <param name="productId">ID của sản phẩm cần cập nhật.</param>
-        /// <param name="updateProductDto">DTO chứa thông tin và file cập nhật.</param>
-        /// <returns>True nếu cập nhật thành công, False nếu thất bại.</returns>
-        Task<bool> UpdateProductWithFilesAsync(int productId, UpdateProductWithFilesDto updateProductDto);
-
-        /// <summary>
         /// Xóa một sản phẩm.
         /// </summary>
         /// <param name="productId">ID của sản phẩm cần xóa.</param>
         /// <returns>True nếu xóa thành công, False nếu thất bại.</returns>
         Task<(bool Success, string ErrorMessage)> DeleteProductAsync(int productId);
-        
         Task<int> CountProductsAsync(ProductFilterParameters filterParams);
         // Bạn có thể thêm các phương thức khác ở đây nếu cần, ví dụ:
         // Task<IEnumerable<ProductDto>> GetFeaturedProductsAsync();

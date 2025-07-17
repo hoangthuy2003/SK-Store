@@ -17,13 +17,11 @@ namespace Services.Implementations
     public class ProductService : IProductService
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IFileUploadService _fileUploadService;
         // private readonly ILogger<ProductService> _logger;
 
-        public ProductService(IUnitOfWork unitOfWork, IFileUploadService fileUploadService /*, ILogger<ProductService> logger */)
+        public ProductService(IUnitOfWork unitOfWork /*, ILogger<ProductService> logger */)
         {
             _unitOfWork = unitOfWork;
-            _fileUploadService = fileUploadService;
             // _logger = logger;
         }
 
@@ -311,170 +309,6 @@ namespace Services.Implementations
             // Xóa bỏ phân trang trước khi đếm
             var countFilters = filterParams;
             return await _unitOfWork.Products.CountProductsAsync(countFilters);
-        }
-
-        public async Task<ProductDetailDto?> CreateProductWithFilesAsync(CreateProductWithFilesDto createProductDto)
-        {
-            var categoryExists = await _unitOfWork.Categories.GetByIdAsync(createProductDto.CategoryId);
-            if (categoryExists == null)
-            {
-                // _logger?.LogWarning($"Category with ID {createProductDto.CategoryId} not found during product creation.");
-                return null;
-            }
-
-            var brandExists = await _unitOfWork.Brands.GetByIdAsync(createProductDto.BrandId);
-            if (brandExists == null)
-            {
-                // _logger?.LogWarning($"Brand with ID {createProductDto.BrandId} not found during product creation.");
-                return null;
-            }
-
-            var product = new Product
-            {
-                ProductName = createProductDto.ProductName,
-                Description = createProductDto.Description,
-                Price = createProductDto.Price,
-                StockQuantity = createProductDto.StockQuantity,
-                CategoryId = createProductDto.CategoryId,
-                BrandId = createProductDto.BrandId,
-                IsActive = createProductDto.IsActive,
-                CreationDate = DateTime.UtcNow
-            };
-
-            // Upload ảnh nếu có
-            if (createProductDto.ImageFiles != null && createProductDto.ImageFiles.Any())
-            {
-                var imageUrls = await _fileUploadService.UploadMultipleImagesAsync(createProductDto.ImageFiles, "products");
-                
-                for (int i = 0; i < imageUrls.Count; i++)
-                {
-                    product.ProductImages.Add(new ProductImage
-                    {
-                        ImageUrl = imageUrls[i],
-                        IsPrimary = i == createProductDto.PrimaryImageIndex // Ảnh đầu tiên hoặc ảnh được chỉ định là primary
-                    });
-                }
-            }
-
-            if (createProductDto.Attributes != null && createProductDto.Attributes.Any())
-            {
-                foreach (var attrDto in createProductDto.Attributes)
-                {
-                    product.ProductAttributes.Add(new ProductAttribute
-                    {
-                        AttributeName = attrDto.AttributeName,
-                        AttributeValue = attrDto.AttributeValue
-                    });
-                }
-            }
-
-            await _unitOfWork.Products.AddAsync(product);
-            await _unitOfWork.CompleteAsync();
-
-            return await GetProductByIdAsync(product.ProductId);
-        }
-
-        public async Task<bool> UpdateProductWithFilesAsync(int productId, UpdateProductWithFilesDto updateProductDto)
-        {
-            // Lấy sản phẩm cùng với các collection liên quan để EF Core có thể theo dõi thay đổi trên chúng
-            var product = await _unitOfWork.Products.GetProductDetailByIdAsync(productId);
-            if (product == null)
-            {
-                // _logger?.LogWarning($"Product with ID {productId} not found for update.");
-                return false;
-            }
-
-            // Cập nhật thông tin cơ bản
-            if (updateProductDto.ProductName != null)
-                product.ProductName = updateProductDto.ProductName;
-            if (updateProductDto.Description != null)
-                product.Description = updateProductDto.Description;
-            if (updateProductDto.Price.HasValue)
-                product.Price = updateProductDto.Price.Value;
-            if (updateProductDto.StockQuantity.HasValue)
-                product.StockQuantity = updateProductDto.StockQuantity.Value;
-            if (updateProductDto.IsActive.HasValue)
-                product.IsActive = updateProductDto.IsActive.Value;
-
-            if (updateProductDto.CategoryId.HasValue && updateProductDto.CategoryId.Value != product.CategoryId)
-            {
-                var categoryExists = await _unitOfWork.Categories.GetByIdAsync(updateProductDto.CategoryId.Value);
-                if (categoryExists == null) return false;
-                product.CategoryId = updateProductDto.CategoryId.Value;
-            }
-
-            if (updateProductDto.BrandId.HasValue && updateProductDto.BrandId.Value != product.BrandId)
-            {
-                var brandExists = await _unitOfWork.Brands.GetByIdAsync(updateProductDto.BrandId.Value);
-                if (brandExists == null) return false;
-                product.BrandId = updateProductDto.BrandId.Value;
-            }
-
-            product.LastUpdatedDate = DateTime.UtcNow;
-
-            // Xử lý ảnh
-            if (updateProductDto.ImageFiles != null && updateProductDto.ImageFiles.Any())
-            {
-                // Nếu yêu cầu thay thế tất cả ảnh
-                if (updateProductDto.ReplaceAllImages)
-                {
-                    // Xóa ảnh cũ từ file system
-                    var imagesToRemove = product.ProductImages.ToList();
-                    foreach (var img in imagesToRemove)
-                    {
-                        await _fileUploadService.DeleteImageAsync(img.ImageUrl);
-                        product.ProductImages.Remove(img);
-                    }
-                }
-
-                // Upload ảnh mới
-                var newImageUrls = await _fileUploadService.UploadMultipleImagesAsync(updateProductDto.ImageFiles, "products");
-                
-                for (int i = 0; i < newImageUrls.Count; i++)
-                {
-                    product.ProductImages.Add(new ProductImage
-                    {
-                        ImageUrl = newImageUrls[i],
-                        IsPrimary = updateProductDto.PrimaryImageIndex.HasValue && i == updateProductDto.PrimaryImageIndex.Value
-                    });
-                }
-
-                // Đảm bảo có ít nhất một ảnh primary
-                if (!product.ProductImages.Any(img => img.IsPrimary) && product.ProductImages.Any())
-                {
-                    product.ProductImages.First().IsPrimary = true;
-                }
-            }
-
-            // Cập nhật thuộc tính: Xóa cũ, thêm mới (cách đơn giản)
-            if (updateProductDto.Attributes != null)
-            {
-                var attributesToRemove = product.ProductAttributes.ToList();
-                foreach (var attr in attributesToRemove)
-                {
-                    product.ProductAttributes.Remove(attr);
-                }
-
-                foreach (var attrDto in updateProductDto.Attributes)
-                {
-                    product.ProductAttributes.Add(new ProductAttribute
-                    {
-                        AttributeName = attrDto.AttributeName,
-                        AttributeValue = attrDto.AttributeValue
-                    });
-                }
-            }
-
-            try
-            {
-                await _unitOfWork.CompleteAsync();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                // _logger?.LogError(ex, $"Error updating product with ID {productId}");
-                return false;
-            }
         }
     }
 }

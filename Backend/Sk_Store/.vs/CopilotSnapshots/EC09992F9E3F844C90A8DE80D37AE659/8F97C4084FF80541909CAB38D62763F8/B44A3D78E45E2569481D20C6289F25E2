@@ -1,0 +1,148 @@
+﻿# Product Image Upload Feature
+
+## Tổng quan
+Tính năng này cho phép upload ảnh sản phẩm từ file local (PNG, JPG) với kích thước tối đa 5MB mỗi file.
+
+## Cấu trúc thư mục
+```
+Sk_Store/
+├── wwwroot/
+│   ├── images/
+│   │   └── products/        # Thư mục chứa ảnh sản phẩm
+│   └── test-upload.html     # File test upload
+└── ...
+```
+
+## API Endpoints
+
+### 1. Tạo sản phẩm với file upload
+**POST** `/api/products/upload`
+
+**Headers:**
+- `Authorization: Bearer {token}` (yêu cầu quyền Admin)
+- `Content-Type: multipart/form-data`
+
+**Form Data:**
+- `ProductName` (string, required): Tên sản phẩm
+- `Description` (string, optional): Mô tả sản phẩm
+- `Price` (decimal, required): Giá sản phẩm
+- `StockQuantity` (int, required): Số lượng tồn kho
+- `CategoryId` (int, required): ID danh mục
+- `BrandId` (int, required): ID thương hiệu
+- `PrimaryImageIndex` (int, optional, default=0): Chỉ số ảnh chính
+- `ImageFiles` (file[], optional): Danh sách file ảnh
+
+**Example Response:**
+```json
+{
+  "productId": 1,
+  "productName": "Bút bi Thiên Long",
+  "price": 5000,
+  "productImages": [
+    {
+      "imageId": 1,
+      "imageUrl": "/images/products/550e8400-e29b-41d4-a716-446655440000.jpg",
+      "isPrimary": true
+    }
+  ]
+}
+```
+
+### 2. Cập nhật sản phẩm với file upload
+**PUT** `/api/products/{id}/upload`
+
+**Headers:**
+- `Authorization: Bearer {token}` (yêu cầu quyền Admin)
+- `Content-Type: multipart/form-data`
+
+**Form Data:**
+- `ProductName` (string, optional): Tên sản phẩm mới
+- `Description` (string, optional): Mô tả mới
+- `Price` (decimal, optional): Giá mới
+- `StockQuantity` (int, optional): Số lượng mới
+- `CategoryId` (int, optional): ID danh mục mới
+- `BrandId` (int, optional): ID thương hiệu mới
+- `ReplaceAllImages` (bool, default=false): Có thay thế tất cả ảnh cũ không
+- `PrimaryImageIndex` (int, optional): Chỉ số ảnh chính trong danh sách ảnh mới
+- `ImageFiles` (file[], optional): Danh sách file ảnh mới
+
+## Ràng buộc file
+- **Định dạng cho phép:** .jpg, .jpeg, .png
+- **Kích thước tối đa:** 5MB mỗi file
+- **MIME types hỗ trợ:** image/jpeg, image/jpg, image/png
+
+## Cách sử dụng
+
+### 1. Test bằng HTML file
+1. Mở `http://localhost:5000/test-upload.html` trong trình duyệt
+2. Điền thông tin sản phẩm
+3. Chọn ảnh từ máy tính
+4. Nhập JWT token (lấy từ login API)
+5. Click "Tạo sản phẩm"
+
+### 2. Test bằng Postman
+1. Tạo request POST tới `http://localhost:5000/api/products/upload`
+2. Chọn Body > form-data
+3. Thêm các field theo form data trên
+4. Với `ImageFiles`, chọn type là File và upload ảnh
+5. Thêm header Authorization với Bearer token
+
+### 3. Test bằng cURL
+```bash
+curl -X POST "http://localhost:5000/api/products/upload" \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
+  -F "ProductName=Test Product" \
+  -F "Price=10000" \
+  -F "StockQuantity=100" \
+  -F "CategoryId=1" \
+  -F "BrandId=1" \
+  -F "ImageFiles=@path/to/image1.jpg" \
+  -F "ImageFiles=@path/to/image2.png" \
+  -F "PrimaryImageIndex=0"
+```
+
+## Xem ảnh đã upload
+Sau khi upload thành công, ảnh có thể được truy cập qua URL:
+`http://localhost:5000/images/products/{filename}`
+
+Ví dụ: `http://localhost:5000/images/products/550e8400-e29b-41d4-a716-446655440000.jpg`
+
+## Lưu ý kỹ thuật
+
+### Services đã thêm
+- `IFileUploadService`: Interface cho upload file
+- `FileUploadService`: Implementation xử lý upload, validation, xóa file
+
+### DTOs mới
+- `CreateProductWithFilesDto`: DTO cho tạo sản phẩm với file
+- `UpdateProductWithFilesDto`: DTO cho cập nhật sản phẩm với file
+
+### Endpoints mới
+- `POST /api/products/upload`: Tạo sản phẩm với file upload
+- `PUT /api/products/{id}/upload`: Cập nhật sản phẩm với file upload
+
+### Cấu hình
+- Đã thêm `app.UseStaticFiles()` trong Program.cs
+- Đã đăng ký `IFileUploadService` trong DI container
+- Tạo thư mục `wwwroot/images/products` để lưu ảnh
+
+## Troubleshooting
+
+### Lỗi 413 Payload Too Large
+Nếu gặp lỗi này, cần cấu hình tăng giới hạn file size trong Program.cs:
+```csharp
+builder.Services.Configure<FormOptions>(options =>
+{
+    options.MultipartBodyLengthLimit = 10 * 1024 * 1024; // 10MB
+});
+```
+
+### Lỗi không tìm thấy ảnh
+- Kiểm tra thư mục `wwwroot/images/products` đã được tạo
+- Kiểm tra quyền ghi file của ứng dụng
+- Đảm bảo `app.UseStaticFiles()` được gọi trong Program.cs
+
+### Lỗi JWT token
+- Đảm bảo token được lấy từ API login
+- Token phải có role "Admin" để tạo/sửa sản phẩm
+- Kiểm tra token chưa hết hạn

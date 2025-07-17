@@ -77,8 +77,6 @@ builder.Services.AddSwaggerGen(options =>
         }
     });
 });
-
-// Đăng ký các service
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IProductService, ProductService>();
@@ -91,8 +89,6 @@ builder.Services.AddScoped<IReviewService, ReviewService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IDashboardService, DashboardService>();
-builder.Services.AddScoped<IFileUploadService, FileUploadService>(); // Thêm service upload file
-
 builder.Services.AddHttpClient();
 builder.Services.AddAuthentication(options =>
 {
@@ -129,9 +125,6 @@ else
 {
     app.UseHttpsRedirection();
 }
-
-// Cấu hình để phục vụ static files (ảnh upload)
-app.UseStaticFiles();
 
 app.UseCors(MyAllowSpecificOrigins);
 

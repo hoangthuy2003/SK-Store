@@ -1,0 +1,91 @@
+﻿using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations;
+
+namespace Application.DTOs.Product
+{
+    /// <summary>
+    /// DTO dùng để tạo sản phẩm với file upload
+    /// </summary>
+    public class CreateProductWithFilesDto
+    {
+        [Required(ErrorMessage = "Tên sản phẩm không được để trống.")]
+        [MaxLength(255, ErrorMessage = "Tên sản phẩm không được vượt quá 255 ký tự.")]
+        public string ProductName { get; set; } = null!;
+
+        public string? Description { get; set; }
+
+        [Required(ErrorMessage = "Giá sản phẩm không được để trống.")]
+        [Range(0.01, double.MaxValue, ErrorMessage = "Giá sản phẩm phải lớn hơn 0.")]
+        public decimal Price { get; set; }
+
+        [Required(ErrorMessage = "Số lượng tồn kho không được để trống.")]
+        [Range(0, int.MaxValue, ErrorMessage = "Số lượng tồn kho không được là số âm.")]
+        public int StockQuantity { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng chọn danh mục.")]
+        public int CategoryId { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng chọn thương hiệu.")]
+        public int BrandId { get; set; }
+
+        public bool IsActive { get; set; } = true;
+
+        /// <summary>
+        /// Danh sách file ảnh upload
+        /// </summary>
+        public IFormFile[]? ImageFiles { get; set; }
+
+        /// <summary>
+        /// Index của ảnh chính trong danh sách ImageFiles (bắt đầu từ 0)
+        /// </summary>
+        public int PrimaryImageIndex { get; set; } = 0;
+
+        /// <summary>
+        /// Danh sách thuộc tính sản phẩm (JSON string hoặc form data)
+        /// </summary>
+        public List<CreateProductAttributeDto>? Attributes { get; set; }
+    }
+
+    /// <summary>
+    /// DTO dùng để cập nhật sản phẩm với file upload
+    /// </summary>
+    public class UpdateProductWithFilesDto
+    {
+        [MaxLength(255, ErrorMessage = "Tên sản phẩm không được vượt quá 255 ký tự.")]
+        public string? ProductName { get; set; }
+
+        public string? Description { get; set; }
+
+        [Range(0.01, double.MaxValue, ErrorMessage = "Giá sản phẩm phải lớn hơn 0.")]
+        public decimal? Price { get; set; }
+
+        [Range(0, int.MaxValue, ErrorMessage = "Số lượng tồn kho không được là số âm.")]
+        public int? StockQuantity { get; set; }
+
+        public int? CategoryId { get; set; }
+
+        public int? BrandId { get; set; }
+
+        public bool? IsActive { get; set; }
+
+        /// <summary>
+        /// Danh sách file ảnh mới cần upload
+        /// </summary>
+        public IFormFile[]? ImageFiles { get; set; }
+
+        /// <summary>
+        /// Index của ảnh chính trong danh sách ImageFiles mới (bắt đầu từ 0)
+        /// </summary>
+        public int? PrimaryImageIndex { get; set; }
+
+        /// <summary>
+        /// Có xóa tất cả ảnh cũ không (true = xóa hết và thay bằng ảnh mới)
+        /// </summary>
+        public bool ReplaceAllImages { get; set; } = false;
+
+        /// <summary>
+        /// Danh sách thuộc tính sản phẩm
+        /// </summary>
+        public List<UpdateProductAttributeDto>? Attributes { get; set; }
+    }
+}

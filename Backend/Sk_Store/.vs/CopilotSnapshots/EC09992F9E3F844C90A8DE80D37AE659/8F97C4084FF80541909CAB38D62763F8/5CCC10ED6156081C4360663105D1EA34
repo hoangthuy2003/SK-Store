@@ -108,45 +108,6 @@ namespace Sk_Store.Controllers // Đảm bảo namespace này đúng với proje
             return CreatedAtAction(nameof(GetProduct), new { id = createdProduct.ProductId }, createdProduct);
         }
 
-        // POST: api/products/upload
-        /// <summary>
-        /// Tạo một sản phẩm mới với upload ảnh (Yêu cầu quyền Admin).
-        /// </summary>
-        /// <param name="createProductDto">DTO chứa thông tin và file ảnh để tạo sản phẩm.</param>
-        /// <returns>Thông tin sản phẩm vừa tạo hoặc lỗi nếu có.</returns>
-        [HttpPost("upload")]
-        [Authorize(Roles = "Admin")]
-        [ProducesResponseType(typeof(ProductDetailDto), StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(StatusCodes.Status403Forbidden)]
-        public async Task<IActionResult> CreateProductWithFiles([FromForm] CreateProductWithFilesDto createProductDto)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            try
-            {
-                var createdProduct = await _productService.CreateProductWithFilesAsync(createProductDto);
-                if (createdProduct == null)
-                {
-                    return BadRequest(new { message = "Không thể tạo sản phẩm. Vui lòng kiểm tra lại thông tin đầu vào." });
-                }
-
-                return CreatedAtAction(nameof(GetProduct), new { id = createdProduct.ProductId }, createdProduct);
-            }
-            catch (ArgumentException ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
-            catch (Exception)
-            {
-                return StatusCode(500, new { message = "Đã xảy ra lỗi khi tạo sản phẩm." });
-            }
-        }
-
         // PUT: api/products/{id}
         /// <summary>
         /// Cập nhật thông tin một sản phẩm (Yêu cầu quyền Admin).
@@ -187,56 +148,6 @@ namespace Sk_Store.Controllers // Đảm bảo namespace này đúng với proje
             }
 
             return NoContent();
-        }
-
-        // PUT: api/products/{id}/upload
-        /// <summary>
-        /// Cập nhật một sản phẩm với upload ảnh (Yêu cầu quyền Admin).
-        /// </summary>
-        /// <param name="id">ID của sản phẩm cần cập nhật.</param>
-        /// <param name="updateProductDto">DTO chứa thông tin và file ảnh cập nhật.</param>
-        /// <returns>204 No Content nếu thành công, hoặc lỗi nếu có.</returns>
-        [HttpPut("{id:int}/upload")]
-        [Authorize(Roles = "Admin")]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(StatusCodes.Status403Forbidden)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> UpdateProductWithFiles(int id, [FromForm] UpdateProductWithFilesDto updateProductDto)
-        {
-            if (id <= 0)
-            {
-                return BadRequest(new { message = "ID sản phẩm không hợp lệ." });
-            }
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            try
-            {
-                var success = await _productService.UpdateProductWithFilesAsync(id, updateProductDto);
-                if (!success)
-                {
-                    var productExists = await _productService.GetProductByIdAsync(id);
-                    if (productExists == null)
-                    {
-                        return NotFound(new { message = $"Sản phẩm với ID {id} không tồn tại." });
-                    }
-                    return BadRequest(new { message = $"Không thể cập nhật sản phẩm với ID {id}. Vui lòng kiểm tra lại thông tin cập nhật." });
-                }
-
-                return NoContent();
-            }
-            catch (ArgumentException ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
-            catch (Exception)
-            {
-                return StatusCode(500, new { message = "Đã xảy ra lỗi khi cập nhật sản phẩm." });
-            }
         }
 
         // DELETE: api/products/{id}
