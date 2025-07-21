@@ -18,6 +18,7 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { OrderListComponent } from './pages/order-list/order-list.component';
 import { OrderDetailComponent } from './pages/order-detail/order-detail.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { AddressManagementComponent } from './pages/address-management/address-management.component';
 
 export const routes: Routes = [
   // Route này không có layout cha, nó sẽ tự quản lý layout của riêng mình
@@ -49,6 +50,7 @@ export const routes: Routes = [
       { path: 'orders', component: OrderListComponent, canActivate: [AuthGuard] },
       { path: 'orders/:id', component: OrderDetailComponent, canActivate: [AuthGuard] },
       { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+      { path: 'addresses', component: AddressManagementComponent, canActivate: [AuthGuard] },
     ]
   },
 

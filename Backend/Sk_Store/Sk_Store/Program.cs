@@ -92,6 +92,7 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IDashboardService, DashboardService>();
 builder.Services.AddScoped<IFileUploadService, FileUploadService>(); // Thêm service upload file
+builder.Services.AddScoped<IUserAddressService, UserAddressService>(); // Thêm UserAddress service
 
 builder.Services.AddHttpClient();
 builder.Services.AddAuthentication(options =>

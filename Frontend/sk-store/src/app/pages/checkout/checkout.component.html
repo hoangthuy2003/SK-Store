@@ -4,53 +4,145 @@
       <!-- Checkout Form -->
       <div class="lg:col-span-7">
         <h1 class="text-2xl font-semibold mb-6">Thông tin giao hàng</h1>
-        <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" class="bg-white p-6 rounded-lg shadow-sm space-y-4">
-          <div>
-            <label for="recipientName" class="form-label">Họ và tên người nhận</label>
-            <input type="text" id="recipientName" formControlName="recipientName" class="form-input">
-            @if (checkoutForm.get('recipientName')?.invalid && checkoutForm.get('recipientName')?.touched) {
-              <p class="form-error">Vui lòng nhập họ tên.</p>
-            }
-          </div>
-
-          <div>
-            <label for="recipientPhoneNumber" class="form-label">Số điện thoại</label>
-            <input type="tel" id="recipientPhoneNumber" formControlName="recipientPhoneNumber" class="form-input">
-            @if (checkoutForm.get('recipientPhoneNumber')?.invalid && checkoutForm.get('recipientPhoneNumber')?.touched) {
-              <p class="form-error">Vui lòng nhập số điện thoại hợp lệ (10 số, bắt đầu bằng 0).</p>
-            }
-          </div>
-
-          <div>
-            <label for="shippingAddress" class="form-label">Địa chỉ giao hàng</label>
-            <textarea id="shippingAddress" formControlName="shippingAddress" rows="3" class="form-input"></textarea>
-            @if (checkoutForm.get('shippingAddress')?.invalid && checkoutForm.get('shippingAddress')?.touched) {
-              <p class="form-error">Vui lòng nhập địa chỉ giao hàng.</p>
-            }
-          </div>
-
-          <div>
-            <label for="notes" class="form-label">Ghi chú (tùy chọn)</label>
-            <textarea id="notes" formControlName="notes" rows="3" class="form-input"></textarea>
-          </div>
-  <!-- <<< THÊM LỰA CHỌN THANH TOÁN >>> -->
-  <div class="mt-6">
-    <h2 class="text-lg font-medium text-gray-900">Phương thức thanh toán</h2>
-    <fieldset class="mt-4">
-      <legend class="sr-only">Payment type</legend>
-      <div class="space-y-4">
-        <div class="flex items-center">
-          <input id="cod" value="COD" formControlName="paymentMethod" type="radio" class="h-4 w-4 border-gray-300 text-primary focus:ring-primary">
-          <label for="cod" class="ml-3 block text-sm font-medium text-gray-700">Thanh toán khi nhận hàng (COD)</label>
+        
+        <!-- Address Selection -->
+        <div class="bg-white p-6 rounded-lg shadow-sm mb-6">
+          <h2 class="text-lg font-medium mb-4">Chọn địa chỉ giao hàng</h2>
+          
+          @if (loadingAddresses()) {
+            <div class="text-center py-4">
+              <div class="inline-block animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600"></div>
+              <p class="mt-2 text-sm text-gray-600">Đang tải địa chỉ...</p>
+            </div>
+          } @else if (addresses().length > 0) {
+            <div class="space-y-3 mb-4">
+              @for (address of addresses(); track address.addressId) {
+                <div class="border rounded-lg p-4 cursor-pointer transition-colors hover:bg-gray-50"
+                     [class.border-blue-500]="selectedAddressId() === address.addressId"
+                     [class.bg-blue-50]="selectedAddressId() === address.addressId"
+                     (click)="selectAddress(address.addressId)">
+                  <div class="flex items-start justify-between">
+                    <div class="flex-1">
+                      <div class="flex items-center gap-2 mb-1">
+                        @if (address.isDefault) {
+                          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">
+                            Mặc định
+                          </span>
+                        }
+                        @if (address.recipientName) {
+                          <span class="font-medium text-gray-800">{{ address.recipientName }}</span>
+                        }
+                      </div>
+                      <p class="text-gray-700 text-sm">{{ address.addressLine }}</p>
+                      @if (address.recipientPhoneNumber) {
+                        <p class="text-gray-600 text-sm mt-1">{{ address.recipientPhoneNumber }}</p>
+                      }
+                    </div>
+                    @if (selectedAddressId() === address.addressId) {
+                      <i class="fas fa-check-circle text-blue-600"></i>
+                    }
+                  </div>
+                </div>
+              }
+            </div>
+            
+            <button 
+              type="button"
+              (click)="useManualAddress()"
+              class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+              <i class="fas fa-plus mr-2"></i>Sử dụng địa chỉ khác
+            </button>
+          } @else {
+            <div class="text-center py-8">
+              <i class="fas fa-map-marker-alt text-3xl text-gray-400 mb-2"></i>
+              <p class="text-gray-600 mb-4">Chưa có địa chỉ nào được lưu</p>
+              <button 
+                type="button"
+                (click)="useManualAddress()"
+                class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                Nhập địa chỉ mới
+              </button>
+            </div>
+          }
         </div>
-        <div class="flex items-center">
-          <input id="payos" value="PayOS" formControlName="paymentMethod" type="radio" class="h-4 w-4 border-gray-300 text-primary focus:ring-primary">
-          <label for="payos" class="ml-3 block text-sm font-medium text-gray-700">Thanh toán online</label>
-        </div>
-      </div>
-    </fieldset>
-  </div>
-  </form>
+
+        <!-- Manual Address Form (hiển thị khi cần nhập thủ công) -->
+        @if (showAddressForm() || addresses().length === 0) {
+          <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" class="bg-white p-6 rounded-lg shadow-sm space-y-4">
+            <div>
+              <label for="recipientName" class="form-label">Họ và tên người nhận</label>
+              <input type="text" id="recipientName" formControlName="recipientName" class="form-input">
+              @if (checkoutForm.get('recipientName')?.invalid && checkoutForm.get('recipientName')?.touched) {
+                <p class="form-error">Vui lòng nhập họ tên.</p>
+              }
+            </div>
+
+            <div>
+              <label for="recipientPhoneNumber" class="form-label">Số điện thoại</label>
+              <input type="tel" id="recipientPhoneNumber" formControlName="recipientPhoneNumber" class="form-input">
+              @if (checkoutForm.get('recipientPhoneNumber')?.invalid && checkoutForm.get('recipientPhoneNumber')?.touched) {
+                <p class="form-error">Vui lòng nhập số điện thoại hợp lệ (10 số, bắt đầu bằng 0).</p>
+              }
+            </div>
+
+            <div>
+              <label for="shippingAddress" class="form-label">Địa chỉ giao hàng</label>
+              <textarea id="shippingAddress" formControlName="shippingAddress" rows="3" class="form-input"></textarea>
+              @if (checkoutForm.get('shippingAddress')?.invalid && checkoutForm.get('shippingAddress')?.touched) {
+                <p class="form-error">Vui lòng nhập địa chỉ giao hàng.</p>
+              }
+            </div>
+
+            <div>
+              <label for="notes" class="form-label">Ghi chú (tùy chọn)</label>
+              <textarea id="notes" formControlName="notes" rows="3" class="form-input"></textarea>
+            </div>
+
+            <!-- Payment Method Selection -->
+            <div class="mt-6">
+              <h2 class="text-lg font-medium text-gray-900">Phương thức thanh toán</h2>
+              <fieldset class="mt-4">
+                <legend class="sr-only">Payment type</legend>
+                <div class="space-y-4">
+                  <div class="flex items-center">
+                    <input id="cod" value="COD" formControlName="paymentMethod" type="radio" class="h-4 w-4 border-gray-300 text-primary focus:ring-primary">
+                    <label for="cod" class="ml-3 block text-sm font-medium text-gray-700">Thanh toán khi nhận hàng (COD)</label>
+                  </div>
+                  <div class="flex items-center">
+                    <input id="payos" value="PayOS" formControlName="paymentMethod" type="radio" class="h-4 w-4 border-gray-300 text-primary focus:ring-primary">
+                    <label for="payos" class="ml-3 block text-sm font-medium text-gray-700">Thanh toán online</label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </form>
+        } @else {
+          <!-- Payment Method when using saved address -->
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h2 class="text-lg font-medium text-gray-900 mb-4">Phương thức thanh toán</h2>
+            <form [formGroup]="checkoutForm">
+              <fieldset>
+                <legend class="sr-only">Payment type</legend>
+                <div class="space-y-4">
+                  <div class="flex items-center">
+                    <input id="cod-saved" value="COD" formControlName="paymentMethod" type="radio" class="h-4 w-4 border-gray-300 text-primary focus:ring-primary">
+                    <label for="cod-saved" class="ml-3 block text-sm font-medium text-gray-700">Thanh toán khi nhận hàng (COD)</label>
+                  </div>
+                  <div class="flex items-center">
+                    <input id="payos-saved" value="PayOS" formControlName="paymentMethod" type="radio" class="h-4 w-4 border-gray-300 text-primary focus:ring-primary">
+                    <label for="payos-saved" class="ml-3 block text-sm font-medium text-gray-700">Thanh toán online</label>
+                  </div>
+                </div>
+              </fieldset>
+              
+              <!-- Notes field -->
+              <div class="mt-4">
+                <label for="notes-saved" class="form-label">Ghi chú (tùy chọn)</label>
+                <textarea id="notes-saved" formControlName="notes" rows="3" class="form-input"></textarea>
+              </div>
+            </form>
+          </div>
+        }
 </div>
       
       <!-- Order Summary -->
@@ -97,7 +189,7 @@
 
             <button 
             type="submit" 
-            [disabled]="isProcessing() || checkoutForm.invalid" 
+            [disabled]="!canSubmitOrder()" 
             (click)="onSubmit()" 
             class="w-full bg-primary text-white font-bold py-3 px-4 rounded-lg mt-6 hover:bg-primary/90 transition flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed">
             @if (isProcessing()) {
