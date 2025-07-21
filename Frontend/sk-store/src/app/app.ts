@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NotificationComponent } from './layouts/notification/notification.component';
+import { ScrollService } from './services/scroll.service';
 
 @Component({
   selector: 'app-root',
@@ -12,4 +13,7 @@ import { NotificationComponent } from './layouts/notification/notification.compo
 })
 export class App {
   protected title = 'sk-store';
+  
+  // Inject ScrollService để kích hoạt auto-scroll behavior
+  private scrollService = inject(ScrollService);
 }

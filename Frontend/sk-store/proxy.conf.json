@@ -3,7 +3,7 @@
     "context": [
       "/api/**"
     ],
-    "target": "https://localhost:7131",
+    "target": "http://localhost:5188",
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug"

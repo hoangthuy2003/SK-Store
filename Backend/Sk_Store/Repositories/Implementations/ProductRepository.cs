@@ -102,9 +102,28 @@ namespace Repositories.Implementations
                 query = query.Where(s => s.ProductName.ToLower().Contains(searchItemLower));
             }
             
-            // Sắp xếp (ví dụ: theo tên sản phẩm, hoặc ngày tạo mới nhất) - tùy chọn
-            // query = query.OrderBy(p => p.ProductName);
-
+            // Thêm sorting logic
+            if (!string.IsNullOrEmpty(productFilter.SortBy))
+            {
+                var isDescending = productFilter.SortOrder?.ToLower() == "desc";
+                
+                Console.WriteLine($"🔄 Applying sort: {productFilter.SortBy} {(isDescending ? "DESC" : "ASC")}");
+                
+                query = productFilter.SortBy.ToLower() switch
+                {
+                    "price" => isDescending ? query.OrderByDescending(p => p.Price) : query.OrderBy(p => p.Price),
+                    "name" => isDescending ? query.OrderByDescending(p => p.ProductName) : query.OrderBy(p => p.ProductName),
+                    "created" => isDescending ? query.OrderByDescending(p => p.CreationDate) : query.OrderBy(p => p.CreationDate),
+                    "popular" => query.OrderByDescending(p => p.Reviews.Count), // Sắp xếp theo số lượng đánh giá
+                    _ => query.OrderBy(p => p.ProductName) // Default sort
+                };
+            }
+            else
+            {
+                Console.WriteLine("🔄 Using default sorting (ProductName ASC)");
+                // Default sorting nếu không có SortBy
+                query = query.OrderBy(p => p.ProductName);
+            }
 
             query = query.Skip((productFilter.PageNumber - 1) * productFilter.PageSize)
                          .Take(productFilter.PageSize);

@@ -21,9 +21,9 @@ export interface ProductFilterParameters {
   pageNumber: number;
   pageSize: number;
   isActive?: boolean | null;
-  // Thêm các tham số sắp xếp nếu cần
-  // sortBy?: string;
-  // sortDirection?: 'asc' | 'desc';
+  // Thêm các tham số sắp xếp
+  sortBy?: string;
+  sortOrder?: string; // 'asc' | 'desc'
 }
 
 

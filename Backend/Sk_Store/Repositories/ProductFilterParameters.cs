@@ -16,5 +16,8 @@ namespace Repositories
         public int PageNumber { get; set; } = 1;
         public int PageSize { get; set; } = 10;
 
+        // Thêm properties cho sorting
+        public string? SortBy { get; set; } // "name", "price", "created", "popular"
+        public string? SortOrder { get; set; } = "asc"; // "asc" hoặc "desc"
     }
 }

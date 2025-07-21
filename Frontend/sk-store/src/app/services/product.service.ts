@@ -28,6 +28,14 @@ export class ProductService {
             params = params.append('searchTerm', filters.searchTerm);
         }
 
+        // Thêm sorting parameters
+        if (filters.sortBy) {
+            params = params.append('sortBy', filters.sortBy);
+        }
+        if (filters.sortOrder) {
+            params = params.append('sortOrder', filters.sortOrder);
+        }
+
         // <<< THÊM LOGIC XỬ LÝ CHO ISACTIVE Ở ĐÂY >>>
         // Chỉ thêm tham số 'isActive' vào URL nếu nó không phải là null hoặc undefined.
         // Điều này cho phép admin gửi `null` để lấy tất cả,
@@ -36,6 +44,9 @@ export class ProductService {
             params = params.append('isActive', filters.isActive.toString());
         }
         // <<< KẾT THÚC PHẦN THÊM >>>
+
+        // Debug logging
+        console.log('🌐 ProductService making API call with params:', params.toString());
 
         return this.http.get<ProductDto[]>(this.apiUrl, { params, observe: 'response' }).pipe(
             catchError(this.handleError)

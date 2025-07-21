@@ -47,7 +47,7 @@ export class ShopComponent implements OnInit, OnDestroy {
 
   // State cho phân trang
   currentPage = signal(1);
-  pageSize = 12;
+  pageSize = 9;
   totalProducts = signal(0);
 
   // --- CẬP NHẬT CHO TÌM KIẾM ---
@@ -55,6 +55,10 @@ export class ShopComponent implements OnInit, OnDestroy {
   activeCategoryId = signal<number | null>(null);
   activeBrandId = signal<number | null>(null);
   searchTerm = signal<string>(''); // Signal để lưu từ khóa tìm kiếm
+  
+  // Sorting signals
+  sortBy = signal<string>(''); // '', 'price', 'name', 'created', 'popular'
+  sortOrder = signal<string>('asc'); // 'asc' hoặc 'desc'
 
   // Subject để quản lý input tìm kiếm với debounce
   private searchSubject = new Subject<string>();
@@ -69,12 +73,14 @@ export class ShopComponent implements OnInit, OnDestroy {
       const brandId = this.activeBrandId();
       const page = this.currentPage();
       const search = this.searchTerm(); // Thêm searchTerm vào danh sách phụ thuộc
+      const sortBy = this.sortBy(); // Thêm sorting vào danh sách phụ thuộc
+      const sortOrder = this.sortOrder();
       
       // Bỏ qua lần chạy đầu tiên khi component chưa load xong dữ liệu ban đầu
       if (!this.isLoading()) {
          this.fetchProducts();
       }
-    }, { allowSignalWrites: true });
+    });
   }
 
   ngOnInit(): void {
@@ -86,6 +92,7 @@ export class ShopComponent implements OnInit, OnDestroy {
       debounceTime(400), // Chờ 400ms sau khi người dùng ngừng gõ
       distinctUntilChanged() // Chỉ gửi request nếu giá trị thay đổi
     ).subscribe(searchValue => {
+      console.log('🔍 Search term updated via debounce:', searchValue);
       this.searchTerm.set(searchValue);
       this.currentPage.set(1); // Reset về trang 1 khi tìm kiếm
     });
@@ -131,9 +138,15 @@ export class ShopComponent implements OnInit, OnDestroy {
     pageNumber: this.currentPage(),
     pageSize: this.pageSize,
     searchTerm: this.searchTerm(),
+    // Chỉ gửi sortBy nếu nó có giá trị
+    ...(this.sortBy() && { sortBy: this.sortBy() }),
+    sortOrder: this.sortOrder(),
     // <<< THÊM DÒNG NÀY ĐỂ TRANG SHOP CHỈ LẤY SẢN PHẨM HOẠT ĐỘNG >>>
     isActive: true 
   };
+
+  // Debug logging
+  console.log('🔍 Shop fetchProducts called with filters:', filters);
 
   this.productService.getProductsWithCount(filters).subscribe({
     next: (response: HttpResponse<ProductDto[]>) => {
@@ -160,6 +173,7 @@ export class ShopComponent implements OnInit, OnDestroy {
    */
   onSearch(event: Event): void {
     const inputElement = event.target as HTMLInputElement;
+    console.log('🔍 Search input changed to:', inputElement.value);
     this.searchSubject.next(inputElement.value);
   }
   // --- KẾT THÚC CẬP NHẬT ---
@@ -177,6 +191,7 @@ export class ShopComponent implements OnInit, OnDestroy {
    * @param categoryId ID của danh mục hoặc null để xóa bộ lọc.
    */
   setCategoryFilter(categoryId: number | null): void {
+    console.log('📂 Category filter changed to:', categoryId);
     if (this.activeCategoryId() !== categoryId) {
       this.activeCategoryId.set(categoryId);
       this.currentPage.set(1);
@@ -188,10 +203,49 @@ export class ShopComponent implements OnInit, OnDestroy {
    * @param brandId ID của thương hiệu hoặc null để xóa bộ lọc.
    */
   setBrandFilter(brandId: number | null): void {
+    console.log('🏷️ Brand filter changed to:', brandId);
     if (this.activeBrandId() !== brandId) {
       this.activeBrandId.set(brandId);
       this.currentPage.set(1);
     }
+  }
+
+  /**
+   * Xử lý thay đổi sắp xếp.
+   * @param sortValue Giá trị sắp xếp từ dropdown
+   */
+  onSortChange(sortValue: string): void {
+    console.log('🔄 Sort changed to:', sortValue);
+    
+    switch(sortValue) {
+      case 'popular':
+        this.sortBy.set('popular');
+        this.sortOrder.set('desc');
+        break;
+      case 'price-asc':
+        this.sortBy.set('price');
+        this.sortOrder.set('asc');
+        break;
+      case 'price-desc':
+        this.sortBy.set('price');
+        this.sortOrder.set('desc');
+        break;
+      case 'newest':
+        this.sortBy.set('created');
+        this.sortOrder.set('desc');
+        break;
+      default:
+        this.sortBy.set('');
+        this.sortOrder.set('asc');
+        break;
+    }
+    
+    console.log('🔄 Sort signals updated:', { 
+      sortBy: this.sortBy(), 
+      sortOrder: this.sortOrder() 
+    });
+    
+    this.currentPage.set(1); // Reset về trang 1 khi thay đổi sắp xếp
   }
 
   // Helper method để get image URL

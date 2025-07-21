@@ -34,7 +34,16 @@ export class ImageService {
    * Trả về URL ảnh placeholder mặc định
    */
   getPlaceholderUrl(): string {
-    return 'https://via.placeholder.com/300x200?text=No+Image';
+    // Sử dụng Data URL SVG để tránh phụ thuộc vào file external
+    const svg = `<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="#f3f4f6"/>
+      <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" 
+            font-family="Arial, sans-serif" font-size="16" fill="#6b7280">
+        No Image
+      </text>
+    </svg>`;
+    
+    return `data:image/svg+xml;base64,${btoa(svg)}`;
   }
 
   /**

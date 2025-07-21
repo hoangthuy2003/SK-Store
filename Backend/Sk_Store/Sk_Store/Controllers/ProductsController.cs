@@ -42,11 +42,16 @@ namespace Sk_Store.Controllers // Đảm bảo namespace này đúng với proje
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> GetProducts([FromQuery] ProductFilterParameters filterParams)
         {
+            // Debug logging
+            Console.WriteLine($"🔍 GetProducts called with filters: CategoryId={filterParams.CategoryId}, BrandId={filterParams.BrandId}, SearchTerm={filterParams.SearchTerm}, SortBy={filterParams.SortBy}, SortOrder={filterParams.SortOrder}, PageNumber={filterParams.PageNumber}, PageSize={filterParams.PageSize}");
+            
             // Lấy danh sách sản phẩm cho trang hiện tại
             var products = await _productService.GetProductsAsync(filterParams);
 
             // Đếm tổng số sản phẩm khớp với bộ lọc (không tính phân trang)
             var totalProducts = await _productService.CountProductsAsync(filterParams);
+
+            Console.WriteLine($"🔍 Found {products.Count()} products, total: {totalProducts}");
 
             // Thêm header X-Total-Count vào response
             Response.Headers.Append("X-Total-Count", totalProducts.ToString());
