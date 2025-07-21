@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CartService } from '../../services/cart.service';
+import { ImageService } from '../../services/image.service';
 import { OrderService } from '../../services/order.service';
 import { CartDto } from '../../models/cart.model';
 import { CreateOrderRequestDto } from '../../models/order.model';
@@ -22,6 +23,7 @@ export class CheckoutComponent implements OnInit {
   private paymentService = inject(PaymentService);
   private fb = inject(FormBuilder);
   private cartService = inject(CartService);
+  private imageService = inject(ImageService);
   private orderService = inject(OrderService);
   private router = inject(Router);
 
@@ -92,6 +94,14 @@ export class CheckoutComponent implements OnInit {
         this.errorMessage.set(err.error?.message || 'Đã xảy ra lỗi khi đặt hàng.');
       }
     });
+  }
+
+  // Helper method để get image URL
+  getImageUrl(imageUrl: string | undefined): string {
+    if (!imageUrl) {
+      return this.imageService.getPlaceholderUrl();
+    }
+    return this.imageService.getFullImageUrl(imageUrl);
   }
 
   

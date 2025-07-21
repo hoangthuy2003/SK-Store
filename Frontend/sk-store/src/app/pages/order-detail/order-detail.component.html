@@ -32,7 +32,7 @@
               @for (item of order.orderItems; track item.productId) {
                 <div class="flex items-center justify-between border-b pb-4">
                   <div class="flex items-center">
-                    <img [src]="item.productImageUrl || 'assets/images/placeholder.jpg'" [alt]="item.productName" class="w-16 h-16 object-contain rounded-md mr-4">
+                    <img [src]="getImageUrl(item.productImageUrl)" [alt]="item.productName" class="w-16 h-16 object-contain rounded-md mr-4" (error)="$any($event.target).src = getImageUrl('')">
                     <div>
                       <p class="font-medium text-gray-800">{{ item.productName }}</p>
                       <p class="text-sm text-gray-500">Số lượng: {{ item.quantity }}</p>

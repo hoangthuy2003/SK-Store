@@ -8,6 +8,7 @@ import {
 } from 'ng-apexcharts';
 
 import { DashboardService } from '../../../services/dashboard.service';
+import { ImageService } from '../../../services/image.service';
 import { DashboardStats } from '../../../models/dashboard.model';
 import { VndCurrencyPipe } from '../../../pipes/vnd-currency.pipe';
 import { UtilsService } from '../../../services/utils.service';
@@ -35,6 +36,7 @@ export type ChartOptions = {
 })
 export class AdminDashboardComponent implements OnInit {
   private dashboardService = inject(DashboardService);
+  private imageService = inject(ImageService);
   public utilsService = inject(UtilsService);
   private vndPipe = new VndCurrencyPipe(); // Khởi tạo pipe để dùng trong code
 
@@ -82,5 +84,13 @@ export class AdminDashboardComponent implements OnInit {
       legend: { position: 'bottom' },
       plotOptions: { pie: { donut: { labels: { show: true, total: { show: true, label: 'Tổng SP' } } } } }
     });
+  }
+
+  // Helper method để get image URL
+  getImageUrl(imageUrl: string | undefined): string {
+    if (!imageUrl) {
+      return this.imageService.getPlaceholderUrl();
+    }
+    return this.imageService.getFullImageUrl(imageUrl);
   }
 }

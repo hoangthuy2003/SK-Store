@@ -90,7 +90,7 @@
         <ul class="space-y-4">
           @for(product of stats()!.topSellingProducts; track product.productId){
             <li class="flex items-center gap-4">
-              <img [src]="product.primaryImageUrl || 'assets/images/placeholder.jpg'" [alt]="product.productName" class="w-12 h-12 object-contain rounded-md bg-gray-100">
+              <img [src]="getImageUrl(product.primaryImageUrl)" [alt]="product.productName" class="w-12 h-12 object-contain rounded-md bg-gray-100" (error)="$any($event.target).src = getImageUrl('')">
               <div class="flex-1">
                  <!-- SỬA LỖI: Thêm routerLink -->
                 <a [routerLink]="['/products', product.productId]" class="font-medium text-sm line-clamp-1 hover:text-primary">{{product.productName}}</a>

@@ -2,6 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { OrderService } from '../../services/order.service';
+import { ImageService } from '../../services/image.service';
 import { OrderDto } from '../../models/order.model';
 import { Observable, of } from 'rxjs';
 import { switchMap, catchError, map } from 'rxjs/operators';
@@ -18,6 +19,7 @@ export class OrderDetailComponent implements OnInit {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private orderService = inject(OrderService);
+  private imageService = inject(ImageService);
  public utilsService = inject(UtilsService);
   order$!: Observable<OrderDto | null>;
   showSuccessMessage = false;
@@ -43,6 +45,14 @@ export class OrderDetailComponent implements OnInit {
         return of(null); // Trả về null nếu không có ID
       })
     );
+  }
+
+  // Helper method để get image URL
+  getImageUrl(imageUrl: string | undefined): string {
+    if (!imageUrl) {
+      return this.imageService.getPlaceholderUrl();
+    }
+    return this.imageService.getFullImageUrl(imageUrl);
   }
 
  

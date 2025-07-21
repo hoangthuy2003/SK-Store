@@ -2,6 +2,7 @@ import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { CartService } from '../../services/cart.service';
+import { ImageService } from '../../services/image.service';
 import { CartDto, CartItemDto } from '../../models/cart.model';
 import { Observable } from 'rxjs';
 import { VndCurrencyPipe } from '../../pipes/vnd-currency.pipe';
@@ -14,6 +15,7 @@ import { VndCurrencyPipe } from '../../pipes/vnd-currency.pipe';
 })
 export class CartComponent implements OnInit {
   private cartService = inject(CartService);
+  private imageService = inject(ImageService);
 
   // Sử dụng observable trực tiếp từ service để luôn có dữ liệu mới nhất
   cart$: Observable<CartDto | null> = this.cartService.cart$;
@@ -61,6 +63,14 @@ export class CartComponent implements OnInit {
         this.updatingItemId.set(null);
       }
     });
+  }
+
+  // Helper method để get image URL
+  getImageUrl(imageUrl: string | undefined): string {
+    if (!imageUrl) {
+      return this.imageService.getPlaceholderUrl();
+    }
+    return this.imageService.getFullImageUrl(imageUrl);
   }
 
   
