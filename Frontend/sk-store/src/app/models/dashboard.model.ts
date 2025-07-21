@@ -1,7 +1,6 @@
 export interface DashboardStats {
   totalRevenue: number;
   totalOrders: number;
-  newCustomersLast30Days: number;
   totalProductsSold: number;
   revenueOverTime: RevenueByDate[];
   categorySalesDistribution: CategorySales[];

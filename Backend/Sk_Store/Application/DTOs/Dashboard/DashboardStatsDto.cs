@@ -5,7 +5,6 @@
         // KPIs
         public decimal TotalRevenue { get; set; }
         public int TotalOrders { get; set; }
-        public int NewCustomersLast30Days { get; set; }
         public int TotalProductsSold { get; set; }
 
         // Chart Data

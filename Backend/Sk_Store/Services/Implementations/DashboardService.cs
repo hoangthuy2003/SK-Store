@@ -34,9 +34,10 @@ namespace Services.Implementations
                 // KPIs
                 TotalRevenue = allOrders.Where(o => o.PaymentStatus == "Paid").Sum(o => o.TotalAmount),
                 TotalOrders = allOrders.Count,
-                NewCustomersLast30Days = await _unitOfWork.Context.Users.CountAsync(u => u.RegistrationDate >= thirtyDaysAgo),
-                TotalProductsSold = allOrders.SelectMany(o => o.OrderItems).Sum(oi => oi.Quantity),
-
+                 TotalProductsSold = await _unitOfWork.Context.OrderItems
+    .Where(oi => oi.Order.OrderStatus == "Delivered" || oi.Order.OrderStatus == "Completed")
+    .Where(oi => oi.Order.PaymentStatus == "Paid")
+    .SumAsync(oi => oi.Quantity),
                 // Revenue Chart
                 RevenueOverTime = allOrders
                     .Where(o => o.PaymentStatus == "Paid" && o.OrderDate >= thirtyDaysAgo)
@@ -47,6 +48,7 @@ namespace Services.Implementations
 
                 // Category Chart
                 CategorySalesDistribution = allOrders
+                    .Where(o => (o.OrderStatus == "Delivered" || o.OrderStatus == "Completed") && o.PaymentStatus == "Paid")
                     .SelectMany(o => o.OrderItems)
                     .GroupBy(oi => oi.Product.Category.CategoryName)
                     .Select(g => new CategorySalesDto { CategoryName = g.Key, TotalQuantitySold = g.Sum(oi => oi.Quantity) })
@@ -68,6 +70,7 @@ namespace Services.Implementations
 
                 // Top Selling Products List
                 TopSellingProducts = allOrders
+                    .Where(o => (o.OrderStatus == "Delivered" || o.OrderStatus == "Completed") && o.PaymentStatus == "Paid")
                     .SelectMany(o => o.OrderItems)
                     .GroupBy(oi => new { oi.ProductId, oi.Product.ProductName, oi.Product.ProductImages })
                     .Select(g => new TopProductDto
