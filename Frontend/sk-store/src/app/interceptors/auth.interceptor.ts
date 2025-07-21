@@ -24,24 +24,21 @@ export const AuthInterceptor: HttpInterceptorFn = (req, next) => {
   // Sử dụng pipe để bắt lỗi
   return next(req).pipe(
     catchError((error: HttpErrorResponse) => {
-      // Lấy thông điệp lỗi từ response của backend
-      // API của bạn trả về lỗi trong `error.error.message`
-      let errorMessage = error.error?.message || 'Đã có lỗi không mong muốn xảy ra.';
-
-      // Xử lý các trường hợp đặc biệt
-      if (error.status === 0) {
-        errorMessage = 'Không thể kết nối đến máy chủ. Vui lòng kiểm tra lại mạng.';
-      } else if (error.status === 401) {
+      // Chỉ xử lý và hiển thị thông báo cho các lỗi liên quan đến authentication/authorization
+      if (error.status === 401) {
         // Lỗi 401 (Unauthorized) có thể do token hết hạn hoặc không hợp lệ
-        // Không hiển thị toast cho lỗi này vì thường sẽ có logic redirect về trang login
+        const errorMessage = 'Phiên đăng nhập đã hết hạn hoặc không hợp lệ.';
+        notificationService.showError(errorMessage);
         // authService.logout(); // Có thể tự động logout ở đây
-        errorMessage = 'Phiên đăng nhập đã hết hạn hoặc không hợp lệ.';
       } else if (error.status === 403) {
-        errorMessage = 'Bạn không có quyền thực hiện hành động này.';
+        const errorMessage = 'Bạn không có quyền thực hiện hành động này.';
+        notificationService.showError(errorMessage);
+      } else if (error.status === 0) {
+        const errorMessage = 'Không thể kết nối đến máy chủ. Vui lòng kiểm tra lại mạng.';
+        notificationService.showError(errorMessage);
       }
-
-      // Hiển thị thông báo lỗi
-      notificationService.showError(errorMessage);
+      // Không hiển thị thông báo cho các lỗi khác (400, 500, etc.) 
+      // để component tự xử lý
 
       // Ném lỗi lại để các service/component khác có thể xử lý thêm nếu cần
       return throwError(() => error);

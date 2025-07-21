@@ -1,25 +1,38 @@
-import { Component, OnInit, signal, inject } from '@angular/core';
+import { Component, OnInit, signal, inject, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { switchMap, takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 import { CartService } from '../../services/cart.service'; // <<< THÊM IMPORT
 import { AddItemToCartDto } from '../../models/cart.model'; // <<< THÊM IMPORT
 import { ProductService } from '../../services/product.service';
 import { ImageService } from '../../services/image.service';
+import { ReviewService, CreateReviewDto } from '../../services/review.service';
+import { AuthService } from '../../services/auth.service';
+import { NotificationService } from '../../services/notification.service';
 import { ProductDetailDto } from '../../models/product.model';
 import { VndCurrencyPipe } from '../../pipes/vnd-currency.pipe';
 @Component({
   selector: 'app-product-detail',
   standalone: true,
-  imports: [CommonModule, RouterLink, VndCurrencyPipe],
+  imports: [CommonModule, RouterLink, VndCurrencyPipe, ReactiveFormsModule],
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css']
 })
-export class ProductDetailComponent implements OnInit {
+export class ProductDetailComponent implements OnInit, OnDestroy {
   private route = inject(ActivatedRoute);
   private productService = inject(ProductService);
   private imageService = inject(ImageService);
-  private cartService = inject(CartService); 
+  private cartService = inject(CartService);
+  private reviewService = inject(ReviewService);
+  private authService = inject(AuthService);
+  private notificationService = inject(NotificationService);
+  private fb = inject(FormBuilder);
+  
+  // Subject for managing subscriptions
+  private destroy$ = new Subject<void>();
+  
   // State signals
   product = signal<ProductDetailDto | null>(null);
   isLoading = signal(true);
@@ -28,6 +41,18 @@ export class ProductDetailComponent implements OnInit {
   // Signal cho hình ảnh đang được chọn
   selectedImage = signal<string | undefined>(undefined);
   quantity = signal(1);
+  
+  // Review form signals
+  reviewForm: FormGroup;
+  isSubmittingReview = signal(false);
+  showReviewForm = signal(false);
+  
+  constructor() {
+    this.reviewForm = this.fb.group({
+      rating: [5, [Validators.required, Validators.min(1), Validators.max(5)]],
+      comment: ['', [Validators.maxLength(1000)]]
+    });
+  }
 
   ngOnInit(): void {
     this.route.paramMap.pipe(
@@ -104,5 +129,88 @@ export class ProductDetailComponent implements OnInit {
 
   getStarRating(rating: number): number[] {
     return Array(5).fill(0).map((_, i) => i < Math.round(rating) ? 1 : 0);
+  }
+  
+  // Review related methods
+  toggleReviewForm(): void {
+    if (!this.authService.isAuthenticated()) {
+      this.notificationService.showError('Bạn cần đăng nhập để đánh giá sản phẩm');
+      return;
+    }
+    this.showReviewForm.update(show => !show);
+  }
+  
+  submitReview(): void {
+    if (this.reviewForm.invalid) {
+      this.reviewForm.markAllAsTouched();
+      return;
+    }
+    
+    // Prevent multiple submissions
+    if (this.isSubmittingReview()) {
+      return;
+    }
+    
+    const product = this.product();
+    if (!product) return;
+    
+    this.isSubmittingReview.set(true);
+    
+    const reviewData: CreateReviewDto = {
+      rating: this.reviewForm.value.rating,
+      comment: this.reviewForm.value.comment?.trim() || undefined
+    };
+    
+    this.reviewService.addReview(product.productId, reviewData)
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: (newReview) => {
+          this.notificationService.showSuccess('Đánh giá của bạn đã được thêm thành công!');
+          
+          // Reset form and hide it first
+          this.reviewForm.reset({ rating: 5, comment: '' });
+          this.showReviewForm.set(false);
+          this.isSubmittingReview.set(false);
+          
+          // Then refresh product data to show new review
+          this.productService.getProductById(product.productId)
+            .pipe(takeUntil(this.destroy$))
+            .subscribe({
+              next: (updatedProduct) => {
+                this.product.set(updatedProduct);
+              },
+              error: (refreshError) => {
+                // Không hiển thị error cho việc refresh vì review đã thành công
+                console.warn('Could not refresh product data:', refreshError);
+              }
+            });
+        },
+        error: (error) => {
+          console.error('Error submitting review:', error);
+          
+          // Extract error message more carefully
+          let errorMessage = 'Có lỗi xảy ra khi thêm đánh giá';
+          
+          if (error?.error?.message) {
+            errorMessage = error.error.message;
+          } else if (error?.message) {
+            errorMessage = error.message;
+          } else if (typeof error?.error === 'string') {
+            errorMessage = error.error;
+          }
+          
+          this.notificationService.showError(errorMessage);
+          this.isSubmittingReview.set(false);
+        }
+      });
+  }
+  
+  isLoggedIn(): boolean {
+    return this.authService.isAuthenticated();
+  }
+  
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }

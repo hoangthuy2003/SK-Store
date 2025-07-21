@@ -36,18 +36,20 @@ namespace Services.Implementations
 
         private async Task<bool> CheckIfUserPurchasedProductAsync(int userId, int productId)
         {
-            // Kiểm tra xem có đơn hàng nào của người dùng này, đã ở trạng thái "Delivered" (hoặc các trạng thái hoàn thành khác),
-            // và chứa sản phẩm này không.
-            // Sửa lỗi: Chuyển OrderStatus và chuỗi so sánh về cùng một kiểu chữ (ví dụ: ToLower())
-            // để so sánh không phân biệt chữ hoa/thường mà EF Core có thể dịch được.
-            string deliveredStatusLower = "delivered";
-            string completedStatusLower = "completed";
-
-            return await _unitOfWork.Context.Orders
-                .AnyAsync(o => o.UserId == userId &&
-                               (o.OrderStatus.ToLower() == deliveredStatusLower ||
-                                o.OrderStatus.ToLower() == completedStatusLower) &&
-                               o.OrderItems.Any(oi => oi.ProductId == productId));
+            // Kiểm tra xem người dùng có mua sản phẩm này và sản phẩm đó đã được giao/hoàn thành không
+            // Chỉ cho phép đánh giá với các trạng thái: Delivered hoặc Completed
+            var validStatuses = new[] { "Delivered", "Completed" };
+            
+            // Debugging: Log thông tin
+            Console.WriteLine($"[DEBUG] Checking purchase for User ID: {userId}, Product ID: {productId}");
+            
+            // Sử dụng một query duy nhất để kiểm tra điều kiện
+            var result = await _unitOfWork.Context.Orders
+                .Where(o => o.UserId == userId && validStatuses.Contains(o.OrderStatus))
+                .AnyAsync(o => o.OrderItems.Any(oi => oi.ProductId == productId));
+                               
+            Console.WriteLine($"[DEBUG] User has purchased product with valid delivery status: {result}");
+            return result;
         }
 
         public async Task<(ReviewDto? Review, string? ErrorMessage)> AddReviewAsync(int productId, int userId, CreateReviewDto createReviewDto)
@@ -58,11 +60,11 @@ namespace Services.Implementations
                 return (null, "Sản phẩm không tồn tại hoặc đã ngừng kinh doanh.");
             }
 
-            // 1. Kiểm tra xem người dùng đã mua sản phẩm này chưa
+            // 1. Kiểm tra xem người dùng đã mua sản phẩm này và đã được giao/hoàn thành chưa
             var hasPurchased = await CheckIfUserPurchasedProductAsync(userId, productId);
             if (!hasPurchased)
             {
-                return (null, "Bạn chỉ có thể đánh giá các sản phẩm bạn đã mua và đã được giao thành công.");
+                return (null, "Bạn chỉ có thể đánh giá các sản phẩm bạn đã mua và đã được giao hoặc hoàn thành.");
             }
 
             // 2. Kiểm tra xem người dùng đã đánh giá sản phẩm này chưa

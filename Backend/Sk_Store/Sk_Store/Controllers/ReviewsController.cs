@@ -64,6 +64,11 @@ namespace Sk_Store.Controllers
             }
 
             var userId = GetCurrentUserId();
+            
+            // Debug logging
+            Console.WriteLine($"[DEBUG] AddReview called - Product ID: {productId}, User ID: {userId}");
+            Console.WriteLine($"[DEBUG] User Claims: {string.Join(", ", User.Claims.Select(c => $"{c.Type}={c.Value}"))}");
+            
             if (userId == 0) // User ID không hợp lệ từ token
             {
                 return Unauthorized(new { message = "Không thể xác định người dùng từ token." });
@@ -73,6 +78,7 @@ namespace Sk_Store.Controllers
 
             if (errorMessage != null)
             {
+                Console.WriteLine($"[DEBUG] Review service returned error: {errorMessage}");
                 return BadRequest(new { message = errorMessage });
             }
 
